@@ -12,8 +12,8 @@ Public Class Scraper_QB
 
     Private mDriver As IWebDriver
     Private mPanes As ObjectModel.ReadOnlyCollection(Of IWebElement)
-    Private mDirChrome As String = "C:\Users\pc\Desktop\Software and Files\Expert 23\Google_For_Selenium_78.0.3904.7000\Chrome\Application\chrome.exe"
-    Private mdirVPN As String = "C:\Users\pc\Desktop\Software and Files\Expert 23\Google_For_Selenium_78.0.3904.7000\Chrome\Application\2.0.0_0.crx"
+    Private mDirChrome As String = "C:\Users\pc\Desktop\Software and Files\Scrapers\Google_For_Selenium_78.0.3904.7000\Google_For_Selenium_78.0.3904.7000\Chrome\Application\chrome.exe"
+    Private mdirVPN As String = "C:\Users\pc\Desktop\Software and Files\Scrapers\Google_For_Selenium_78.0.3904.7000\Google_For_Selenium_78.0.3904.7000\Chrome\Application\2.0.0_0.crx"
     Private handleTopWindow As String
     Private maxWaitSecs_PageLoads As Integer
     Private maxWaitSecs_Downloads As Integer
@@ -193,22 +193,12 @@ Public Class Scraper_QB
 
     Private Sub Initialize()
 
-        maxWaitSecs_Downloads = 20
-        maxWaitSecs_PageLoads = 30
-
         Dim options As New ChromeOptions
-
-        options.AddExtension(mdirVPN)
         options.BinaryLocation = mDirChrome
-
+        options.AddExtension(mdirVPN)
         mDriver = New ChromeDriver(options)
+        mDriver.Manage.Timeouts.PageLoad = New TimeSpan(0, 0, 60)
         mDriver.Manage.Window.Maximize()
-        'driver.Manage.Timeouts.ImplicitlyWait(New TimeSpan(0, 0, 10))
-        'driver.Manage.Timeouts.SetPageLoadTimeout(New TimeSpan(0, 3, 0))
-        'driver.Manage.Timeouts.SetScriptTimeout(New TimeSpan(0, 3, 0))
-
-        'No built in way to minimize browser while scraping - just move off into oblivion as workaround
-        'driver.Manage.Window.Position = New System.Drawing.Point(-2000, -2000)
 
     End Sub
 

@@ -365,9 +365,9 @@ Public Class frmQuilbot
     End Sub
 
     Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
-        'Load_Message(True)
-        'Dim frm As frmLemlist = New frmLemlist(mMessage, mJob)
-        'frm.ShowDialog()
+        Load_Message(True)
+        Dim frm As frmLemlist = New frmLemlist(mMessage, mJob)
+        frm.ShowDialog()
     End Sub
 
 
