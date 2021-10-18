@@ -4,7 +4,7 @@ Imports Content.Solicitation.Utilities
 Public Class frmQuilbot
     Private mMessage As Message
     Private mJob As Job_Curation
-
+    'MA
     Private mRandom As New System.Random
     Private selectedPath As String
     Private mLoading As Boolean
