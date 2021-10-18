@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4BC36F2C-9171-4C92-910B-4960E8ECBF37}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Content.Solicitation.UI.My.MyApplication</StartupObject>
+    <RootNamespace>Content.Solicitation.UI</RootNamespace>
+    <AssemblyName>Content.Solicitation.UI</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Content.Solicitation.UI.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Content.Solicitation.UI.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFileSystem.Designer.vb">
+      <DependentUpon>frmFileSystem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmFileSystem.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLemlist.Designer.vb">
+      <DependentUpon>frmLemlist.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmLemlist.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuilbot.Designer.vb">
+      <DependentUpon>frmQuilbot.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuilbot.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVersion.Designer.vb">
+      <DependentUpon>frmVersion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmVersion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frmFileSystem.resx">
+      <DependentUpon>frmFileSystem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLemlist.resx">
+      <DependentUpon>frmLemlist.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuilbot.resx">
+      <DependentUpon>frmQuilbot.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVersion.resx">
+      <DependentUpon>frmVersion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Content.Solicitation.Adapters\Content.Solicitation.Adapters.vbproj">
+      <Project>{06aace38-7017-451f-81a0-85ac42f4182b}</Project>
+      <Name>Content.Solicitation.Adapters</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Content.Solicitation.Primitives\Content.Solicitation.Primitives.vbproj">
+      <Project>{dde8a23f-e0d2-4a97-a1d5-e45ea2a397b7}</Project>
+      <Name>Content.Solicitation.Primitives</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Content.Solicitation.Utilities\Content.Solicitation.Utilities.vbproj">
+      <Project>{2703f8d8-9a09-45be-8c43-cfb6473dc214}</Project>
+      <Name>Content.Solicitation.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Span_Words.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Test0.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
