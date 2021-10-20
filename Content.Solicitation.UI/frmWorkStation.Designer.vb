@@ -55,6 +55,7 @@ Partial Class frmWorkStation
         Me.SolicitsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BuildEmailToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaunchCampaignToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SAVEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -84,7 +85,7 @@ Partial Class frmWorkStation
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1290, 494)
+        Me.Panel1.Size = New System.Drawing.Size(1350, 729)
         Me.Panel1.TabIndex = 0
         '
         'Panel2
@@ -93,7 +94,7 @@ Partial Class frmWorkStation
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel2.Location = New System.Drawing.Point(0, 30)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1290, 464)
+        Me.Panel2.Size = New System.Drawing.Size(1350, 699)
         Me.Panel2.TabIndex = 1
         '
         'TableLayoutPanel1
@@ -113,16 +114,16 @@ Partial Class frmWorkStation
         Me.TableLayoutPanel1.RowCount = 2
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(1284, 458)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(1344, 693)
         Me.TableLayoutPanel1.TabIndex = 0
         '
         'Panel3
         '
         Me.Panel3.Controls.Add(Me.TableLayoutPanel2)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel3.Location = New System.Drawing.Point(67, 3)
+        Me.Panel3.Location = New System.Drawing.Point(70, 3)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1149, 223)
+        Me.Panel3.Size = New System.Drawing.Size(1203, 340)
         Me.Panel3.TabIndex = 0
         '
         'TableLayoutPanel2
@@ -140,7 +141,7 @@ Partial Class frmWorkStation
         Me.TableLayoutPanel2.RowCount = 1
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 217.0!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(1143, 217)
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(1197, 334)
         Me.TableLayoutPanel2.TabIndex = 0
         '
         'TableLayoutPanel3
@@ -158,7 +159,7 @@ Partial Class frmWorkStation
         Me.TableLayoutPanel3.RowCount = 2
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel3.Size = New System.Drawing.Size(565, 211)
+        Me.TableLayoutPanel3.Size = New System.Drawing.Size(592, 328)
         Me.TableLayoutPanel3.TabIndex = 0
         '
         'GroupBox1
@@ -170,7 +171,7 @@ Partial Class frmWorkStation
         Me.GroupBox1.Font = New System.Drawing.Font("Arial Narrow", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(3, 3)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(559, 99)
+        Me.GroupBox1.Size = New System.Drawing.Size(586, 158)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Select Snippet"
@@ -189,7 +190,7 @@ Partial Class frmWorkStation
         Me.TableLayoutPanel4.RowCount = 1
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 65.0!))
-        Me.TableLayoutPanel4.Size = New System.Drawing.Size(547, 65)
+        Me.TableLayoutPanel4.Size = New System.Drawing.Size(574, 124)
         Me.TableLayoutPanel4.TabIndex = 0
         '
         'ComboBox1
@@ -200,7 +201,7 @@ Partial Class frmWorkStation
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Location = New System.Drawing.Point(3, 3)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(541, 31)
+        Me.ComboBox1.Size = New System.Drawing.Size(568, 31)
         Me.ComboBox1.TabIndex = 0
         '
         'TableLayoutPanel7
@@ -213,11 +214,11 @@ Partial Class frmWorkStation
         Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel7.Controls.Add(Me.TableLayoutPanel8, 0, 0)
         Me.TableLayoutPanel7.Controls.Add(Me.TableLayoutPanel10, 1, 0)
-        Me.TableLayoutPanel7.Location = New System.Drawing.Point(3, 108)
+        Me.TableLayoutPanel7.Location = New System.Drawing.Point(3, 167)
         Me.TableLayoutPanel7.Name = "TableLayoutPanel7"
         Me.TableLayoutPanel7.RowCount = 1
         Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel7.Size = New System.Drawing.Size(559, 100)
+        Me.TableLayoutPanel7.Size = New System.Drawing.Size(586, 158)
         Me.TableLayoutPanel7.TabIndex = 1
         '
         'TableLayoutPanel8
@@ -234,7 +235,7 @@ Partial Class frmWorkStation
         Me.TableLayoutPanel8.RowCount = 1
         Me.TableLayoutPanel8.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel8.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 94.0!))
-        Me.TableLayoutPanel8.Size = New System.Drawing.Size(273, 94)
+        Me.TableLayoutPanel8.Size = New System.Drawing.Size(287, 152)
         Me.TableLayoutPanel8.TabIndex = 0
         '
         'GroupBox3
@@ -246,7 +247,7 @@ Partial Class frmWorkStation
         Me.GroupBox3.Font = New System.Drawing.Font("Arial Narrow", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.Location = New System.Drawing.Point(3, 3)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(267, 88)
+        Me.GroupBox3.Size = New System.Drawing.Size(281, 146)
         Me.GroupBox3.TabIndex = 0
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Select List"
@@ -264,7 +265,7 @@ Partial Class frmWorkStation
         Me.TableLayoutPanel9.RowCount = 1
         Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 53.0!))
-        Me.TableLayoutPanel9.Size = New System.Drawing.Size(254, 53)
+        Me.TableLayoutPanel9.Size = New System.Drawing.Size(268, 111)
         Me.TableLayoutPanel9.TabIndex = 0
         '
         'Button1
@@ -274,7 +275,7 @@ Partial Class frmWorkStation
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button1.Location = New System.Drawing.Point(3, 3)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(248, 47)
+        Me.Button1.Size = New System.Drawing.Size(262, 105)
         Me.Button1.TabIndex = 0
         Me.Button1.Text = "Upload List"
         Me.Button1.UseVisualStyleBackColor = True
@@ -288,12 +289,12 @@ Partial Class frmWorkStation
         Me.TableLayoutPanel10.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel10.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel10.Controls.Add(Me.GroupBox4, 0, 0)
-        Me.TableLayoutPanel10.Location = New System.Drawing.Point(282, 3)
+        Me.TableLayoutPanel10.Location = New System.Drawing.Point(296, 3)
         Me.TableLayoutPanel10.Name = "TableLayoutPanel10"
         Me.TableLayoutPanel10.RowCount = 1
         Me.TableLayoutPanel10.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel10.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 94.0!))
-        Me.TableLayoutPanel10.Size = New System.Drawing.Size(274, 94)
+        Me.TableLayoutPanel10.Size = New System.Drawing.Size(287, 152)
         Me.TableLayoutPanel10.TabIndex = 1
         '
         'GroupBox4
@@ -305,7 +306,7 @@ Partial Class frmWorkStation
         Me.GroupBox4.Font = New System.Drawing.Font("Arial Narrow", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox4.Location = New System.Drawing.Point(3, 3)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(268, 88)
+        Me.GroupBox4.Size = New System.Drawing.Size(281, 146)
         Me.GroupBox4.TabIndex = 0
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Campaign Name"
@@ -324,7 +325,7 @@ Partial Class frmWorkStation
         Me.TableLayoutPanel11.RowCount = 1
         Me.TableLayoutPanel11.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel11.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47.0!))
-        Me.TableLayoutPanel11.Size = New System.Drawing.Size(256, 47)
+        Me.TableLayoutPanel11.Size = New System.Drawing.Size(269, 105)
         Me.TableLayoutPanel11.TabIndex = 0
         '
         'TextBox1
@@ -334,7 +335,7 @@ Partial Class frmWorkStation
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TextBox1.Location = New System.Drawing.Point(3, 3)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(250, 29)
+        Me.TextBox1.Size = New System.Drawing.Size(263, 29)
         Me.TextBox1.TabIndex = 0
         '
         'TableLayoutPanel5
@@ -346,12 +347,12 @@ Partial Class frmWorkStation
         Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel5.Controls.Add(Me.GroupBox2, 0, 0)
-        Me.TableLayoutPanel5.Location = New System.Drawing.Point(574, 3)
+        Me.TableLayoutPanel5.Location = New System.Drawing.Point(601, 3)
         Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
         Me.TableLayoutPanel5.RowCount = 2
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel5.Size = New System.Drawing.Size(566, 211)
+        Me.TableLayoutPanel5.Size = New System.Drawing.Size(593, 328)
         Me.TableLayoutPanel5.TabIndex = 1
         '
         'GroupBox2
@@ -363,7 +364,7 @@ Partial Class frmWorkStation
         Me.GroupBox2.Font = New System.Drawing.Font("Arial Narrow", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.Location = New System.Drawing.Point(3, 3)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(560, 99)
+        Me.GroupBox2.Size = New System.Drawing.Size(587, 158)
         Me.GroupBox2.TabIndex = 0
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Select Email Variations"
@@ -382,7 +383,7 @@ Partial Class frmWorkStation
         Me.TableLayoutPanel6.RowCount = 1
         Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 65.0!))
-        Me.TableLayoutPanel6.Size = New System.Drawing.Size(548, 65)
+        Me.TableLayoutPanel6.Size = New System.Drawing.Size(575, 124)
         Me.TableLayoutPanel6.TabIndex = 0
         '
         'ComboBox2
@@ -393,16 +394,16 @@ Partial Class frmWorkStation
         Me.ComboBox2.FormattingEnabled = True
         Me.ComboBox2.Location = New System.Drawing.Point(3, 3)
         Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(542, 31)
+        Me.ComboBox2.Size = New System.Drawing.Size(569, 31)
         Me.ComboBox2.TabIndex = 1
         '
         'Panel4
         '
         Me.Panel4.Controls.Add(Me.TableLayoutPanel12)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel4.Location = New System.Drawing.Point(67, 232)
+        Me.Panel4.Location = New System.Drawing.Point(70, 349)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(1149, 223)
+        Me.Panel4.Size = New System.Drawing.Size(1203, 341)
         Me.Panel4.TabIndex = 1
         '
         'TableLayoutPanel12
@@ -418,7 +419,7 @@ Partial Class frmWorkStation
         Me.TableLayoutPanel12.RowCount = 1
         Me.TableLayoutPanel12.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel12.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 217.0!))
-        Me.TableLayoutPanel12.Size = New System.Drawing.Size(1146, 217)
+        Me.TableLayoutPanel12.Size = New System.Drawing.Size(1200, 335)
         Me.TableLayoutPanel12.TabIndex = 0
         '
         'MenuStrip1
@@ -427,7 +428,7 @@ Partial Class frmWorkStation
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.LOADToolStripMenuItem, Me.WIPToolStripMenuItem, Me.BuildEmailToolStripMenuItem, Me.LaunchCampaignToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1290, 30)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1350, 30)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -445,7 +446,7 @@ Partial Class frmWorkStation
         '
         'WIPToolStripMenuItem
         '
-        Me.WIPToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoadToolStripMenuItem1})
+        Me.WIPToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoadToolStripMenuItem1, Me.SAVEToolStripMenuItem})
         Me.WIPToolStripMenuItem.Name = "WIPToolStripMenuItem"
         Me.WIPToolStripMenuItem.Size = New System.Drawing.Size(57, 26)
         Me.WIPToolStripMenuItem.Text = "WIP"
@@ -481,11 +482,17 @@ Partial Class frmWorkStation
         Me.LaunchCampaignToolStripMenuItem.Size = New System.Drawing.Size(191, 26)
         Me.LaunchCampaignToolStripMenuItem.Text = "Launch Campaign"
         '
+        'SAVEToolStripMenuItem
+        '
+        Me.SAVEToolStripMenuItem.Name = "SAVEToolStripMenuItem"
+        Me.SAVEToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
+        Me.SAVEToolStripMenuItem.Text = "Save"
+        '
         'frmWorkStation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1290, 494)
+        Me.ClientSize = New System.Drawing.Size(1350, 729)
         Me.Controls.Add(Me.Panel1)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "frmWorkStation"
@@ -550,4 +557,5 @@ Partial Class frmWorkStation
     Friend WithEvents Panel4 As Panel
     Friend WithEvents TableLayoutPanel12 As TableLayoutPanel
     Friend WithEvents LaunchCampaignToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SAVEToolStripMenuItem As ToolStripMenuItem
 End Class
