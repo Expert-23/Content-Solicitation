@@ -6,6 +6,8 @@ Imports System.Text
 Imports System.Threading
 Imports Content.Solicitation.Primitives
 Imports Content.Solicitation.Utilities
+Imports Loggingg
+
 Public Class Driver_Email
 
     'This class is the Selenium base method of doing the screen scraping via Chrome - placed into service 7/1/17
@@ -72,8 +74,8 @@ Public Class Driver_Email
             System.Threading.Thread.Sleep(3000)
 
 
-        Catch ex As Exception
-            Debug.Print(ex.Message)
+        Catch ex As NullReferenceException
+            MasterLog.MasterLogs().Error(ex, "Object with null reference")
         End Try
 
     End Sub

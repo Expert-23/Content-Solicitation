@@ -2,6 +2,7 @@
 Imports Content.Solicitation.Utilities
 Imports Content.Solicitation.Adapters
 Public Class frmVar
+
 #Region "Members"
     Private mMessage As Message
     Private mJob As Job_Curation
@@ -10,6 +11,7 @@ Public Class frmVar
     Private selectedPath As String
     Private mLoading As Boolean
 #End Region
+
 #Region "Initialization"
     Public Sub New(ByVal job As Job_Curation)
         InitializeComponent()
@@ -19,6 +21,7 @@ Public Class frmVar
         mJob = job
     End Sub
 #End Region
+
 #Region "Form Events"
     Private Sub frmVar_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Initialize_Form(mJob)
@@ -28,6 +31,7 @@ Public Class frmVar
         Analyze_Message()
     End Sub
 #End Region
+
 #Region "Methods"
     Private Sub Analyze_Message()
         Initialize_Message()
@@ -48,7 +52,7 @@ Public Class frmVar
     End Sub
 
     Private Sub MORPHToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MORPHToolStripMenuItem.Click
-        Load_Next_Message_Version
+        Load_Next_Message_Version()
     End Sub
     Private Sub Load_Next_Message_Version()
 
@@ -82,11 +86,6 @@ Public Class frmVar
 
     End Sub
 #End Region
-
-
-
-
-
 
 
 End Class

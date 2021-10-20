@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "YayzjdsNTOjnzWLksJC/58cOTiO7tC3XfpCnqUrluKhkTvxWPcQpCK3bRRCuADRq0M1RIMCG1whHunwoZWYYVg==",
+  "dgSpecHash": "iH34J6VjOjIyjnwaW7uZzN3W+qswWfM4MTPJVclpaV0kpAPMmraQEqQUJ8EEcif2TRes1wk4S7REfcmnrwh27A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\pc\\source\\repos\\Expert-23\\Content-Solicitation\\Logging\\Logging.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\josep\\Source\\Repos\\Expert-23\\Content-Solicitation\\Logging\\Logging.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\josep\\.nuget\\packages\\serilog\\2.10.0\\serilog.2.10.0.nupkg.sha512"
+  ],
   "logs": []
 }
