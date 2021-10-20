@@ -212,9 +212,7 @@ Public Class frmVariations
     End Sub
 
 #Region " Message Version "
-
     Private Sub Load_Next_Message_Version()
-
         Try
             mLoading = True
 
@@ -239,10 +237,6 @@ Public Class frmVariations
         Catch ex As Exception
 
         End Try
-
-
-
-
     End Sub
 
     Private Function Build_Version() As Version

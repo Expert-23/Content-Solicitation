@@ -53,9 +53,9 @@ Partial Class frmWorkStation
         Me.LoadToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.EmailsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SolicitsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SAVEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BuildEmailToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaunchCampaignToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SAVEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -140,7 +140,7 @@ Partial Class frmWorkStation
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
         Me.TableLayoutPanel2.RowCount = 1
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 217.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 334.0!))
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(1197, 334)
         Me.TableLayoutPanel2.TabIndex = 0
         '
@@ -189,7 +189,7 @@ Partial Class frmWorkStation
         Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
         Me.TableLayoutPanel4.RowCount = 1
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 65.0!))
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 124.0!))
         Me.TableLayoutPanel4.Size = New System.Drawing.Size(574, 124)
         Me.TableLayoutPanel4.TabIndex = 0
         '
@@ -234,7 +234,7 @@ Partial Class frmWorkStation
         Me.TableLayoutPanel8.Name = "TableLayoutPanel8"
         Me.TableLayoutPanel8.RowCount = 1
         Me.TableLayoutPanel8.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel8.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 94.0!))
+        Me.TableLayoutPanel8.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 152.0!))
         Me.TableLayoutPanel8.Size = New System.Drawing.Size(287, 152)
         Me.TableLayoutPanel8.TabIndex = 0
         '
@@ -264,7 +264,7 @@ Partial Class frmWorkStation
         Me.TableLayoutPanel9.Name = "TableLayoutPanel9"
         Me.TableLayoutPanel9.RowCount = 1
         Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 53.0!))
+        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 111.0!))
         Me.TableLayoutPanel9.Size = New System.Drawing.Size(268, 111)
         Me.TableLayoutPanel9.TabIndex = 0
         '
@@ -293,7 +293,7 @@ Partial Class frmWorkStation
         Me.TableLayoutPanel10.Name = "TableLayoutPanel10"
         Me.TableLayoutPanel10.RowCount = 1
         Me.TableLayoutPanel10.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel10.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 94.0!))
+        Me.TableLayoutPanel10.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 152.0!))
         Me.TableLayoutPanel10.Size = New System.Drawing.Size(287, 152)
         Me.TableLayoutPanel10.TabIndex = 1
         '
@@ -324,7 +324,7 @@ Partial Class frmWorkStation
         Me.TableLayoutPanel11.Name = "TableLayoutPanel11"
         Me.TableLayoutPanel11.RowCount = 1
         Me.TableLayoutPanel11.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel11.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47.0!))
+        Me.TableLayoutPanel11.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 105.0!))
         Me.TableLayoutPanel11.Size = New System.Drawing.Size(269, 105)
         Me.TableLayoutPanel11.TabIndex = 0
         '
@@ -382,7 +382,7 @@ Partial Class frmWorkStation
         Me.TableLayoutPanel6.Name = "TableLayoutPanel6"
         Me.TableLayoutPanel6.RowCount = 1
         Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 65.0!))
+        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 124.0!))
         Me.TableLayoutPanel6.Size = New System.Drawing.Size(575, 124)
         Me.TableLayoutPanel6.TabIndex = 0
         '
@@ -418,7 +418,7 @@ Partial Class frmWorkStation
         Me.TableLayoutPanel12.Name = "TableLayoutPanel12"
         Me.TableLayoutPanel12.RowCount = 1
         Me.TableLayoutPanel12.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel12.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 217.0!))
+        Me.TableLayoutPanel12.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 335.0!))
         Me.TableLayoutPanel12.Size = New System.Drawing.Size(1200, 335)
         Me.TableLayoutPanel12.TabIndex = 0
         '
@@ -455,20 +455,26 @@ Partial Class frmWorkStation
         '
         Me.LoadToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EmailsToolStripMenuItem, Me.SolicitsToolStripMenuItem})
         Me.LoadToolStripMenuItem1.Name = "LoadToolStripMenuItem1"
-        Me.LoadToolStripMenuItem1.Size = New System.Drawing.Size(127, 26)
+        Me.LoadToolStripMenuItem1.Size = New System.Drawing.Size(180, 26)
         Me.LoadToolStripMenuItem1.Text = "Load"
         '
         'EmailsToolStripMenuItem
         '
         Me.EmailsToolStripMenuItem.Name = "EmailsToolStripMenuItem"
-        Me.EmailsToolStripMenuItem.Size = New System.Drawing.Size(148, 26)
+        Me.EmailsToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
         Me.EmailsToolStripMenuItem.Text = "Emails"
         '
         'SolicitsToolStripMenuItem
         '
         Me.SolicitsToolStripMenuItem.Name = "SolicitsToolStripMenuItem"
-        Me.SolicitsToolStripMenuItem.Size = New System.Drawing.Size(148, 26)
+        Me.SolicitsToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
         Me.SolicitsToolStripMenuItem.Text = "Solicits"
+        '
+        'SAVEToolStripMenuItem
+        '
+        Me.SAVEToolStripMenuItem.Name = "SAVEToolStripMenuItem"
+        Me.SAVEToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
+        Me.SAVEToolStripMenuItem.Text = "Save"
         '
         'BuildEmailToolStripMenuItem
         '
@@ -481,12 +487,6 @@ Partial Class frmWorkStation
         Me.LaunchCampaignToolStripMenuItem.Name = "LaunchCampaignToolStripMenuItem"
         Me.LaunchCampaignToolStripMenuItem.Size = New System.Drawing.Size(191, 26)
         Me.LaunchCampaignToolStripMenuItem.Text = "Launch Campaign"
-        '
-        'SAVEToolStripMenuItem
-        '
-        Me.SAVEToolStripMenuItem.Name = "SAVEToolStripMenuItem"
-        Me.SAVEToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
-        Me.SAVEToolStripMenuItem.Text = "Save"
         '
         'frmWorkStation
         '
