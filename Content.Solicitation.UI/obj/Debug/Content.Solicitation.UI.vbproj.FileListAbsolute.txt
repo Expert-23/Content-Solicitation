@@ -56,8 +56,6 @@ C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.UI\
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.UI\bin\Debug\Content.Solicitation.Localize.exe.config
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.UI\obj\Debug\Content.Solicitation.UI.vbproj.AssemblyReference.cache
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.UI\obj\Debug\Content.Solicitation.UI.frmFileSystem.resources
-C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.UI\obj\Debug\Content.Solicitation.UI.frmLemlist.resources
-C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.UI\obj\Debug\Content.Solicitation.UI.frmQuilbot.resources
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.UI\obj\Debug\Content.Solicitation.UI.frmVersion.resources
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.UI\obj\Debug\Content.Solicitation.UI.Resources.resources
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.UI\obj\Debug\Content.Solicitation.UI.vbproj.GenerateResource.cache
@@ -66,3 +64,12 @@ C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.UI\
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.UI\obj\Debug\Content.Solicitation.UI.exe
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.UI\obj\Debug\Content.Solicitation.UI.xml
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.UI\obj\Debug\Content.Solicitation.UI.pdb
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.UI\obj\Debug\Content.Solicitation.UI.frmCampaign.resources
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.UI\obj\Debug\Content.Solicitation.UI.frmVariations.resources
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.UI\bin\Debug\Content.Solicitation.Controllers.exe
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.UI\bin\Debug\Content.Solicitation.Controllers.pdb
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.UI\bin\Debug\Content.Solicitation.Controllers.xml
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.UI\bin\Debug\Content.Solicitation.Controllers.exe.config
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.UI\obj\Debug\Content.Solicitation.UI.frmWorkStation.resources
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.UI\obj\Debug\Content.Solicitation.UI.frmCamp.resources
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.UI\obj\Debug\Content.Solicitation.UI.frmVar.resources

@@ -78,6 +78,8 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller_Persistance.vb" />
+    <Compile Include="Controller_Scraper.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +123,16 @@
     </None>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Content.Solicitation.Adapters\Content.Solicitation.Adapters.vbproj">
+      <Project>{06aace38-7017-451f-81a0-85ac42f4182b}</Project>
+      <Name>Content.Solicitation.Adapters</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Content.Solicitation.Primitives\Content.Solicitation.Primitives.vbproj">
+      <Project>{dde8a23f-e0d2-4a97-a1d5-e45ea2a397b7}</Project>
+      <Name>Content.Solicitation.Primitives</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Import Project="..\packages\Selenium.WebDriver.ChromeDriver.78.0.3904.7000\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.ChromeDriver.78.0.3904.7000\build\Selenium.WebDriver.ChromeDriver.targets')" />

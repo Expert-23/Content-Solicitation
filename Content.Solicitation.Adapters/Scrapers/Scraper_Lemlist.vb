@@ -13,6 +13,7 @@ Public Class Scraper_Lemlist
     Private mLemlist As Lemlist
     Private mJob As Job_Curation
     Private mRandom As New System.Random
+
     Public Sub New(ByVal dt2 As Lemlist, Job As Job_Curation)
         Initialize(dt2, Job)
     End Sub
