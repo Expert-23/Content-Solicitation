@@ -1,5 +1,4 @@
 ﻿Public Module Localization
-
     Private mFolder As String = "C:\Users\pc\Desktop\Software and Files\Expert 23\Kaleidescope-main\DIR\"
     Private mFilename_WIP As String = "message_wip.bin"
     Private mFilename_done As String = "message_done"

@@ -14,6 +14,8 @@
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -58,6 +60,9 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="WebDriver, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.3.141.0\lib\net45\WebDriver.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -73,11 +78,23 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.vb">
+    <Compile Include="frmCamp.Designer.vb">
+      <DependentUpon>frmCamp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCamp.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="frmCampaign.Designer.vb">
+      <DependentUpon>frmCampaign.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCampaign.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.vb">
+      <DependentUpon>frmMain.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmFileSystem.Designer.vb">
@@ -86,22 +103,28 @@
     <Compile Include="frmFileSystem.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLemlist.Designer.vb">
-      <DependentUpon>frmLemlist.vb</DependentUpon>
+    <Compile Include="frmVar.Designer.vb">
+      <DependentUpon>frmVar.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmLemlist.vb">
+    <Compile Include="frmVar.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmQuilbot.Designer.vb">
-      <DependentUpon>frmQuilbot.vb</DependentUpon>
+    <Compile Include="frmVariations.Designer.vb">
+      <DependentUpon>frmVariations.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmQuilbot.vb">
+    <Compile Include="frmVariations.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmVersion.Designer.vb">
       <DependentUpon>frmVersion.vb</DependentUpon>
     </Compile>
     <Compile Include="frmVersion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWorkStation.Designer.vb">
+      <DependentUpon>frmWorkStation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmWorkStation.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -122,17 +145,26 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmCamp.resx">
+      <DependentUpon>frmCamp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCampaign.resx">
+      <DependentUpon>frmCampaign.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmFileSystem.resx">
       <DependentUpon>frmFileSystem.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLemlist.resx">
-      <DependentUpon>frmLemlist.vb</DependentUpon>
+    <EmbeddedResource Include="frmVar.resx">
+      <DependentUpon>frmVar.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmQuilbot.resx">
-      <DependentUpon>frmQuilbot.vb</DependentUpon>
+    <EmbeddedResource Include="frmVariations.resx">
+      <DependentUpon>frmVariations.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVersion.resx">
       <DependentUpon>frmVersion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWorkStation.resx">
+      <DependentUpon>frmWorkStation.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -158,6 +190,10 @@
       <Project>{06aace38-7017-451f-81a0-85ac42f4182b}</Project>
       <Name>Content.Solicitation.Adapters</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Content.Solicitation.Controllers\Content.Solicitation.Controllers.vbproj">
+      <Project>{3bf2e87a-3abc-4293-b74d-0afa046040a3}</Project>
+      <Name>Content.Solicitation.Controllers</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Content.Solicitation.Primitives\Content.Solicitation.Primitives.vbproj">
       <Project>{dde8a23f-e0d2-4a97-a1d5-e45ea2a397b7}</Project>
       <Name>Content.Solicitation.Primitives</Name>
@@ -168,10 +204,18 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Resources\Span_Words.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Test0.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="..\packages\Selenium.WebDriver.ChromeDriver.78.0.3904.7000\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.ChromeDriver.78.0.3904.7000\build\Selenium.WebDriver.ChromeDriver.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Selenium.WebDriver.ChromeDriver.78.0.3904.7000\build\Selenium.WebDriver.ChromeDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.ChromeDriver.78.0.3904.7000\build\Selenium.WebDriver.ChromeDriver.targets'))" />
+  </Target>
 </Project>

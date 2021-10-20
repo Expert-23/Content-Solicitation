@@ -9,3 +9,17 @@ C:\Users\pc\source\repos\Content.Solicitation.Complete\Content.Solicitation.Prim
 C:\Users\pc\source\repos\Content.Solicitation.Complete\Content.Solicitation.Primitives\obj\Debug\Content.Solicitation.Primitives.exe
 C:\Users\pc\source\repos\Content.Solicitation.Complete\Content.Solicitation.Primitives\obj\Debug\Content.Solicitation.Primitives.xml
 C:\Users\pc\source\repos\Content.Solicitation.Complete\Content.Solicitation.Primitives\obj\Debug\Content.Solicitation.Primitives.pdb
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Primitives\bin\Debug\Content.Solicitation.Primitives.exe.config
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Primitives\bin\Debug\Content.Solicitation.Primitives.exe
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Primitives\bin\Debug\Content.Solicitation.Primitives.pdb
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Primitives\bin\Debug\Content.Solicitation.Primitives.xml
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Primitives\bin\Debug\WebDriver.dll
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Primitives\bin\Debug\WebDriver.xml
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Primitives\obj\Debug\Content.Solicitation.Primitives.vbproj.AssemblyReference.cache
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Primitives\obj\Debug\Content.Solicitation.Primitives.Resources.resources
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Primitives\obj\Debug\Content.Solicitation.Primitives.vbproj.GenerateResource.cache
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Primitives\obj\Debug\Content.Solicitation.Primitives.vbproj.CoreCompileInputs.cache
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Primitives\obj\Debug\Content.Solicitation.Primitives.vbproj.CopyComplete
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Primitives\obj\Debug\Content.Solicitation.Primitives.exe
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Primitives\obj\Debug\Content.Solicitation.Primitives.xml
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Primitives\obj\Debug\Content.Solicitation.Primitives.pdb
