@@ -69,11 +69,8 @@ Public Class frmVariations
 #Region " Initialization"
 
     Public Sub New(ByVal job As Job_Curation)
-
-
         InitializeComponent()
         Initialize_Form(job)
-
     End Sub
     Private Sub Initialize_Form(ByVal job As Job_Curation)
         mJob = job

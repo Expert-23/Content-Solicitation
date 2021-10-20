@@ -29,8 +29,9 @@ Partial Class frmVar
         Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
         Me.GroupBox8 = New System.Windows.Forms.GroupBox()
         Me.TableLayoutPanel12 = New System.Windows.Forms.TableLayoutPanel()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
         Me.TableLayoutPanel13 = New System.Windows.Forms.TableLayoutPanel()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.cboSentence_Number = New System.Windows.Forms.ComboBox()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel7 = New System.Windows.Forms.Panel()
@@ -52,11 +53,11 @@ Partial Class frmVar
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtOriginal_Subject = New System.Windows.Forms.TextBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.txtOriginal_Body = New System.Windows.Forms.TextBox()
         Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -65,7 +66,6 @@ Partial Class frmVar
         Me.WIPToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LOADToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SAVEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -195,6 +195,17 @@ Partial Class frmVar
         Me.TableLayoutPanel12.Size = New System.Drawing.Size(415, 86)
         Me.TableLayoutPanel12.TabIndex = 0
         '
+        'TextBox5
+        '
+        Me.TextBox5.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TextBox5.Location = New System.Drawing.Point(86, 3)
+        Me.TextBox5.Multiline = True
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.Size = New System.Drawing.Size(326, 80)
+        Me.TextBox5.TabIndex = 1
+        '
         'TableLayoutPanel13
         '
         Me.TableLayoutPanel13.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
@@ -202,7 +213,7 @@ Partial Class frmVar
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TableLayoutPanel13.ColumnCount = 1
         Me.TableLayoutPanel13.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel13.Controls.Add(Me.ComboBox1, 0, 0)
+        Me.TableLayoutPanel13.Controls.Add(Me.cboSentence_Number, 0, 0)
         Me.TableLayoutPanel13.Controls.Add(Me.ComboBox2, 0, 2)
         Me.TableLayoutPanel13.Controls.Add(Me.Button1, 0, 1)
         Me.TableLayoutPanel13.Location = New System.Drawing.Point(3, 3)
@@ -214,17 +225,17 @@ Partial Class frmVar
         Me.TableLayoutPanel13.Size = New System.Drawing.Size(77, 80)
         Me.TableLayoutPanel13.TabIndex = 0
         '
-        'ComboBox1
+        'cboSentence_Number
         '
-        Me.ComboBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.cboSentence_Number.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ComboBox1.Font = New System.Drawing.Font("Arial Narrow", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(3, 3)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(71, 24)
-        Me.ComboBox1.TabIndex = 2
+        Me.cboSentence_Number.Font = New System.Drawing.Font("Arial Narrow", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboSentence_Number.FormattingEnabled = True
+        Me.cboSentence_Number.Location = New System.Drawing.Point(3, 3)
+        Me.cboSentence_Number.Name = "cboSentence_Number"
+        Me.cboSentence_Number.Size = New System.Drawing.Size(71, 24)
+        Me.cboSentence_Number.TabIndex = 2
         '
         'ComboBox2
         '
@@ -501,7 +512,7 @@ Partial Class frmVar
         Me.TableLayoutPanel3.ColumnCount = 1
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel3.Controls.Add(Me.TextBox1, 0, 0)
+        Me.TableLayoutPanel3.Controls.Add(Me.txtOriginal_Subject, 0, 0)
         Me.TableLayoutPanel3.Location = New System.Drawing.Point(3, 28)
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
         Me.TableLayoutPanel3.RowCount = 1
@@ -510,16 +521,16 @@ Partial Class frmVar
         Me.TableLayoutPanel3.Size = New System.Drawing.Size(403, 82)
         Me.TableLayoutPanel3.TabIndex = 0
         '
-        'TextBox1
+        'txtOriginal_Subject
         '
-        Me.TextBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.txtOriginal_Subject.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox1.Location = New System.Drawing.Point(3, 3)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(397, 76)
-        Me.TextBox1.TabIndex = 0
+        Me.txtOriginal_Subject.Location = New System.Drawing.Point(3, 3)
+        Me.txtOriginal_Subject.Multiline = True
+        Me.txtOriginal_Subject.Name = "txtOriginal_Subject"
+        Me.txtOriginal_Subject.Size = New System.Drawing.Size(397, 76)
+        Me.txtOriginal_Subject.TabIndex = 0
         '
         'Panel4
         '
@@ -552,7 +563,7 @@ Partial Class frmVar
         Me.TableLayoutPanel4.ColumnCount = 1
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel4.Controls.Add(Me.TextBox2, 0, 0)
+        Me.TableLayoutPanel4.Controls.Add(Me.txtOriginal_Body, 0, 0)
         Me.TableLayoutPanel4.Location = New System.Drawing.Point(19, 34)
         Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
         Me.TableLayoutPanel4.RowCount = 1
@@ -561,16 +572,16 @@ Partial Class frmVar
         Me.TableLayoutPanel4.Size = New System.Drawing.Size(356, 411)
         Me.TableLayoutPanel4.TabIndex = 0
         '
-        'TextBox2
+        'txtOriginal_Body
         '
-        Me.TextBox2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.txtOriginal_Body.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox2.Location = New System.Drawing.Point(3, 3)
-        Me.TextBox2.Multiline = True
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(350, 405)
-        Me.TextBox2.TabIndex = 0
+        Me.txtOriginal_Body.Location = New System.Drawing.Point(3, 3)
+        Me.txtOriginal_Body.Multiline = True
+        Me.txtOriginal_Body.Name = "txtOriginal_Body"
+        Me.txtOriginal_Body.Size = New System.Drawing.Size(350, 405)
+        Me.txtOriginal_Body.TabIndex = 0
         '
         'TableLayoutPanel5
         '
@@ -633,17 +644,6 @@ Partial Class frmVar
         Me.SAVEToolStripMenuItem.Name = "SAVEToolStripMenuItem"
         Me.SAVEToolStripMenuItem.Size = New System.Drawing.Size(134, 26)
         Me.SAVEToolStripMenuItem.Text = "SAVE"
-        '
-        'TextBox5
-        '
-        Me.TextBox5.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox5.Location = New System.Drawing.Point(86, 3)
-        Me.TextBox5.Multiline = True
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(326, 80)
-        Me.TextBox5.TabIndex = 1
         '
         'frmVar
         '
@@ -719,11 +719,11 @@ Partial Class frmVar
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtOriginal_Subject As TextBox
     Friend WithEvents Panel4 As Panel
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents txtOriginal_Body As TextBox
     Friend WithEvents TableLayoutPanel5 As TableLayoutPanel
     Friend WithEvents GroupBox7 As GroupBox
     Friend WithEvents TableLayoutPanel6 As TableLayoutPanel
@@ -732,7 +732,7 @@ Partial Class frmVar
     Friend WithEvents Panel7 As Panel
     Friend WithEvents TableLayoutPanel14 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel13 As TableLayoutPanel
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents cboSentence_Number As ComboBox
     Friend WithEvents ComboBox2 As ComboBox
     Friend WithEvents Button1 As Button
     Friend WithEvents TextBox5 As TextBox
