@@ -75,7 +75,7 @@ Public Class frmVar
             mLoading = True
             Load_Message(True)
             Load_Controls_Subject()
-            Message.ID = Guid.NewGuid.ToString
+            Message.ID = txtBoxCampaignName.Text
             Message.Varied = Build_Version()
             Dim bodyText As String
             bodyText = Message.Varied.Body_Text

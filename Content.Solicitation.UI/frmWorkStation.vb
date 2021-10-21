@@ -15,12 +15,7 @@ Public Class frmWorkStation
         mJob = New List(Of Job_Solicitation)
     End Sub
 #Region "Form Events"
-    Private Sub BuildEmailToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BuildEmailToolStripMenuItem.Click
-        Dim msg As New Message
-        Dim frm As New frmVar()
-        frm.ShowDialog()
-        mMessage.Add(frm.Message)
-    End Sub
+
     Private Sub LaunchCampaignToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LaunchCampaignToolStripMenuItem.Click
         Dim JOB As New Job_Curation
         Dim message As New Message
@@ -41,6 +36,13 @@ Public Class frmWorkStation
     Private Sub LoadToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles LoadToolStripMenuItem1.Click
 
     End Sub
+    Private Sub EditToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditToolStripMenuItem.Click
+        Dim msg As New Message
+        Dim frm As New frmVar()
+        frm.ShowDialog()
+        cboEmail.Items.Add(frm.Message.ID)
+        mMessage.Add(frm.Message)
+    End Sub
     Private Sub Load_Message(ByVal morph As Boolean)
         'Dim success As Boolean
         'Dim selectedPath
@@ -56,6 +58,8 @@ Public Class frmWorkStation
         'End Try
         'txtBoxBody.Text = mMessage.Sentences(0).Variations(3)
     End Sub
+
+
 #End Region
 
 End Class

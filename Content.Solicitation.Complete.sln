@@ -33,6 +33,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Content.Solicitation.Schema
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loggingg", "Content.Solicitation.Controllers\Loggingg\Loggingg.csproj", "{5C0AF8F7-3DF7-409D-A99C-6A87CA927C84}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loggingg", "Loggingg\Loggingg.csproj", "{2395B301-2A35-4D4A-B297-2A129D1BCFA1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,6 +81,10 @@ Global
 		{5C0AF8F7-3DF7-409D-A99C-6A87CA927C84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C0AF8F7-3DF7-409D-A99C-6A87CA927C84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C0AF8F7-3DF7-409D-A99C-6A87CA927C84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2395B301-2A35-4D4A-B297-2A129D1BCFA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2395B301-2A35-4D4A-B297-2A129D1BCFA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2395B301-2A35-4D4A-B297-2A129D1BCFA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2395B301-2A35-4D4A-B297-2A129D1BCFA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

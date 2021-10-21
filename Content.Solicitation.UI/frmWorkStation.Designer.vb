@@ -31,12 +31,12 @@ Partial Class frmWorkStation
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.cboSnippet = New System.Windows.Forms.ComboBox()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
+        Me.cboEmail = New System.Windows.Forms.ComboBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
@@ -62,10 +62,10 @@ Partial Class frmWorkStation
         Me.SAVEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContentToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.BuildEmailToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LaunchCampaignToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LaunchCampaignToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -180,7 +180,7 @@ Partial Class frmWorkStation
         Me.TableLayoutPanel3.ColumnCount = 1
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel3.Controls.Add(Me.ComboBox2, 0, 0)
+        Me.TableLayoutPanel3.Controls.Add(Me.cboSnippet, 0, 0)
         Me.TableLayoutPanel3.Location = New System.Drawing.Point(6, 23)
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
         Me.TableLayoutPanel3.RowCount = 1
@@ -188,16 +188,16 @@ Partial Class frmWorkStation
         Me.TableLayoutPanel3.Size = New System.Drawing.Size(573, 94)
         Me.TableLayoutPanel3.TabIndex = 0
         '
-        'ComboBox2
+        'cboSnippet
         '
-        Me.ComboBox2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.cboSnippet.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(3, 3)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(567, 31)
-        Me.ComboBox2.TabIndex = 0
+        Me.cboSnippet.FormattingEnabled = True
+        Me.cboSnippet.Location = New System.Drawing.Point(3, 3)
+        Me.cboSnippet.Name = "cboSnippet"
+        Me.cboSnippet.Size = New System.Drawing.Size(567, 31)
+        Me.cboSnippet.TabIndex = 0
         '
         'TableLayoutPanel2
         '
@@ -249,7 +249,7 @@ Partial Class frmWorkStation
         Me.TableLayoutPanel4.ColumnCount = 1
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel4.Controls.Add(Me.ComboBox3, 0, 0)
+        Me.TableLayoutPanel4.Controls.Add(Me.cboEmail, 0, 0)
         Me.TableLayoutPanel4.Location = New System.Drawing.Point(6, 23)
         Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
         Me.TableLayoutPanel4.RowCount = 1
@@ -257,16 +257,16 @@ Partial Class frmWorkStation
         Me.TableLayoutPanel4.Size = New System.Drawing.Size(579, 101)
         Me.TableLayoutPanel4.TabIndex = 0
         '
-        'ComboBox3
+        'cboEmail
         '
-        Me.ComboBox3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.cboEmail.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(3, 3)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(573, 31)
-        Me.ComboBox3.TabIndex = 0
+        Me.cboEmail.FormattingEnabled = True
+        Me.cboEmail.Location = New System.Drawing.Point(3, 3)
+        Me.cboEmail.Name = "cboEmail"
+        Me.cboEmail.Size = New System.Drawing.Size(573, 31)
+        Me.cboEmail.TabIndex = 0
         '
         'Panel4
         '
@@ -532,17 +532,6 @@ Partial Class frmWorkStation
         Me.BuildEmailToolStripMenuItem.Size = New System.Drawing.Size(73, 26)
         Me.BuildEmailToolStripMenuItem.Text = "Email"
         '
-        'LaunchCampaignToolStripMenuItem
-        '
-        Me.LaunchCampaignToolStripMenuItem.Name = "LaunchCampaignToolStripMenuItem"
-        Me.LaunchCampaignToolStripMenuItem.Size = New System.Drawing.Size(191, 26)
-        Me.LaunchCampaignToolStripMenuItem.Text = "Launch Campaign"
-        '
-        'ContextMenuStrip1
-        '
-        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
-        '
         'EditToolStripMenuItem
         '
         Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
@@ -554,6 +543,17 @@ Partial Class frmWorkStation
         Me.EditToolStripMenuItem1.Name = "EditToolStripMenuItem1"
         Me.EditToolStripMenuItem1.Size = New System.Drawing.Size(180, 26)
         Me.EditToolStripMenuItem1.Text = "Edit"
+        '
+        'LaunchCampaignToolStripMenuItem
+        '
+        Me.LaunchCampaignToolStripMenuItem.Name = "LaunchCampaignToolStripMenuItem"
+        Me.LaunchCampaignToolStripMenuItem.Size = New System.Drawing.Size(191, 26)
+        Me.LaunchCampaignToolStripMenuItem.Text = "Launch Campaign"
+        '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
         '
         'frmWorkStation
         '
@@ -611,12 +611,12 @@ Partial Class frmWorkStation
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
-    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents cboSnippet As ComboBox
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
-    Friend WithEvents ComboBox3 As ComboBox
+    Friend WithEvents cboEmail As ComboBox
     Friend WithEvents Panel4 As Panel
     Friend WithEvents TableLayoutPanel5 As TableLayoutPanel
     Friend WithEvents GroupBox4 As GroupBox

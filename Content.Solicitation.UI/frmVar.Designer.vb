@@ -24,7 +24,7 @@ Partial Class frmVar
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.MaskedTextBox1 = New System.Windows.Forms.MaskedTextBox()
+        Me.txtBoxCampaignName = New System.Windows.Forms.MaskedTextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtBoxVariation = New System.Windows.Forms.MaskedTextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -103,7 +103,7 @@ Partial Class frmVar
         'Panel1
         '
         Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.MaskedTextBox1)
+        Me.Panel1.Controls.Add(Me.txtBoxCampaignName)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.txtBoxVariation)
         Me.Panel1.Controls.Add(Me.Panel2)
@@ -128,13 +128,13 @@ Partial Class frmVar
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "Campaign Name"
         '
-        'MaskedTextBox1
+        'txtBoxCampaignName
         '
-        Me.MaskedTextBox1.Font = New System.Drawing.Font("Arial Narrow", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MaskedTextBox1.Location = New System.Drawing.Point(1026, 2)
-        Me.MaskedTextBox1.Name = "MaskedTextBox1"
-        Me.MaskedTextBox1.Size = New System.Drawing.Size(312, 29)
-        Me.MaskedTextBox1.TabIndex = 4
+        Me.txtBoxCampaignName.Font = New System.Drawing.Font("Arial Narrow", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBoxCampaignName.Location = New System.Drawing.Point(1026, 2)
+        Me.txtBoxCampaignName.Name = "txtBoxCampaignName"
+        Me.txtBoxCampaignName.Size = New System.Drawing.Size(312, 29)
+        Me.txtBoxCampaignName.TabIndex = 4
         '
         'Label1
         '
@@ -805,7 +805,7 @@ Partial Class frmVar
     Friend WithEvents TableLayoutPanel9 As TableLayoutPanel
     Friend WithEvents cboSubjects As ComboBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents MaskedTextBox1 As MaskedTextBox
+    Friend WithEvents txtBoxCampaignName As MaskedTextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents txtBoxVariation As MaskedTextBox
     Friend WithEvents GroupBox2 As GroupBox
