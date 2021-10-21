@@ -112,6 +112,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Sentence.vb" />
+    <Compile Include="Solicitation_Message_Combo.vb" />
     <Compile Include="Versions.vb" />
     <Compile Include="Wrangler.vb" />
   </ItemGroup>
