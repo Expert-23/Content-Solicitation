@@ -60,7 +60,6 @@ Partial Class frmWorkStation
         Me.EmailToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SAVEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EmailToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContentToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.BuildEmailToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaunchCampaignToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -496,7 +495,7 @@ Partial Class frmWorkStation
         '
         Me.LoadToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EmailToolStripMenuItem, Me.ContentToolStripMenuItem})
         Me.LoadToolStripMenuItem1.Name = "LoadToolStripMenuItem1"
-        Me.LoadToolStripMenuItem1.Size = New System.Drawing.Size(127, 26)
+        Me.LoadToolStripMenuItem1.Size = New System.Drawing.Size(180, 26)
         Me.LoadToolStripMenuItem1.Text = "Load"
         '
         'EmailToolStripMenuItem
@@ -513,16 +512,10 @@ Partial Class frmWorkStation
         '
         'SAVEToolStripMenuItem
         '
-        Me.SAVEToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EmailToolStripMenuItem1, Me.ContentToolStripMenuItem1})
+        Me.SAVEToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ContentToolStripMenuItem1})
         Me.SAVEToolStripMenuItem.Name = "SAVEToolStripMenuItem"
-        Me.SAVEToolStripMenuItem.Size = New System.Drawing.Size(127, 26)
+        Me.SAVEToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
         Me.SAVEToolStripMenuItem.Text = "Save"
-        '
-        'EmailToolStripMenuItem1
-        '
-        Me.EmailToolStripMenuItem1.Name = "EmailToolStripMenuItem1"
-        Me.EmailToolStripMenuItem1.Size = New System.Drawing.Size(153, 26)
-        Me.EmailToolStripMenuItem1.Text = "Email"
         '
         'ContentToolStripMenuItem1
         '
@@ -627,6 +620,5 @@ Partial Class frmWorkStation
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents EmailToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ContentToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents EmailToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents ContentToolStripMenuItem1 As ToolStripMenuItem
 End Class

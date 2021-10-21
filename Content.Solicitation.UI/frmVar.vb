@@ -3,7 +3,7 @@ Imports Content.Solicitation.Utilities
 Imports Content.Solicitation.Adapters
 Public Class frmVar
 #Region "Members"
-    Private mMessage As Message
+    Public Message As Message
     Private mJob As Job_Curation
 
     Private mRandom As New System.Random
@@ -11,17 +11,17 @@ Public Class frmVar
     Private mLoading As Boolean
 #End Region
 #Region "Initialization"
-    Public Sub New(ByVal job As Job_Curation)
+    Public Sub New()
         InitializeComponent()
-        Initialize_Form(job)
+        Initialize_Form()
     End Sub
-    Private Sub Initialize_Form(ByVal job As Job_Curation)
-        mJob = job
+    Private Sub Initialize_Form()
+
     End Sub
 #End Region
 #Region "Form Events"
     Private Sub frmVar_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Initialize_Form(mJob)
+        Initialize_Form()
     End Sub
 
     Private Sub AnalyzeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AnalyzeToolStripMenuItem.Click
@@ -57,33 +57,33 @@ Public Class frmVar
         Initialize_Message()
         Dim s As New Scraper_QB
         Dim variants As Integer = 3
-        s.Scrape(mMessage.Sentences, variants)
+        s.Scrape(Message, variants)
         Save_Message()
     End Sub
     Private Sub Initialize_Message()
-        mMessage = New Message(txtOriginal_Subject.Text, txtOriginal_Body.Text)
+        Message = New Message(txtOriginal_Subject.Text, txtOriginal_Body.Text)
     End Sub
     Private Sub Save_Message()
         Dim frm As New frmFileSystem("", "C:\Users\pc\source\repos\Expert-23\Content\G23.Content.Complete\z_cache\wip\")
         frm.ShowDialog()
         selectedPath = frm.FullFileRef()
         Dim success As Boolean
-        Serialization_Utilities.Serialize_Object_And_Save_FileSystem(mMessage, selectedPath, success)
+        Serialization_Utilities.Serialize_Object_And_Save_FileSystem(Message, selectedPath, success)
     End Sub
     Private Sub Load_Next_Message_Version()
         Try
             mLoading = True
             Load_Message(True)
             Load_Controls_Subject()
-            mMessage.ID = Guid.NewGuid.ToString
-            mMessage.Varied = Build_Version()
+            Message.ID = Guid.NewGuid.ToString
+            Message.Varied = Build_Version()
             Dim bodyText As String
-            bodyText = mMessage.Varied.Body_Text
+            bodyText = Message.Varied.Body_Text
             txtVersion.Text = bodyText
             Check_Message(bodyText)
             mLoading = False
             cboSentence_Number.Items.Clear()
-            For i = 0 To mMessage.Sentences.Count - 1
+            For i = 0 To Message.Sentences.Count - 1
                 cboSentence_Number.Items.Add(i.ToString())
             Next
         Catch ex As Exception
@@ -92,7 +92,7 @@ Public Class frmVar
     End Sub
     Private Function Build_Version() As Version
         Dim vers As New Version()
-        With mMessage
+        With Message
             Dim permutation As New SortedDictionary(Of Integer, Integer)
             permutation = Select_Random_Permutation()
             vers = Version.Build_Version(.Sentences, permutation)
@@ -101,7 +101,7 @@ Public Class frmVar
     End Function
     Private Function Select_Random_Permutation() As SortedDictionary(Of Integer, Integer)
         Dim permutation As New SortedDictionary(Of Integer, Integer) 'line number, variation chosen
-        With mMessage
+        With Message
             For i = 1 To .Sentences.Count - 1
                 Dim sentnce As Sentence = .Sentences(i)
                 If sentnce.Variations.Count > 0 Then
@@ -120,11 +120,11 @@ Public Class frmVar
             selectedPath = frm.FullFileRef()
         End If
         Try
-            If mMessage Is Nothing Then Serialization_Utilities.Load_Object_FileSystem_And_Deserialize(Of Message)(selectedPath, mMessage, success) : txtSubject_Variations.Text = mMessage.Sentences(0).Variations(3) : Exit Sub
+            If Message Is Nothing Then Serialization_Utilities.Load_Object_FileSystem_And_Deserialize(Of Message)(selectedPath, Message, success) : txtSubject_Variations.Text = Message.Sentences(0).Variations(3) : Exit Sub
         Catch ex As Exception
             Exit Sub
         End Try
-        txtSubject_Variations.Text = mMessage.Sentences(0).Variations(3)
+        txtSubject_Variations.Text = Message.Sentences(0).Variations(3)
     End Sub
     Private Sub Check_Message(ByVal content As String)
         Dim sb As New System.Text.StringBuilder
@@ -136,13 +136,13 @@ Public Class frmVar
     Private Sub Change_Variation()
         Dim senteceIndex As Integer = cboSentence_Number.SelectedIndex
         Dim variationIndex As Integer = cboSentence_Variation.SelectedIndex
-        If variationIndex = -1 Then mMessage.Sentences(senteceIndex).Variations(0) = txtBoxNewSentence.Text Else mMessage.Sentences(senteceIndex).Variations(variationIndex) = txtBoxNewSentence.Text
+        If variationIndex = -1 Then Message.Sentences(senteceIndex).Variations(0) = txtBoxNewSentence.Text Else Message.Sentences(senteceIndex).Variations(variationIndex) = txtBoxNewSentence.Text
     End Sub
     Private Sub Load_Controls_Subject()
         Try
             cboSubjects.Items.Clear()
             Dim seen As New SortedDictionary(Of Integer, String)
-            For Each entry In mMessage.Sentences(0).Variations
+            For Each entry In Message.Sentences(0).Variations
 
                 Dim number = entry.Key
                 Dim text = entry.Value
@@ -169,15 +169,15 @@ Public Class frmVar
     End Sub
     Private Sub Select_Variation()
         cboSentence_Variation.Items.Clear()
-        For j = 0 To mMessage.Sentences(cboSentence_Number.SelectedIndex).Variations.Count - 1
+        For j = 0 To Message.Sentences(cboSentence_Number.SelectedIndex).Variations.Count - 1
             cboSentence_Variation.Items.Add(j.ToString())
         Next
     End Sub
     Private Sub Select_Sentence_Default()
-        txtBoxNewSentence.Text = mMessage.Sentences(cboSentence_Number.SelectedIndex).Variations(0)
+        txtBoxNewSentence.Text = Message.Sentences(cboSentence_Number.SelectedIndex).Variations(0)
     End Sub
     Private Sub Select_Sentence()
-        txtBoxNewSentence.Text = mMessage.Sentences(cboSentence_Number.SelectedIndex).Variations(cboSentence_Variation.SelectedIndex)
+        txtBoxNewSentence.Text = Message.Sentences(cboSentence_Number.SelectedIndex).Variations(cboSentence_Variation.SelectedIndex)
     End Sub
     Private Sub Changed_Subject_Variation()
         If mLoading Then Exit Sub

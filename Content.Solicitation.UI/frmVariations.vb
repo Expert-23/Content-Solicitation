@@ -205,7 +205,7 @@ Public Class frmVariations
 
         Dim s As New Scraper_QB
         Dim variants As Integer = 3
-        s.Scrape(mMessage.Sentences, variants)
+        s.Scrape(mMessage, variants)
 
         Save_Message()
 
@@ -358,6 +358,10 @@ Public Class frmVariations
         Load_Message(True)
         Dim frm As frmCAmpaign = New frmCAmpaign(mMessage, mJob)
         frm.ShowDialog()
+    End Sub
+
+    Private Sub WIPToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles WIPToolStripMenuItem.Click
+
     End Sub
 
 #End Region

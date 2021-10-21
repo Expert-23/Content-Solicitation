@@ -3,14 +3,23 @@ Imports Content.Solicitation.Utilities
 
 Public Class frmWorkStation
 #Region "Members"
-    Private mMessage As Message
-    Private mSnippet As Bitmap
+    Private mMessage As List(Of Message)
+    Private mJob As List(Of Job_Solicitation)
 #End Region
+    Public Sub New()
+        InitializeComponent()
+        Initialize_Form()
+    End Sub
+    Private Sub Initialize_Form()
+        mMessage = New List(Of Message)
+        mJob = New List(Of Job_Solicitation)
+    End Sub
 #Region "Form Events"
     Private Sub BuildEmailToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BuildEmailToolStripMenuItem.Click
-        Dim job As New Job_Curation
-        Dim frm As New frmVar(job)
+        Dim msg As New Message
+        Dim frm As New frmVar()
         frm.ShowDialog()
+        mMessage.Add(frm.Message)
     End Sub
     Private Sub LaunchCampaignToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LaunchCampaignToolStripMenuItem.Click
         Dim JOB As New Job_Curation
@@ -33,19 +42,19 @@ Public Class frmWorkStation
 
     End Sub
     Private Sub Load_Message(ByVal morph As Boolean)
-        Dim success As Boolean
-        Dim selectedPath
-        If Not morph Then
-            Dim frm As frmFileSystem = New frmFileSystem("", "C:\Users\pc\source\repos\Expert-23\Content\G23.Content.Complete\z_cache\wip\")
-            frm.ShowDialog()
-            selectedPath = frm.FullFileRef()
-        End If
-        Try
-            If mMessage Is Nothing Then Serialization_Utilities.Load_Object_FileSystem_And_Deserialize(Of Message)(selectedPath, mMessage, success) : txtBoxBody.Text = mMessage.Sentences(0).Variations(3) : Exit Sub
-        Catch ex As Exception
-            Exit Sub
-        End Try
-        txtBoxBody.Text = mMessage.Sentences(0).Variations(3)
+        'Dim success As Boolean
+        'Dim selectedPath
+        'If Not morph Then
+        '    Dim frm As frmFileSystem = New frmFileSystem("", "C:\Users\pc\source\repos\Expert-23\Content\G23.Content.Complete\z_cache\wip\")
+        '    frm.ShowDialog()
+        '    selectedPath = frm.FullFileRef()
+        'End If
+        'Try
+        '    If mMessage Is Nothing Then Serialization_Utilities.Load_Object_FileSystem_And_Deserialize(Of Message)(selectedPath, mMessage, success) : txtBoxBody.Text = mMessage.Sentences(0).Variations(3) : Exit Sub
+        'Catch ex As Exception
+        '    Exit Sub
+        'End Try
+        'txtBoxBody.Text = mMessage.Sentences(0).Variations(3)
     End Sub
 #End Region
 

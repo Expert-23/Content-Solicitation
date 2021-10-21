@@ -6,8 +6,8 @@ Public Class Controller_Scraper
     Public Sub New()
         Scraper_Quilbot = New Scraper_QB
     End Sub
-    Public Sub Analyze_Message(ByRef sentences As SortedDictionary(Of Integer, Sentence), ByVal variants As Integer)
-        Scraper_Quilbot.Scrape(sentences, variants)
+    Public Sub Analyze_Message(ByRef message As Message, ByVal variants As Integer)
+        Scraper_Quilbot.Scrape(message, variants)
     End Sub
     Public Sub Launch_Campaign(ByRef lemlist As Lemlist, ByRef job As Job_Curation)
         Scraper_Lemlist = New Scraper_Lemlist(lemlist, job)
