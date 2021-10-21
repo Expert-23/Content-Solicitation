@@ -43,7 +43,7 @@ Public Class frmWorkStation
         Map_Selected_Job()
     End Sub
     Private Sub cboEmail_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboEmail.SelectedIndexChanged
-        Map_Form()
+        Map_Selected_Email()
     End Sub
     Private Sub EditToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles EditToolStripMenuItem1.Click
         Edit_Email()
@@ -51,13 +51,14 @@ Public Class frmWorkStation
 #End Region
 
 #Region "Methods"
-    Private Sub Map_Form()
+    Private Sub Map_Selected_Email()
         txtBoxSubject.Text = mMessage(cboEmail.SelectedIndex).Original_Subject.Original
         mSelected_Message = mMessage(cboEmail.SelectedIndex)
         txtBoxBody.Text = mMessage(cboEmail.SelectedIndex).Original.Body_Text
     End Sub
     Private Sub Map_Job_Email()
-
+        Map_Selected_Email()
+        Map_Selected_Job()
     End Sub
     Private Sub Edit_Email()
         Dim frm = New frmVar(mSelected_Message)
@@ -105,7 +106,7 @@ Public Class frmWorkStation
         Dim cmb As New Solicitation_Message_Combo
         Dim success As Boolean
         Dim frm As frmFileSystem = New frmFileSystem("", "C:\Users\pc\source\repos\Expert-23\Content\G23.Content.Complete\z_cache\wip\")
-            frm.ShowDialog()
+        frm.ShowDialog()
         Dim selectedPath = frm.FullFileRef()
         Try
             Serialization_Utilities.Load_Object_FileSystem_And_Deserialize(Of Solicitation_Message_Combo)(selectedPath, cmb, success)
