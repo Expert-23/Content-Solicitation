@@ -41,6 +41,8 @@ Partial Class frmVar
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.TableLayoutPanel8 = New System.Windows.Forms.TableLayoutPanel()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.TableLayoutPanel9 = New System.Windows.Forms.TableLayoutPanel()
+        Me.cboSubjects = New System.Windows.Forms.ComboBox()
         Me.txtSubject_Variations = New System.Windows.Forms.TextBox()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
@@ -65,8 +67,6 @@ Partial Class frmVar
         Me.WIPToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuItmWip_Load = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuItmWIP_Save = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TableLayoutPanel9 = New System.Windows.Forms.TableLayoutPanel()
-        Me.cboSubjects = New System.Windows.Forms.ComboBox()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -81,6 +81,7 @@ Partial Class frmVar
         Me.GroupBox4.SuspendLayout()
         Me.TableLayoutPanel8.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
+        Me.TableLayoutPanel9.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
         Me.TableLayoutPanel11.SuspendLayout()
@@ -93,7 +94,6 @@ Partial Class frmVar
         Me.GroupBox3.SuspendLayout()
         Me.TableLayoutPanel4.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
-        Me.TableLayoutPanel9.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -355,6 +355,35 @@ Partial Class frmVar
         Me.GroupBox5.TabIndex = 0
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Subject"
+        '
+        'TableLayoutPanel9
+        '
+        Me.TableLayoutPanel9.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TableLayoutPanel9.ColumnCount = 2
+        Me.TableLayoutPanel9.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel9.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80.0!))
+        Me.TableLayoutPanel9.Controls.Add(Me.cboSubjects, 0, 0)
+        Me.TableLayoutPanel9.Controls.Add(Me.txtSubject_Variations, 1, 0)
+        Me.TableLayoutPanel9.Location = New System.Drawing.Point(6, 25)
+        Me.TableLayoutPanel9.Name = "TableLayoutPanel9"
+        Me.TableLayoutPanel9.RowCount = 1
+        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel9.Size = New System.Drawing.Size(400, 85)
+        Me.TableLayoutPanel9.TabIndex = 0
+        '
+        'cboSubjects
+        '
+        Me.cboSubjects.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cboSubjects.Font = New System.Drawing.Font("Arial Narrow", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboSubjects.FormattingEnabled = True
+        Me.cboSubjects.Location = New System.Drawing.Point(3, 3)
+        Me.cboSubjects.Name = "cboSubjects"
+        Me.cboSubjects.Size = New System.Drawing.Size(74, 24)
+        Me.cboSubjects.TabIndex = 3
         '
         'txtSubject_Variations
         '
@@ -629,35 +658,6 @@ Partial Class frmVar
         Me.mnuItmWIP_Save.Size = New System.Drawing.Size(180, 26)
         Me.mnuItmWIP_Save.Text = "SAVE"
         '
-        'TableLayoutPanel9
-        '
-        Me.TableLayoutPanel9.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TableLayoutPanel9.ColumnCount = 2
-        Me.TableLayoutPanel9.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.TableLayoutPanel9.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80.0!))
-        Me.TableLayoutPanel9.Controls.Add(Me.cboSubjects, 0, 0)
-        Me.TableLayoutPanel9.Controls.Add(Me.txtSubject_Variations, 1, 0)
-        Me.TableLayoutPanel9.Location = New System.Drawing.Point(6, 25)
-        Me.TableLayoutPanel9.Name = "TableLayoutPanel9"
-        Me.TableLayoutPanel9.RowCount = 1
-        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel9.Size = New System.Drawing.Size(400, 85)
-        Me.TableLayoutPanel9.TabIndex = 0
-        '
-        'cboSubjects
-        '
-        Me.cboSubjects.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cboSubjects.Font = New System.Drawing.Font("Arial Narrow", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboSubjects.FormattingEnabled = True
-        Me.cboSubjects.Location = New System.Drawing.Point(3, 3)
-        Me.cboSubjects.Name = "cboSubjects"
-        Me.cboSubjects.Size = New System.Drawing.Size(74, 24)
-        Me.cboSubjects.TabIndex = 3
-        '
         'frmVar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -683,6 +683,8 @@ Partial Class frmVar
         Me.GroupBox4.ResumeLayout(False)
         Me.TableLayoutPanel8.ResumeLayout(False)
         Me.GroupBox5.ResumeLayout(False)
+        Me.TableLayoutPanel9.ResumeLayout(False)
+        Me.TableLayoutPanel9.PerformLayout()
         Me.Panel6.ResumeLayout(False)
         Me.GroupBox6.ResumeLayout(False)
         Me.TableLayoutPanel11.ResumeLayout(False)
@@ -699,8 +701,6 @@ Partial Class frmVar
         Me.TableLayoutPanel4.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        Me.TableLayoutPanel9.ResumeLayout(False)
-        Me.TableLayoutPanel9.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub

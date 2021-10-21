@@ -3,58 +3,75 @@
 
     Public Function Preprocess_Text(ByVal content As String) As SortedDictionary(Of Integer, String)
 
-        Dim clean As Char() = content.Replace(vbCr, "").Replace(vbLf, " ").ToArray
 
+        'Dim clean As Char() = content.Replace(vbCr, "").Replace(vbCrLf, "").Replace(vbLf, " ").ToArray
+
+        'Dim sentences As New SortedDictionary(Of Integer, String)
+
+        'Dim last As Integer = clean.GetUpperBound(0)
+        'Dim sentence As String = String.Empty
+        'For i = 0 To last
+
+        '    Dim c As Char = clean(i)
+
+        '    If i = last Then
+
+        '        sentences.Add(sentences.Count, sentence & ".")
+
+        '    Else
+
+        '        If i > last - 3 Then
+
+        '            sentence = sentence & c
+
+        '        Else
+
+        '            If c = "." Then
+
+        '                Dim nxt(2) As Char
+        '                nxt(0) = clean(i + 1)
+        '                nxt(1) = clean(i + 2)
+        '                nxt(2) = clean(i + 3)
+
+        '                If End_of_Sentence(nxt) Then
+
+        '                    sentences.Add(sentences.Count, sentence & ".")
+        '                    sentence = String.Empty
+
+        '                Else
+
+        '                    sentence = sentence & c
+
+        '                End If
+
+        '            Else
+
+        '                sentence = sentence & c
+
+        '            End If
+
+        '        End If
+
+        '    End If
+
+        'Next
         Dim sentences As New SortedDictionary(Of Integer, String)
+        Dim output = content.Split(".")
+        Dim j = 0
+        For i = 0 To output.Count - 1
 
-        Dim last As Integer = clean.GetUpperBound(0)
-        Dim sentence As String = String.Empty
-        For i = 0 To last
-
-            Dim c As Char = clean(i)
-
-            If i = last Then
-
-                sentences.Add(sentences.Count, sentence & ".")
+            If output(i).Contains(vbNewLine) Then
+                Dim temp = output(i).Split(vbNewLine)
+                sentences.Add(j, temp(0))
+                sentences.Add(j + 1, temp(1))
+                j = j + 2
 
             Else
-
-                If i > last - 3 Then
-
-                    sentence = sentence & c
-
-                Else
-
-                    If c = "." Then
-
-                        Dim nxt(2) As Char
-                        nxt(0) = clean(i + 1)
-                        nxt(1) = clean(i + 2)
-                        nxt(2) = clean(i + 3)
-
-                        If End_of_Sentence(nxt) Then
-
-                            sentences.Add(sentences.Count, sentence & ".")
-                            sentence = String.Empty
-
-                        Else
-
-                            sentence = sentence & c
-
-                        End If
-
-                    Else
-
-                        sentence = sentence & c
-
-                    End If
-
-                End If
-
+                sentences.Add(j, output(i))
+                j = j + 1
             End If
 
         Next
-
         Return sentences
 
     End Function

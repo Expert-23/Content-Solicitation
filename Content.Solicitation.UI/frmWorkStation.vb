@@ -7,10 +7,10 @@ Public Class frmWorkStation
     End Sub
 
     Private Sub LaunchCampaignToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LaunchCampaignToolStripMenuItem.Click
-
+        Dim JOB As New Job_Curation
+        Dim message As New Message
+        Dim frm = New frmCAmpaign(message, JOB)
+        frm.ShowDialog()
     End Sub
 
-    Private Sub EmailsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EmailsToolStripMenuItem.Click
-
-    End Sub
 End Class
