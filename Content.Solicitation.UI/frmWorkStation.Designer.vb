@@ -64,6 +64,8 @@ Partial Class frmWorkStation
         Me.BuildEmailToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaunchCampaignToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EditToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -525,9 +527,10 @@ Partial Class frmWorkStation
         '
         'BuildEmailToolStripMenuItem
         '
+        Me.BuildEmailToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditToolStripMenuItem, Me.EditToolStripMenuItem1})
         Me.BuildEmailToolStripMenuItem.Name = "BuildEmailToolStripMenuItem"
-        Me.BuildEmailToolStripMenuItem.Size = New System.Drawing.Size(126, 26)
-        Me.BuildEmailToolStripMenuItem.Text = "Build Email"
+        Me.BuildEmailToolStripMenuItem.Size = New System.Drawing.Size(73, 26)
+        Me.BuildEmailToolStripMenuItem.Text = "Email"
         '
         'LaunchCampaignToolStripMenuItem
         '
@@ -539,6 +542,18 @@ Partial Class frmWorkStation
         '
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
         Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
+        '
+        'EditToolStripMenuItem
+        '
+        Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
+        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
+        Me.EditToolStripMenuItem.Text = "New"
+        '
+        'EditToolStripMenuItem1
+        '
+        Me.EditToolStripMenuItem1.Name = "EditToolStripMenuItem1"
+        Me.EditToolStripMenuItem1.Size = New System.Drawing.Size(180, 26)
+        Me.EditToolStripMenuItem1.Text = "Edit"
         '
         'frmWorkStation
         '
@@ -621,4 +636,6 @@ Partial Class frmWorkStation
     Friend WithEvents EmailToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ContentToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ContentToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents EditToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EditToolStripMenuItem1 As ToolStripMenuItem
 End Class
