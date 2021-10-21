@@ -2,6 +2,7 @@
 Imports Content.Solicitation.Utilities
 Imports Content.Solicitation.Adapters
 Public Class frmVar
+
 #Region "Members"
     Public Message_ As Message
     Private mJob As Job_Curation
@@ -10,6 +11,7 @@ Public Class frmVar
     Private selectedPath As String
     Private mLoading As Boolean
 #End Region
+
 #Region "Initialization"
     Public Sub New()
         InitializeComponent()
@@ -23,6 +25,7 @@ Public Class frmVar
         Message_ = message
     End Sub
 #End Region
+
 #Region "Form Events"
     Private Sub AnalyzeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AnalyzeToolStripMenuItem.Click
         Analyze_Message()
@@ -53,6 +56,7 @@ Public Class frmVar
         txtOriginal_Body.ScrollBars = ScrollBars.Both
     End Sub
 #End Region
+
 #Region "Methods"
     Private Sub Analyze_Message()
         Initialize_Message()
@@ -130,15 +134,12 @@ Public Class frmVar
         Catch ex As Exception
             Exit Sub
         End Try
-
-
     End Sub
     Private Sub Check_Message(ByVal content As String)
         Dim sb As New System.Text.StringBuilder
         For Each word In Version.Check_For_Spam_Phrases(content)
             sb.AppendLine(word)
         Next
-
         'txtSpam.Text = sb.ToString
     End Sub
     Private Sub Map_Loaded()
@@ -203,7 +204,6 @@ Public Class frmVar
         txtSubject_Variations.Text = subjectText
         txtSubject_Variations.Tag = index
     End Sub
-
-
 #End Region
+
 End Class
