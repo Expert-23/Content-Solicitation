@@ -7,8 +7,6 @@ Public Class Message
     Public Varied As Version
     Public Sentences As SortedDictionary(Of Integer, Sentence)
     Public Versions As SortedDictionary(Of Integer, Version)
-    Public Snippet As Bitmap
-    Public SnippetRef As String
 
     Public ReadOnly Property Original_Subject As Sentence
         Get
