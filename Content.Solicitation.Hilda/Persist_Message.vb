@@ -16,14 +16,15 @@ Public Class Persist_Message
 
                 conn.Open()
 
-                Dim query As String = String.Format("Insert into {0} ({1}) VALUES(@binary)",
+                Dim query As String = String.Format("Insert into {0} ({1},{2}) VALUES(@binary,'{3}')",
                                                     OPS.Message.Table_Name,
                                                     OPS.Message.ColName.Message_Binary,
-                                                    bytes
+                                                    OPS.Message.ColName.Date_Created,
+                                                    DateTime.Now
                                                     )
 
                 Dim cmd As New SqlCommand(query, conn)
-                cmd.Parameters.AddWithValue("@binary", job_binary)
+                cmd.Parameters.AddWithValue("@binary", bytes)
 
                 cmd.ExecuteNonQuery()
 
@@ -110,11 +111,13 @@ Public Class Persist_Message
 
                 conn.Open()
 
-                Dim query As String = String.Format("UPDATE {0}  SET {1}  = @binary WHERE {2}= '{3}' ",
+                Dim query As String = String.Format("UPDATE {0}  SET {2}  = @binary , {3} = '{5}  WHERE {1}= '{4}' ",
                                                     OPS.Message.Table_Name,
-                                                    OPS.Message.ColName.Message_Binary,
                                                     OPS.Message.ColName.ID,
-                                                    message.ID)
+                                                    OPS.Message.ColName.Message_Binary,
+                                                    OPS.Message.ColName.Date_Updated,
+                                                    message.ID,
+                                                    DateTime.Now)
 
 
                 Dim cmd As New SqlCommand(query, conn)

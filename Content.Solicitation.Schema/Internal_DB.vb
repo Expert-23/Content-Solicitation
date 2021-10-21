@@ -218,6 +218,8 @@ Public Class Internal_DB
 
                 Public Shared ID As String = "[ID]"
                 Public Shared Message_Binary As String = "[Message_Binary]"
+                Public Shared Date_Created As String = "[Date_Created]"
+                Public Shared Date_Updated As String = "[Date_Updated]"
 
             End Class
 
@@ -225,6 +227,8 @@ Public Class Internal_DB
 
                 Public Shared ID As Type = GetType(Integer)
                 Public Shared Message_Binary As Type = GetType(Byte)
+                Public Shared Date_Created As Type = GetType(DateTime)
+                Public Shared Date_Updated As Type = GetType(DateTime)
 
             End Class
 
@@ -232,6 +236,8 @@ Public Class Internal_DB
 
                 Public Shared ID As SqlDbType = SqlDbType.Int
                 Public Shared Message_Binary As SqlDbType = SqlDbType.VarBinary
+                Public Shared Date_Created As SqlDbType = SqlDbType.DateTime
+                Public Shared Date_Updated As SqlDbType = SqlDbType.DateTime
 
             End Class
 
