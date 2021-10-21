@@ -34,7 +34,7 @@ Public Class Controller_Message
 
     End Function
 
-    Public Function Get_One_Messages(ByVal id As Integer) As SortedDictionary(Of Integer, SortedDictionary(Of String, Message))
+    Public Function Get_One_Message(ByVal id As Integer) As SortedDictionary(Of Integer, SortedDictionary(Of String, Message))
 
         Dim ds As New DataSet
         Dim messages As New SortedDictionary(Of Integer, SortedDictionary(Of String, Message))

@@ -16,7 +16,7 @@ Public Class Persist_Solicitation
 
                 conn.Open()
 
-                Dim query As String = String.Format("Insert INTO {0}({1},{2},{3},{4},{5},{6},{7},{8}) values('{9}','{10}','{11}','{12}','{13}',@binary,'{14}','{13}')",
+                Dim query As String = String.Format("Insert INTO {0}({1},{2},{3},{4},{5},{6},{7},{8}) values('{9}','{10}','{11}','{12}','{13}',@binary,@binary1,'{13}')",
                                                     OPS.Job_Solicitation.Table_Name,
                                                     OPS.Job_Solicitation.ColName.Content_Item_ID,
                                                     OPS.Job_Solicitation.ColName.Job_Status,
@@ -31,12 +31,11 @@ Public Class Persist_Solicitation
                                                     job_solicitation.Item_Content.Website.ToString(),
                                                     job_solicitation.Item_Content.Category,
                                                     date_created,
-                                                    imagebytes
-                                                    )
+)
 
                 Dim cmd As New SqlCommand(query, conn)
                 cmd.Parameters.AddWithValue("@binary", job_binary)
-
+                cmd.Parameters.AddWithValue("@binary1", imagebytes)
 
 
                 cmd.ExecuteNonQuery()
@@ -239,6 +238,41 @@ Public Class Persist_Solicitation
         End Try
 
         Return success
+
+    End Function
+
+    Public Function Retrieve_All_Job_Solicitation() As DataSet
+
+        Dim ds As New DataSet
+
+        Try
+
+
+            Using conn As New SqlClient.SqlConnection(OPS.Conn)
+
+                conn.Open()
+
+                Dim query As String = String.Format("select * from {0}",
+                                                    OPS.Job_Solicitation.Table_Name)
+
+                Dim da = New SqlDataAdapter(query, conn)
+                da.Fill(ds)
+
+                conn.Close()
+                kjkpo
+            End Using
+
+        Catch ex As SqlException0iuiuiu
+
+            MasterLog.MasterLogs().[Error](ex, "Sql Exception")
+
+        Catch ex As Exception
+
+            MasterLog.MasterLogs().[Error](ex, "")
+
+        End Try
+
+        Return ds
 
     End Function
 
