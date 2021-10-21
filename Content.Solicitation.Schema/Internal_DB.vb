@@ -220,6 +220,7 @@ Public Class Internal_DB
                 Public Shared Message_Binary As String = "[Message_Binary]"
                 Public Shared Date_Created As String = "[Date_Created]"
                 Public Shared Date_Updated As String = "[Date_Updated]"
+                Public Shared Campaign_Name As String = "[Campaign_Name]"
 
             End Class
 
@@ -229,6 +230,7 @@ Public Class Internal_DB
                 Public Shared Message_Binary As Type = GetType(Byte)
                 Public Shared Date_Created As Type = GetType(DateTime)
                 Public Shared Date_Updated As Type = GetType(DateTime)
+                Public Shared Campaign_Name As Type = GetType(String)
 
             End Class
 
@@ -238,6 +240,7 @@ Public Class Internal_DB
                 Public Shared Message_Binary As SqlDbType = SqlDbType.VarBinary
                 Public Shared Date_Created As SqlDbType = SqlDbType.DateTime
                 Public Shared Date_Updated As SqlDbType = SqlDbType.DateTime
+                Public Shared Campaign_Name As SqlDbType = SqlDbType.VarChar
 
             End Class
 
