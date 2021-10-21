@@ -82,8 +82,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller_Message.vb" />
     <Compile Include="Controller_Persistance.vb" />
     <Compile Include="Controller_Scraper.vb" />
+    <Compile Include="Controller_Solicitation.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -133,9 +135,17 @@
       <Project>{06aace38-7017-451f-81a0-85ac42f4182b}</Project>
       <Name>Content.Solicitation.Adapters</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Content.Solicitation.Hilda\Content.Solicitation.HLDA.vbproj">
+      <Project>{B792F2C0-6DFB-43F5-819A-637337DCA223}</Project>
+      <Name>Content.Solicitation.HLDA</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Content.Solicitation.Primitives\Content.Solicitation.Primitives.vbproj">
       <Project>{dde8a23f-e0d2-4a97-a1d5-e45ea2a397b7}</Project>
       <Name>Content.Solicitation.Primitives</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Content.Solicitation.Utilities\Content.Solicitation.Utilities.vbproj">
+      <Project>{2703F8D8-9A09-45BE-8C43-CFB6473DC214}</Project>
+      <Name>Content.Solicitation.Utilities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

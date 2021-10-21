@@ -16,11 +16,13 @@ Public Class Persist_Message
 
                 conn.Open()
 
-                Dim query As String = String.Format("Insert into {0} ({1},{2}) VALUES(@binary,'{3}')",
+                Dim query As String = String.Format("Insert into {0} ({1},{2},{3}) VALUES(@binary,'{5}','{4}')",
                                                     OPS.Message.Table_Name,
                                                     OPS.Message.ColName.Message_Binary,
+                                                    OPS.Message.ColName.Campaign_Name,
                                                     OPS.Message.ColName.Date_Created,
-                                                    DateTime.Now
+                                                    DateTime.Now,
+                                                    message.ID
                                                     )
 
                 Dim cmd As New SqlCommand(query, conn)
@@ -186,7 +188,7 @@ Public Class Persist_Message
 
     End Function
 
-    Public Function Retrieve_One_Message(ByVal id As Integer) As Boolean
+    Public Function Retrieve_One_Message(ByVal id As Integer) As DataSet
 
         Dim ds As New DataSet
 
@@ -206,9 +208,6 @@ Public Class Persist_Message
                 da.Fill(ds)
 
                 conn.Close()
-                success = True
-
-
 
             End Using
 
@@ -222,7 +221,42 @@ Public Class Persist_Message
 
         End Try
 
-        Return success
+        Return ds
+
+    End Function
+
+    Public Function Retrieve_All_Messages() As DataSet
+
+        Dim ds As New DataSet
+
+        Try
+
+
+            Using conn As New SqlClient.SqlConnection(OPS.Conn)
+
+                conn.Open()
+
+                Dim query As String = String.Format("select * from {0}",
+                                                    OPS.Message.Table_Name)
+
+                Dim da = New SqlDataAdapter(query, conn)
+                da.Fill(ds)
+
+                conn.Close()
+
+            End Using
+
+        Catch ex As SqlException
+
+            MasterLog.MasterLogs().[Error](ex, "Sql Exception")
+
+        Catch ex As Exception
+
+            MasterLog.MasterLogs().[Error](ex, "")
+
+        End Try
+
+        Return ds
 
     End Function
 
