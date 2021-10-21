@@ -34,16 +34,6 @@ Partial Class frmWorkStation
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LOADToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.WIPToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LoadToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EmailsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SolicitsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SAVEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BuildEmailToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LaunchCampaignToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.ComboBox3 = New System.Windows.Forms.ComboBox()
@@ -57,12 +47,24 @@ Partial Class frmWorkStation
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Subject = New System.Windows.Forms.GroupBox()
         Me.TableLayoutPanel8 = New System.Windows.Forms.TableLayoutPanel()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtBoxSubject = New System.Windows.Forms.TextBox()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.TableLayoutPanel9 = New System.Windows.Forms.TableLayoutPanel()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.txtBoxBody = New System.Windows.Forms.TextBox()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LOADToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.WIPToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LoadToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SAVEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BuildEmailToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LaunchCampaignToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.EmailToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ContentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EmailToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ContentToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -71,7 +73,6 @@ Partial Class frmWorkStation
         Me.GroupBox2.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
-        Me.MenuStrip1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.TableLayoutPanel4.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -87,6 +88,7 @@ Partial Class frmWorkStation
         Me.Panel7.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         Me.TableLayoutPanel9.SuspendLayout()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -222,72 +224,6 @@ Partial Class frmWorkStation
         Me.ComboBox1.Size = New System.Drawing.Size(567, 31)
         Me.ComboBox1.TabIndex = 0
         '
-        'MenuStrip1
-        '
-        Me.MenuStrip1.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.LOADToolStripMenuItem, Me.WIPToolStripMenuItem, Me.BuildEmailToolStripMenuItem, Me.LaunchCampaignToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1350, 30)
-        Me.MenuStrip1.TabIndex = 0
-        Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'FileToolStripMenuItem
-        '
-        Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(55, 26)
-        Me.FileToolStripMenuItem.Text = "File"
-        '
-        'LOADToolStripMenuItem
-        '
-        Me.LOADToolStripMenuItem.Name = "LOADToolStripMenuItem"
-        Me.LOADToolStripMenuItem.Size = New System.Drawing.Size(94, 26)
-        Me.LOADToolStripMenuItem.Text = "Refresh"
-        '
-        'WIPToolStripMenuItem
-        '
-        Me.WIPToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoadToolStripMenuItem1, Me.SAVEToolStripMenuItem})
-        Me.WIPToolStripMenuItem.Name = "WIPToolStripMenuItem"
-        Me.WIPToolStripMenuItem.Size = New System.Drawing.Size(57, 26)
-        Me.WIPToolStripMenuItem.Text = "WIP"
-        '
-        'LoadToolStripMenuItem1
-        '
-        Me.LoadToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EmailsToolStripMenuItem, Me.SolicitsToolStripMenuItem})
-        Me.LoadToolStripMenuItem1.Name = "LoadToolStripMenuItem1"
-        Me.LoadToolStripMenuItem1.Size = New System.Drawing.Size(127, 26)
-        Me.LoadToolStripMenuItem1.Text = "Load"
-        '
-        'EmailsToolStripMenuItem
-        '
-        Me.EmailsToolStripMenuItem.Name = "EmailsToolStripMenuItem"
-        Me.EmailsToolStripMenuItem.Size = New System.Drawing.Size(148, 26)
-        Me.EmailsToolStripMenuItem.Text = "Emails"
-        '
-        'SolicitsToolStripMenuItem
-        '
-        Me.SolicitsToolStripMenuItem.Name = "SolicitsToolStripMenuItem"
-        Me.SolicitsToolStripMenuItem.Size = New System.Drawing.Size(148, 26)
-        Me.SolicitsToolStripMenuItem.Text = "Solicits"
-        '
-        'SAVEToolStripMenuItem
-        '
-        Me.SAVEToolStripMenuItem.Name = "SAVEToolStripMenuItem"
-        Me.SAVEToolStripMenuItem.Size = New System.Drawing.Size(127, 26)
-        Me.SAVEToolStripMenuItem.Text = "Save"
-        '
-        'BuildEmailToolStripMenuItem
-        '
-        Me.BuildEmailToolStripMenuItem.Name = "BuildEmailToolStripMenuItem"
-        Me.BuildEmailToolStripMenuItem.Size = New System.Drawing.Size(126, 26)
-        Me.BuildEmailToolStripMenuItem.Text = "Build Email"
-        '
-        'LaunchCampaignToolStripMenuItem
-        '
-        Me.LaunchCampaignToolStripMenuItem.Name = "LaunchCampaignToolStripMenuItem"
-        Me.LaunchCampaignToolStripMenuItem.Size = New System.Drawing.Size(191, 26)
-        Me.LaunchCampaignToolStripMenuItem.Text = "Launch Campaign"
-        '
         'GroupBox3
         '
         Me.GroupBox3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
@@ -351,7 +287,7 @@ Partial Class frmWorkStation
         Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
         Me.TableLayoutPanel5.RowCount = 1
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 536.0!))
         Me.TableLayoutPanel5.Size = New System.Drawing.Size(585, 536)
         Me.TableLayoutPanel5.TabIndex = 0
         '
@@ -379,7 +315,7 @@ Partial Class frmWorkStation
         Me.TableLayoutPanel6.Name = "TableLayoutPanel6"
         Me.TableLayoutPanel6.RowCount = 1
         Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 496.0!))
         Me.TableLayoutPanel6.Size = New System.Drawing.Size(567, 496)
         Me.TableLayoutPanel6.TabIndex = 0
         '
@@ -451,25 +387,25 @@ Partial Class frmWorkStation
         Me.TableLayoutPanel8.ColumnCount = 1
         Me.TableLayoutPanel8.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel8.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel8.Controls.Add(Me.TextBox1, 0, 0)
+        Me.TableLayoutPanel8.Controls.Add(Me.txtBoxSubject, 0, 0)
         Me.TableLayoutPanel8.Location = New System.Drawing.Point(6, 25)
         Me.TableLayoutPanel8.Name = "TableLayoutPanel8"
         Me.TableLayoutPanel8.RowCount = 1
         Me.TableLayoutPanel8.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel8.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel8.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 64.0!))
         Me.TableLayoutPanel8.Size = New System.Drawing.Size(552, 64)
         Me.TableLayoutPanel8.TabIndex = 0
         '
-        'TextBox1
+        'txtBoxSubject
         '
-        Me.TextBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.txtBoxSubject.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox1.Location = New System.Drawing.Point(3, 3)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(546, 58)
-        Me.TextBox1.TabIndex = 0
+        Me.txtBoxSubject.Location = New System.Drawing.Point(3, 3)
+        Me.txtBoxSubject.Multiline = True
+        Me.txtBoxSubject.Name = "txtBoxSubject"
+        Me.txtBoxSubject.Size = New System.Drawing.Size(546, 58)
+        Me.txtBoxSubject.TabIndex = 0
         '
         'Panel7
         '
@@ -502,30 +438,109 @@ Partial Class frmWorkStation
         Me.TableLayoutPanel9.ColumnCount = 1
         Me.TableLayoutPanel9.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel9.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel9.Controls.Add(Me.TextBox2, 0, 0)
+        Me.TableLayoutPanel9.Controls.Add(Me.txtBoxBody, 0, 0)
         Me.TableLayoutPanel9.Location = New System.Drawing.Point(6, 28)
         Me.TableLayoutPanel9.Name = "TableLayoutPanel9"
         Me.TableLayoutPanel9.RowCount = 1
         Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 367.0!))
         Me.TableLayoutPanel9.Size = New System.Drawing.Size(524, 367)
         Me.TableLayoutPanel9.TabIndex = 0
         '
-        'TextBox2
+        'txtBoxBody
         '
-        Me.TextBox2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.txtBoxBody.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox2.Location = New System.Drawing.Point(3, 3)
-        Me.TextBox2.Multiline = True
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(518, 361)
-        Me.TextBox2.TabIndex = 0
+        Me.txtBoxBody.Location = New System.Drawing.Point(3, 3)
+        Me.txtBoxBody.Multiline = True
+        Me.txtBoxBody.Name = "txtBoxBody"
+        Me.txtBoxBody.Size = New System.Drawing.Size(518, 361)
+        Me.txtBoxBody.TabIndex = 0
+        '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.LOADToolStripMenuItem, Me.WIPToolStripMenuItem, Me.BuildEmailToolStripMenuItem, Me.LaunchCampaignToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(1350, 30)
+        Me.MenuStrip1.TabIndex = 0
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'FileToolStripMenuItem
+        '
+        Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(55, 26)
+        Me.FileToolStripMenuItem.Text = "File"
+        '
+        'LOADToolStripMenuItem
+        '
+        Me.LOADToolStripMenuItem.Name = "LOADToolStripMenuItem"
+        Me.LOADToolStripMenuItem.Size = New System.Drawing.Size(94, 26)
+        Me.LOADToolStripMenuItem.Text = "Refresh"
+        '
+        'WIPToolStripMenuItem
+        '
+        Me.WIPToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoadToolStripMenuItem1, Me.SAVEToolStripMenuItem})
+        Me.WIPToolStripMenuItem.Name = "WIPToolStripMenuItem"
+        Me.WIPToolStripMenuItem.Size = New System.Drawing.Size(57, 26)
+        Me.WIPToolStripMenuItem.Text = "WIP"
+        '
+        'LoadToolStripMenuItem1
+        '
+        Me.LoadToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EmailToolStripMenuItem, Me.ContentToolStripMenuItem})
+        Me.LoadToolStripMenuItem1.Name = "LoadToolStripMenuItem1"
+        Me.LoadToolStripMenuItem1.Size = New System.Drawing.Size(180, 26)
+        Me.LoadToolStripMenuItem1.Text = "Load"
+        '
+        'SAVEToolStripMenuItem
+        '
+        Me.SAVEToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EmailToolStripMenuItem1, Me.ContentToolStripMenuItem1})
+        Me.SAVEToolStripMenuItem.Name = "SAVEToolStripMenuItem"
+        Me.SAVEToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
+        Me.SAVEToolStripMenuItem.Text = "Save"
+        '
+        'BuildEmailToolStripMenuItem
+        '
+        Me.BuildEmailToolStripMenuItem.Name = "BuildEmailToolStripMenuItem"
+        Me.BuildEmailToolStripMenuItem.Size = New System.Drawing.Size(126, 26)
+        Me.BuildEmailToolStripMenuItem.Text = "Build Email"
+        '
+        'LaunchCampaignToolStripMenuItem
+        '
+        Me.LaunchCampaignToolStripMenuItem.Name = "LaunchCampaignToolStripMenuItem"
+        Me.LaunchCampaignToolStripMenuItem.Size = New System.Drawing.Size(191, 26)
+        Me.LaunchCampaignToolStripMenuItem.Text = "Launch Campaign"
         '
         'ContextMenuStrip1
         '
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
         Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
+        '
+        'EmailToolStripMenuItem
+        '
+        Me.EmailToolStripMenuItem.Name = "EmailToolStripMenuItem"
+        Me.EmailToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
+        Me.EmailToolStripMenuItem.Text = "Email"
+        '
+        'ContentToolStripMenuItem
+        '
+        Me.ContentToolStripMenuItem.Name = "ContentToolStripMenuItem"
+        Me.ContentToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
+        Me.ContentToolStripMenuItem.Text = "Content"
+        '
+        'EmailToolStripMenuItem1
+        '
+        Me.EmailToolStripMenuItem1.Name = "EmailToolStripMenuItem1"
+        Me.EmailToolStripMenuItem1.Size = New System.Drawing.Size(180, 26)
+        Me.EmailToolStripMenuItem1.Text = "Email"
+        '
+        'ContentToolStripMenuItem1
+        '
+        Me.ContentToolStripMenuItem1.Name = "ContentToolStripMenuItem1"
+        Me.ContentToolStripMenuItem1.Size = New System.Drawing.Size(180, 26)
+        Me.ContentToolStripMenuItem1.Text = "Content"
         '
         'frmWorkStation
         '
@@ -545,8 +560,6 @@ Partial Class frmWorkStation
         Me.GroupBox2.ResumeLayout(False)
         Me.TableLayoutPanel3.ResumeLayout(False)
         Me.TableLayoutPanel2.ResumeLayout(False)
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.TableLayoutPanel4.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
@@ -564,6 +577,8 @@ Partial Class frmWorkStation
         Me.GroupBox5.ResumeLayout(False)
         Me.TableLayoutPanel9.ResumeLayout(False)
         Me.TableLayoutPanel9.PerformLayout()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -575,8 +590,6 @@ Partial Class frmWorkStation
     Friend WithEvents LOADToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents WIPToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LoadToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents EmailsToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents SolicitsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BuildEmailToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LaunchCampaignToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SAVEToolStripMenuItem As ToolStripMenuItem
@@ -601,10 +614,14 @@ Partial Class frmWorkStation
     Friend WithEvents Panel6 As Panel
     Friend WithEvents Subject As GroupBox
     Friend WithEvents TableLayoutPanel8 As TableLayoutPanel
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtBoxSubject As TextBox
     Friend WithEvents Panel7 As Panel
     Friend WithEvents GroupBox5 As GroupBox
     Friend WithEvents TableLayoutPanel9 As TableLayoutPanel
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents txtBoxBody As TextBox
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents EmailToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ContentToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EmailToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ContentToolStripMenuItem1 As ToolStripMenuItem
 End Class
