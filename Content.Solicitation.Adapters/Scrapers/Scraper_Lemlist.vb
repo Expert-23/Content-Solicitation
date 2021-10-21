@@ -23,6 +23,7 @@ Public Class Scraper_Lemlist
         mDirChrome = "C:\Users\pc\Desktop\Software and Files\Expert 23\Google_For_Selenium_78.0.3904.7000\Chrome\Application\chrome.exe"
         mUrl_Base = "https://app.lemlist.com/campaigns/"
         mdirVPN = "C:\Users\pc\Desktop\Software and Files\Expert 23\Google_For_Selenium_78.0.3904.7000\Chrome\Application\2.0.0_0.crx"
+        'test
     End Sub
     Public Sub Scrape()
         Initialise_Driver()
