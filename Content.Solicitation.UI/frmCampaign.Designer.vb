@@ -105,7 +105,7 @@ Partial Class frmCAmpaign
         '
         'LoadCampaignToolStripMenuItem
         '
-        Me.LoadCampaignToolStripMenuItem.ForeColor = System.Drawing.Color.Green
+        Me.LoadCampaignToolStripMenuItem.ForeColor = System.Drawing.Color.Black
         Me.LoadCampaignToolStripMenuItem.Name = "LoadCampaignToolStripMenuItem"
         Me.LoadCampaignToolStripMenuItem.Size = New System.Drawing.Size(142, 23)
         Me.LoadCampaignToolStripMenuItem.Text = "Load Campaign"
@@ -577,7 +577,7 @@ Partial Class frmCAmpaign
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
         Me.TableLayoutPanel3.RowCount = 1
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 66.0!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 102.0!))
         Me.TableLayoutPanel3.Size = New System.Drawing.Size(589, 102)
         Me.TableLayoutPanel3.TabIndex = 0
         '

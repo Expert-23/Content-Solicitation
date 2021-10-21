@@ -57,14 +57,14 @@ Partial Class frmWorkStation
         Me.LOADToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.WIPToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoadToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EmailToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ContentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SAVEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EmailToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ContentToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.BuildEmailToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaunchCampaignToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.EmailToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ContentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EmailToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ContentToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -163,6 +163,7 @@ Partial Class frmWorkStation
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox2.Controls.Add(Me.TableLayoutPanel3)
         Me.GroupBox2.Font = New System.Drawing.Font("Arial Narrow", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox2.ForeColor = System.Drawing.Color.Green
         Me.GroupBox2.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(585, 123)
@@ -231,6 +232,7 @@ Partial Class frmWorkStation
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox3.Controls.Add(Me.TableLayoutPanel4)
         Me.GroupBox3.Font = New System.Drawing.Font("Arial Narrow", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox3.ForeColor = System.Drawing.Color.Green
         Me.GroupBox3.Location = New System.Drawing.Point(674, 3)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(591, 130)
@@ -298,6 +300,7 @@ Partial Class frmWorkStation
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox4.Controls.Add(Me.TableLayoutPanel6)
         Me.GroupBox4.Font = New System.Drawing.Font("Arial Narrow", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.GroupBox4.Location = New System.Drawing.Point(3, 3)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(579, 530)
@@ -372,6 +375,7 @@ Partial Class frmWorkStation
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Subject.Controls.Add(Me.TableLayoutPanel8)
         Me.Subject.Font = New System.Drawing.Font("Arial Narrow", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Subject.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.Subject.Location = New System.Drawing.Point(3, 3)
         Me.Subject.Name = "Subject"
         Me.Subject.Size = New System.Drawing.Size(564, 95)
@@ -423,6 +427,7 @@ Partial Class frmWorkStation
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox5.Controls.Add(Me.TableLayoutPanel9)
         Me.GroupBox5.Font = New System.Drawing.Font("Arial Narrow", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.GroupBox5.Location = New System.Drawing.Point(9, 13)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Size = New System.Drawing.Size(536, 401)
@@ -491,15 +496,39 @@ Partial Class frmWorkStation
         '
         Me.LoadToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EmailToolStripMenuItem, Me.ContentToolStripMenuItem})
         Me.LoadToolStripMenuItem1.Name = "LoadToolStripMenuItem1"
-        Me.LoadToolStripMenuItem1.Size = New System.Drawing.Size(180, 26)
+        Me.LoadToolStripMenuItem1.Size = New System.Drawing.Size(127, 26)
         Me.LoadToolStripMenuItem1.Text = "Load"
+        '
+        'EmailToolStripMenuItem
+        '
+        Me.EmailToolStripMenuItem.Name = "EmailToolStripMenuItem"
+        Me.EmailToolStripMenuItem.Size = New System.Drawing.Size(153, 26)
+        Me.EmailToolStripMenuItem.Text = "Email"
+        '
+        'ContentToolStripMenuItem
+        '
+        Me.ContentToolStripMenuItem.Name = "ContentToolStripMenuItem"
+        Me.ContentToolStripMenuItem.Size = New System.Drawing.Size(153, 26)
+        Me.ContentToolStripMenuItem.Text = "Content"
         '
         'SAVEToolStripMenuItem
         '
         Me.SAVEToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EmailToolStripMenuItem1, Me.ContentToolStripMenuItem1})
         Me.SAVEToolStripMenuItem.Name = "SAVEToolStripMenuItem"
-        Me.SAVEToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
+        Me.SAVEToolStripMenuItem.Size = New System.Drawing.Size(127, 26)
         Me.SAVEToolStripMenuItem.Text = "Save"
+        '
+        'EmailToolStripMenuItem1
+        '
+        Me.EmailToolStripMenuItem1.Name = "EmailToolStripMenuItem1"
+        Me.EmailToolStripMenuItem1.Size = New System.Drawing.Size(153, 26)
+        Me.EmailToolStripMenuItem1.Text = "Email"
+        '
+        'ContentToolStripMenuItem1
+        '
+        Me.ContentToolStripMenuItem1.Name = "ContentToolStripMenuItem1"
+        Me.ContentToolStripMenuItem1.Size = New System.Drawing.Size(153, 26)
+        Me.ContentToolStripMenuItem1.Text = "Content"
         '
         'BuildEmailToolStripMenuItem
         '
@@ -517,30 +546,6 @@ Partial Class frmWorkStation
         '
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
         Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
-        '
-        'EmailToolStripMenuItem
-        '
-        Me.EmailToolStripMenuItem.Name = "EmailToolStripMenuItem"
-        Me.EmailToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
-        Me.EmailToolStripMenuItem.Text = "Email"
-        '
-        'ContentToolStripMenuItem
-        '
-        Me.ContentToolStripMenuItem.Name = "ContentToolStripMenuItem"
-        Me.ContentToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
-        Me.ContentToolStripMenuItem.Text = "Content"
-        '
-        'EmailToolStripMenuItem1
-        '
-        Me.EmailToolStripMenuItem1.Name = "EmailToolStripMenuItem1"
-        Me.EmailToolStripMenuItem1.Size = New System.Drawing.Size(180, 26)
-        Me.EmailToolStripMenuItem1.Text = "Email"
-        '
-        'ContentToolStripMenuItem1
-        '
-        Me.ContentToolStripMenuItem1.Name = "ContentToolStripMenuItem1"
-        Me.ContentToolStripMenuItem1.Size = New System.Drawing.Size(180, 26)
-        Me.ContentToolStripMenuItem1.Text = "Content"
         '
         'frmWorkStation
         '
