@@ -2,6 +2,7 @@
 Imports Content.Solicitation.Utilities
 Imports Content.Solicitation.Adapters
 Imports Loggingg
+Imports System.IO
 
 Public Class frmVar
 #Region "Members"
@@ -66,11 +67,17 @@ Public Class frmVar
         mMessage = New Message(txtOriginal_Subject.Text, txtOriginal_Body.Text)
     End Sub
     Private Sub Save_Message()
-        Dim frm As New frmFileSystem("", "C:\Users\pc\source\repos\Expert-23\Content\G23.Content.Complete\z_cache\wip\")
-        frm.ShowDialog()
-        selectedPath = frm.FullFileRef()
-        Dim success As Boolean
-        Serialization_Utilities.Serialize_Object_And_Save_FileSystem(mMessage, selectedPath, success)
+        Try
+            Dim frm As New frmFileSystem("", "C:\Users\pc\source\repos\Expert-23\Content\G23.Content.Complete\z_cache\wip\")
+            frm.ShowDialog()
+            selectedPath = frm.FullFileRef()
+            Dim success As Boolean
+            Serialization_Utilities.Serialize_Object_And_Save_FileSystem(mMessage, selectedPath, success)
+        Catch ex As FileNotFoundException
+            MasterLog.MasterLogs().Error(ex, "File Not Found")
+        Catch ex As Exception
+            MasterLog.MasterLogs().Error(ex, "")
+        End Try
     End Sub
     Private Sub Load_Next_Message_Version()
         Try
@@ -196,10 +203,14 @@ Public Class frmVar
         Select_Sentence_Default()
     End Sub
     Private Sub Select_Variation()
-        cboSentence_Variation.Items.Clear()
-        For j = 0 To mMessage.Sentences(cboSentence_Number.SelectedIndex).Variations.Count - 1
-            cboSentence_Variation.Items.Add(j.ToString())
-        Next
+        Try
+            cboSentence_Variation.Items.Clear()
+            For j = 0 To mMessage.Sentences(cboSentence_Number.SelectedIndex).Variations.Count - 1
+                cboSentence_Variation.Items.Add(j.ToString())
+            Next
+        Catch ex As NullReferenceException
+            MasterLog.MasterLogs().Error(ex, "Object with null reference")
+        End Try
     End Sub
     Private Sub Select_Sentence_Default()
         txtBoxNewSentence.Text = mMessage.Sentences(cboSentence_Number.SelectedIndex).Variations(0)

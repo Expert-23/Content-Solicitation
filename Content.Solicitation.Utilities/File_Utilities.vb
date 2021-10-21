@@ -94,7 +94,8 @@ Public Class File_Utilities
             Dim locLastSlash As Integer = fullFileRef.LastIndexOf(pathDelimeter)
             fileName = fullFileRef.Substring(locLastSlash + 1)
             filePath = fullFileRef.Substring(0, locLastSlash)
-
+        Catch ex As FileNotFoundException
+            MasterLog.MasterLogs().Error(ex, "File Not Found")
         Catch ex As Exception
 
             Dim keyVariableNames() As String = {"Full File Reference", "File Path", "File Name"}

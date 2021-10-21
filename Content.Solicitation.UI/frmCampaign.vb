@@ -1,6 +1,7 @@
 ﻿Imports Content.Solicitation.Primitives
 Imports Content.Solicitation.Controllers
 Imports Loggingg
+Imports System.IO
 
 Public Class frmCAmpaign
 
@@ -80,18 +81,31 @@ Public Class frmCAmpaign
         mTracking.Add(Tracking.reply_body, chck_Track_reply.Checked)
     End Sub
     Private Sub btnFile_Upload_Click(sender As Object, e As EventArgs) Handles btnFile_Upload.Click
-        Dim openFileDialog1 As New OpenFileDialog
-        Dim result As DialogResult = openFileDialog1.ShowDialog()
-        Dim file = openFileDialog1.FileName
-        mLemlist.CSV_File = file
-        file = file.Substring(file.LastIndexOf("\") + 1)
-        lblFile.Text = file
-        File_Size()
+        Try
+            Dim openFileDialog1 As New OpenFileDialog
+            Dim result As DialogResult = openFileDialog1.ShowDialog()
+            Dim file = openFileDialog1.FileName
+            mLemlist.CSV_File = file
+            file = file.Substring(file.LastIndexOf("\") + 1)
+            lblFile.Text = file
+            File_Size()
+        Catch ex As FileNotFoundException
+            MasterLog.MasterLogs().Error(ex, "File Not Found")
+        Catch ex As Exception
+            MasterLog.MasterLogs().Error(ex, "")
+        End Try
     End Sub
     Private Sub File_Size()
-        Dim file As String = My.Computer.FileSystem.ReadAllText(mLemlist.CSV_File)
-        Dim lines As String() = file.Split(vbNewLine)
-        mLemlist.NB_Rows = lines.Count
-        MessageBox.Show(mLemlist.NB_Rows)
+        Try
+
+            Dim file As String = My.Computer.FileSystem.ReadAllText(mLemlist.CSV_File)
+            Dim lines As String() = file.Split(vbNewLine)
+            mLemlist.NB_Rows = lines.Count
+            MessageBox.Show(mLemlist.NB_Rows)
+        Catch ex As FileNotFoundException
+            MasterLog.MasterLogs().Error(ex, "File Not Found")
+        Catch ex As Exception
+            MasterLog.MasterLogs().Error(ex, "")
+        End Try
     End Sub
 End Class
