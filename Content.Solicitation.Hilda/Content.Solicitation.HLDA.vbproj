@@ -101,6 +101,8 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Persist_FileSystem.vb" />
+    <Compile Include="Persist_Message.vb" />
+    <Compile Include="Persist_Solicitation.vb" />
     <Compile Include="Persist_SQL.vb" />
   </ItemGroup>
   <ItemGroup>
@@ -140,6 +142,10 @@
     <ProjectReference Include="..\Content.Solicitation.Utilities\Content.Solicitation.Utilities.vbproj">
       <Project>{2703f8d8-9a09-45be-8c43-cfb6473dc214}</Project>
       <Name>Content.Solicitation.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Loggingg\Loggingg.csproj">
+      <Project>{5C0AF8F7-3DF7-409D-A99C-6A87CA927C84}</Project>
+      <Name>Loggingg</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
