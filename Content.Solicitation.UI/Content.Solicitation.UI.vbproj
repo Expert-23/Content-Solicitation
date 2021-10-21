@@ -198,6 +198,10 @@
       <Project>{3bf2e87a-3abc-4293-b74d-0afa046040a3}</Project>
       <Name>Content.Solicitation.Controllers</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Content.Solicitation.Controllers\Loggingg\Loggingg.csproj">
+      <Project>{5C0AF8F7-3DF7-409D-A99C-6A87CA927C84}</Project>
+      <Name>Loggingg</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Content.Solicitation.Primitives\Content.Solicitation.Primitives.vbproj">
       <Project>{dde8a23f-e0d2-4a97-a1d5-e45ea2a397b7}</Project>
       <Name>Content.Solicitation.Primitives</Name>

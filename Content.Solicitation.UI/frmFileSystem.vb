@@ -2,6 +2,8 @@
 Imports System.IO
 Imports System.Windows.Forms
 Imports Content.Solicitation.Utilities
+Imports Loggingg
+
 Public Class frmFileSystem
 
     Public Event FileSystem_Values_Changed(ByVal dir As String, ByVal filename As String, ByVal fullFileRef As String)
@@ -67,43 +69,55 @@ Public Class frmFileSystem
 
 
     Private Sub Get_Directory()
+        Try
+            Dim result As DialogResult
+            Dim fd As New FolderBrowserDialog
 
-        Dim result As DialogResult
-        Dim fd As New FolderBrowserDialog
+            result = fd.ShowDialog()
 
-        result = fd.ShowDialog()
-
-        If result = DialogResult.OK OrElse result = DialogResult.Yes Then _
+            If result = DialogResult.OK OrElse result = DialogResult.Yes Then _
         txtDir.Text = fd.SelectedPath
 
-        RaiseEvent FileSystem_Values_Changed(txtDir.Text, txtFileName.Text, txtFullFileRef.Text)
-
+            RaiseEvent FileSystem_Values_Changed(txtDir.Text, txtFileName.Text, txtFullFileRef.Text)
+        Catch ex As FileNotFoundException
+            MasterLog.MasterLogs().Error(ex, "File Not Found")
+        Catch ex As NullReferenceException
+            MasterLog.MasterLogs().Error(ex, "Object with null reference")
+        Catch ex As Exception
+            MasterLog.MasterLogs().Error(ex, "")
+        End Try
     End Sub
 
     Private Sub Get_Full_File_Ref()
+        Try
+            Dim result As DialogResult
+            Dim fd As New OpenFileDialog
 
-        Dim result As DialogResult
-        Dim fd As New OpenFileDialog
+            Dim dirDefault As String = txtDir.Text
+            If My.Computer.FileSystem.DirectoryExists(dirDefault) Then fd.InitialDirectory = dirDefault
 
-        Dim dirDefault As String = txtDir.Text
-        If My.Computer.FileSystem.DirectoryExists(dirDefault) Then fd.InitialDirectory = dirDefault
+            result = fd.ShowDialog()
 
-        result = fd.ShowDialog()
+            If result = DialogResult.OK OrElse result = DialogResult.Yes Then
 
-        If result = DialogResult.OK OrElse result = DialogResult.Yes Then
+                Dim path As String = String.Empty
+                Dim fileName As String = String.Empty
 
-            Dim path As String = String.Empty
-            Dim fileName As String = String.Empty
+                File_Utilities.Split_Full_File_Ref_Into_Path_FileName(fd.FileName, path, fileName)
 
-            File_Utilities.Split_Full_File_Ref_Into_Path_FileName(fd.FileName, path, fileName)
+                txtDir.Text = path
+                txtFileName.Text = fileName
 
-            txtDir.Text = path
-            txtFileName.Text = fileName
+                RaiseEvent FileSystem_Values_Changed(txtDir.Text, txtFileName.Text, txtFullFileRef.Text)
 
-            RaiseEvent FileSystem_Values_Changed(txtDir.Text, txtFileName.Text, txtFullFileRef.Text)
-
-        End If
-
+            End If
+        Catch ex As FileNotFoundException
+            MasterLog.MasterLogs().Error(ex, "File Not Found")
+        Catch ex As NullReferenceException
+            MasterLog.MasterLogs().Error(ex, "Object with null reference")
+        Catch ex As Exception
+            MasterLog.MasterLogs().Error(ex, "")
+        End Try
     End Sub
 
     Public Sub Build_Full_File_Ref()

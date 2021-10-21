@@ -1,5 +1,7 @@
 ﻿Imports Content.Solicitation.Primitives
 Imports Content.Solicitation.Controllers
+Imports Loggingg
+
 Public Class frmCAmpaign
 
     Private mControllerScraper As Controller_Scraper
@@ -33,18 +35,29 @@ Public Class frmCAmpaign
         mControllerScraper.Launch_Campaign(mLemlist, mJob)
     End Sub
     Private Sub Map_Lemlist()
-        mLemlist.Campaign_Name = txtBox_Campaign_Name.Text
-        mLemlist.Labels.Add(txtBox_Label.Text)
-        For Each zone In mZone
-            If zone.Value = True Then
-                mLemlist.Time_Zone = zone.Key
-                Exit For
-            End If
-        Next
-        mLemlist.Stop_sending = mSending
-        mLemlist.Tracking = mTracking
-        mLemlist.User_Name = "qcontinuum@mail.com"
-        mLemlist.Password = "send2021!Email"
+        Try
+            mLemlist.Campaign_Name = txtBox_Campaign_Name.Text
+            mLemlist.Labels.Add(txtBox_Label.Text)
+
+            For Each zone In mZone
+                If zone.Value = True Then
+                    mLemlist.Time_Zone = zone.Key
+                    Exit For
+                End If
+            Next
+
+        Catch ex As NullReferenceException
+            MasterLog.MasterLogs().Error(ex, "Object with null reference")
+
+            mLemlist.Stop_sending = mSending
+            mLemlist.Tracking = mTracking
+            mLemlist.User_Name = "qcontinuum@mail.com"
+            mLemlist.Password = "send2021!Email"
+
+        Catch ex As Exception
+            MasterLog.MasterLogs().Error(ex, "")
+
+        End Try
     End Sub
     Private Sub Map_Zones()
         mZone = New SortedDictionary(Of Time_Zone, Boolean)

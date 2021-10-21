@@ -1,6 +1,8 @@
 ﻿Imports Content.Solicitation.Primitives
 Imports Content.Solicitation.Utilities
 Imports Content.Solicitation.Adapters
+Imports Loggingg
+
 Public Class frmVar
 #Region "Members"
     Private mMessage As Message
@@ -86,8 +88,10 @@ Public Class frmVar
             For i = 0 To mMessage.Sentences.Count - 1
                 cboSentence_Number.Items.Add(i.ToString())
             Next
+        Catch ex As NullReferenceException
+            MasterLog.MasterLogs().Error(ex, "Object with null reference")
         Catch ex As Exception
-
+            MasterLog.MasterLogs().Error(ex, "")
         End Try
     End Sub
     Private Function Build_Version() As Version
@@ -100,17 +104,23 @@ Public Class frmVar
         Return vers
     End Function
     Private Function Select_Random_Permutation() As SortedDictionary(Of Integer, Integer)
-        Dim permutation As New SortedDictionary(Of Integer, Integer) 'line number, variation chosen
-        With mMessage
-            For i = 1 To .Sentences.Count - 1
-                Dim sentnce As Sentence = .Sentences(i)
-                If sentnce.Variations.Count > 0 Then
-                    Dim which As Integer = mRandom.Next(0, sentnce.Variations.Count)
-                    permutation.Add(i, which)
-                End If
-            Next
-        End With
-        Return permutation
+        Try
+            Dim permutation As New SortedDictionary(Of Integer, Integer) 'line number, variation chosen
+            With mMessage
+                For i = 1 To .Sentences.Count - 1
+                    Dim sentnce As Sentence = .Sentences(i)
+                    If sentnce.Variations.Count > 0 Then
+                        Dim which As Integer = mRandom.Next(0, sentnce.Variations.Count)
+                        permutation.Add(i, which)
+                    End If
+                Next
+            End With
+            Return permutation
+        Catch ex As NullReferenceException
+            MasterLog.MasterLogs().Error(ex, "Object with null reference")
+        Catch ex As Exception
+            MasterLog.MasterLogs().Error(ex, "")
+        End Try
     End Function
     Private Sub Load_Message(ByVal morph As Boolean)
         Dim success As Boolean
@@ -121,22 +131,36 @@ Public Class frmVar
         End If
         Try
             If mMessage Is Nothing Then Serialization_Utilities.Load_Object_FileSystem_And_Deserialize(Of Message)(selectedPath, mMessage, success) : txtSubject_Variations.Text = mMessage.Sentences(0).Variations(3) : Exit Sub
+        Catch ex As NullReferenceException
+            MasterLog.MasterLogs().Error(ex, "Object with null reference")
         Catch ex As Exception
-            Exit Sub
+            MasterLog.MasterLogs().Error(ex, "")
         End Try
         txtSubject_Variations.Text = mMessage.Sentences(0).Variations(3)
     End Sub
     Private Sub Check_Message(ByVal content As String)
-        Dim sb As New System.Text.StringBuilder
-        For Each word In Version.Check_For_Spam_Phrases(content)
-            sb.AppendLine(word)
-        Next
-        'txtSpam.Text = sb.ToString
+        Try
+            Dim sb As New System.Text.StringBuilder
+            For Each word In Version.Check_For_Spam_Phrases(content)
+                sb.AppendLine(word)
+            Next
+            'txtSpam.Text = sb.ToString
+        Catch ex As NullReferenceException
+            MasterLog.MasterLogs().Error(ex, "Object with null reference")
+        Catch ex As Exception
+            MasterLog.MasterLogs().Error(ex, "")
+        End Try
     End Sub
     Private Sub Change_Variation()
-        Dim senteceIndex As Integer = cboSentence_Number.SelectedIndex
-        Dim variationIndex As Integer = cboSentence_Variation.SelectedIndex
-        If variationIndex = -1 Then mMessage.Sentences(senteceIndex).Variations(0) = txtBoxNewSentence.Text Else mMessage.Sentences(senteceIndex).Variations(variationIndex) = txtBoxNewSentence.Text
+        Try
+            Dim senteceIndex As Integer = cboSentence_Number.SelectedIndex
+            Dim variationIndex As Integer = cboSentence_Variation.SelectedIndex
+            If variationIndex = -1 Then mMessage.Sentences(senteceIndex).Variations(0) = txtBoxNewSentence.Text Else mMessage.Sentences(senteceIndex).Variations(variationIndex) = txtBoxNewSentence.Text
+        Catch ex As NullReferenceException
+            MasterLog.MasterLogs().Error(ex, "Object with null reference")
+        Catch ex As Exception
+            MasterLog.MasterLogs().Error(ex, "")
+        End Try
     End Sub
     Private Sub Load_Controls_Subject()
         Try
@@ -159,8 +183,12 @@ Public Class frmVar
 
             txtSubject_Variations.Text = seen(0)
             txtSubject_Variations.Tag = 0
+        Catch ex As NullReferenceException
+            MasterLog.MasterLogs().Error(ex, "Object with null reference")
+        Catch ex As IndexOutOfRangeException
+            MasterLog.MasterLogs().Error(ex, "Index out of range")
         Catch ex As Exception
-
+            MasterLog.MasterLogs().Error(ex, "")
         End Try
     End Sub
     Private Sub Sentence_Change()
@@ -180,14 +208,18 @@ Public Class frmVar
         txtBoxNewSentence.Text = mMessage.Sentences(cboSentence_Number.SelectedIndex).Variations(cboSentence_Variation.SelectedIndex)
     End Sub
     Private Sub Changed_Subject_Variation()
-        If mLoading Then Exit Sub
-        If cboSubjects.SelectedItem Is Nothing Then txtSubject_Variations.Text = String.Empty : Exit Sub
-        Dim index As Integer = cboSubjects.SelectedItem
-        Dim subjectText As String = cboSubjects.Tag(index)
-        txtSubject_Variations.Text = subjectText
-        txtSubject_Variations.Tag = index
+        Try
+            If mLoading Then Exit Sub
+            If cboSubjects.SelectedItem Is Nothing Then txtSubject_Variations.Text = String.Empty : Exit Sub
+            Dim index As Integer = cboSubjects.SelectedItem
+            Dim subjectText As String = cboSubjects.Tag(index)
+            txtSubject_Variations.Text = subjectText
+            txtSubject_Variations.Tag = index
+        Catch ex As NullReferenceException
+            MasterLog.MasterLogs().Error(ex, "Object with null reference")
+        Catch ex As Exception
+            MasterLog.MasterLogs().Error(ex, "")
+        End Try
     End Sub
-
-
 #End Region
 End Class

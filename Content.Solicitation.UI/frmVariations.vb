@@ -1,6 +1,9 @@
 ﻿Imports Content.Solicitation.Primitives
 Imports Content.Solicitation.Utilities
 Imports Content.Solicitation.Adapters
+Imports Loggingg
+Imports System.IO
+
 Public Class frmVariations
 
     Private mMessage As Message
@@ -150,23 +153,23 @@ Public Class frmVariations
 
     Private Sub Load_Message(ByVal morph As Boolean)
         Dim success As Boolean
-
-        If Not morph Then
-
-            Dim frm As frmFileSystem = New frmFileSystem("", "C:\Users\pc\source\repos\Expert-23\Content\G23.Content.Complete\z_cache\wip\")
-            frm.ShowDialog()
-            selectedPath = frm.FullFileRef()
-        End If
-
-
         Try
+            If Not morph Then
+
+                Dim frm As frmFileSystem = New frmFileSystem("", "C:\Users\pc\source\repos\Expert-23\Content\G23.Content.Complete\z_cache\wip\")
+                frm.ShowDialog()
+                selectedPath = frm.FullFileRef()
+            End If
+
             If mMessage Is Nothing Then Serialization_Utilities.Load_Object_FileSystem_And_Deserialize(Of Message)(selectedPath, mMessage, success) : txtSubject_Variations.Text = mMessage.Sentences(0).Variations(3) : Exit Sub
+            Catch ex As NullReferenceException
+            MasterLog.MasterLogs().Error(ex, "Object With null reference")
+        Catch ex As FileNotFoundException
+            MasterLog.MasterLogs().Error(ex, "File Not Found")
         Catch ex As Exception
+            MasterLog.MasterLogs().Error(ex, "")
             Exit Sub
         End Try
-
-
-
 
         txtSubject_Variations.Text = mMessage.Sentences(0).Variations(3)
     End Sub
@@ -187,16 +190,18 @@ Public Class frmVariations
     End Sub
 
     Private Sub Check_Message(ByVal content As String)
+        Try
+            Dim sb As New System.Text.StringBuilder
+            For Each word In Version.Check_For_Spam_Phrases(content)
 
-        Dim sb As New System.Text.StringBuilder
-        For Each word In Version.Check_For_Spam_Phrases(content)
+                sb.AppendLine(word)
 
-            sb.AppendLine(word)
+            Next
 
-        Next
-
-        txtSpam.Text = sb.ToString
-
+            txtSpam.Text = sb.ToString
+        Catch ex As NullReferenceException
+            MasterLog.MasterLogs().Error(ex, "Object With null reference")
+        End Try
     End Sub
 
     Private Sub Analyze_Message()
@@ -234,8 +239,10 @@ Public Class frmVariations
             For i = 0 To mMessage.Sentences.Count - 1
                 cboSentence_Number.Items.Add(i.ToString())
             Next
+        Catch ex As NullReferenceException
+            MasterLog.MasterLogs().Error(ex, "FileNotFoundException")
         Catch ex As Exception
-
+            MasterLog.MasterLogs().Error(ex, "")
         End Try
     End Sub
 
@@ -257,27 +264,34 @@ Public Class frmVariations
     End Function
 
     Private Function Select_Random_Permutation() As SortedDictionary(Of Integer, Integer)
+        Try
+            Dim permutation As New SortedDictionary(Of Integer, Integer) 'line number, variation chosen
 
-        Dim permutation As New SortedDictionary(Of Integer, Integer) 'line number, variation chosen
+            With mMessage
 
-        With mMessage
+                For i = 1 To .Sentences.Count - 1
 
-            For i = 1 To .Sentences.Count - 1
+                    Dim sentnce As Sentence = .Sentences(i)
 
-                Dim sentnce As Sentence = .Sentences(i)
+                    If sentnce.Variations.Count > 0 Then
 
-                If sentnce.Variations.Count > 0 Then
+                        Dim which As Integer = mRandom.Next(0, sentnce.Variations.Count)
+                        permutation.Add(i, which)
 
-                    Dim which As Integer = mRandom.Next(0, sentnce.Variations.Count)
-                    permutation.Add(i, which)
+                    End If
 
-                End If
+                Next
 
-            Next
+            End With
 
-        End With
+            Return permutation
 
-        Return permutation
+        Catch ex As NullReferenceException
+            MasterLog.MasterLogs().Error(ex, "Object With null reference")
+        Catch ex As Exception
+            MasterLog.MasterLogs().Error(ex, "")
+        End Try
+
 
     End Function
 
@@ -295,23 +309,25 @@ Public Class frmVariations
 
                 Display_Kept_Versions()
             End With
+        Catch ex As NullReferenceException
+            MasterLog.MasterLogs().Error(ex, "Object With null reference")
         Catch ex As Exception
-
+            MasterLog.MasterLogs().Error(ex, "")
         End Try
-
-
-
-
     End Sub
 
     Private Sub Kept_Version_Selected()
+        Try
+            If mLoading Then Exit Sub
+            If cklbKept.SelectedItem Is Nothing Then Exit Sub
 
-        If mLoading Then Exit Sub
-        If cklbKept.SelectedItem Is Nothing Then Exit Sub
-
-        Dim frm As New frmVersion(cklbKept.SelectedItem)
-        frm.ShowDialog()
-
+            Dim frm As New frmVersion(cklbKept.SelectedItem)
+            frm.ShowDialog()
+        Catch ex As NullReferenceException
+            MasterLog.MasterLogs().Error(ex, "Object With null reference")
+        Catch ex As Exception
+            MasterLog.MasterLogs().Error(ex, "")
+        End Try
     End Sub
 
 #End Region
@@ -323,8 +339,6 @@ Public Class frmVariations
         Catch ex As Exception
 
         End Try
-
-
     End Sub
 
     Private Sub Run_Ad_Hoc()
@@ -333,10 +347,16 @@ Public Class frmVariations
 
 #Region "MA"
     Private Sub Select_Variation()
-        cboSentence_Variation.Items.Clear()
-        For j = 0 To mMessage.Sentences(cboSentence_Number.SelectedIndex).Variations.Count - 1
-            cboSentence_Variation.Items.Add(j.ToString())
-        Next
+        Try
+            cboSentence_Variation.Items.Clear()
+            For j = 0 To mMessage.Sentences(cboSentence_Number.SelectedIndex).Variations.Count - 1
+                cboSentence_Variation.Items.Add(j.ToString())
+            Next
+        Catch ex As NullReferenceException
+            MasterLog.MasterLogs().Error(ex, "Object With null reference")
+        Catch ex As Exception
+            MasterLog.MasterLogs().Error(ex, "")
+        End Try
     End Sub
     Private Sub Sentence_Change()
         Select_Variation()

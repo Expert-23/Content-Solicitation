@@ -1,65 +1,79 @@
 ﻿
+Imports System.IO
+Imports Loggingg
 Public Class File_Utilities
 
     Public Shared Function Extract_File_Extension(ByVal fileName As String, Optional ByVal defaultExt As String = "") As String
+        Try
+            If String.IsNullOrEmpty(fileName) Then Return defaultExt
 
-        If String.IsNullOrEmpty(fileName) Then Return defaultExt
+            Dim dotLoc As Integer = fileName.LastIndexOf(".")
+            Dim ext As String = fileName.Substring(dotLoc + 1)
 
-        Dim dotLoc As Integer = fileName.LastIndexOf(".")
-        Dim ext As String = fileName.Substring(dotLoc + 1)
-
-        Return ext
-
+            Return ext
+        Catch ex As NullReferenceException
+            MasterLog.MasterLogs().Error(ex, "Object with null reference")
+        Catch ex As Exception
+            MasterLog.MasterLogs().Error(ex, "")
+        End Try
     End Function
 
 
     Public Shared Sub Load_Delimited_File(ByVal fullFileRef As String,
                                                              ByRef dict As SortedDictionary(Of Integer, SortedDictionary(Of Integer, String)),
                                                              Optional ByVal delim As String = ",")
+        Try
+            dict = New SortedDictionary(Of Integer, SortedDictionary(Of Integer, String))
 
-        dict = New SortedDictionary(Of Integer, SortedDictionary(Of Integer, String))
-
-        Dim contents As String = My.Computer.FileSystem.ReadAllText(fullFileRef)
-        Parse_Delimited_Contents(contents, dict, delim)
-
+            Dim contents As String = My.Computer.FileSystem.ReadAllText(fullFileRef)
+            Parse_Delimited_Contents(contents, dict, delim)
+        Catch ex As FileNotFoundException
+            MasterLog.MasterLogs().Error(ex, "File Not Found")
+        Catch ex As Exception
+            MasterLog.MasterLogs().Error(ex, "")
+        End Try
     End Sub
 
     Public Shared Sub Parse_Delimited_Contents(ByVal contents As String,
-                                                                                    ByRef dict As SortedDictionary(Of Integer, SortedDictionary(Of Integer, String)),
-                                                                                    Optional ByVal delim As String = ",")
+                                               ByRef dict As SortedDictionary(Of Integer, SortedDictionary(Of Integer, String)),
+                                               Optional ByVal delim As String = ",")
+        Try
+            dict = New SortedDictionary(Of Integer, SortedDictionary(Of Integer, String))
 
-        dict = New SortedDictionary(Of Integer, SortedDictionary(Of Integer, String))
+            Dim lines As String() = contents.Split(Environment.NewLine)
+            Dim lineCount As Integer = 0
+            For Each line As String In lines
 
-        Dim lines As String() = contents.Split(Environment.NewLine)
-        Dim lineCount As Integer = 0
-        For Each line As String In lines
+                line = line.Replace(ChrW(10), "")
 
-            line = line.Replace(ChrW(10), "")
+                If line <> String.Empty Then
 
-            If line <> String.Empty Then
+                    Dim words As String() = line.Split(delim)
+                    Dim wordCount As Integer = 0
+                    Dim wordDict As New SortedDictionary(Of Integer, String)
+                    For Each word In words
 
-                Dim words As String() = line.Split(delim)
-                Dim wordCount As Integer = 0
-                Dim wordDict As New SortedDictionary(Of Integer, String)
-                For Each word In words
+                        'If word <> String.Empty Then
 
-                    'If word <> String.Empty Then
+                        wordDict.Add(wordCount, word)
+                        wordCount += 1
 
-                    wordDict.Add(wordCount, word)
-                    wordCount += 1
+                        'End If
 
-                    'End If
+                    Next
 
-                Next
+                    dict.Add(lineCount, wordDict)
+                    lineCount += 1
 
-                dict.Add(lineCount, wordDict)
-                lineCount += 1
+                End If
 
-            End If
+            Next
 
-        Next
-
-
+        Catch ex As NullReferenceException
+            MasterLog.MasterLogs().Error(ex, "Object with null reference")
+        Catch ex As Exception
+            MasterLog.MasterLogs().Error(ex, "")
+        End Try
     End Sub
 
 
@@ -116,6 +130,10 @@ Public Class File_Utilities
             End If
 
             ext = Extract_File_Extension(fileName, "")
+        Catch ex As FileNotFoundException
+            MasterLog.MasterLogs().Error(ex, "File Not Found")
+        Catch ex As NullReferenceException
+            MasterLog.MasterLogs().Error(ex, "Object with null reference")
 
         Catch ex As Exception
 
@@ -134,64 +152,68 @@ Public Class File_Utilities
     End Sub
 
     Public Shared Function Copy_File_From_One_Directory_To_Another(ByVal fullFileRef As String, ByVal dir_destination As String) As Boolean
-
-        If Not My.Computer.FileSystem.FileExists(fullFileRef) Then
-            Debug.Print("Source file {0} not found. File copy aborted", fullFileRef)
-            Return False
-        End If
-
-        If Not My.Computer.FileSystem.DirectoryExists(dir_destination) Then
-            Debug.Print("Destination directory {0} not found. File copy aborted", dir_destination)
-            Return False
-        End If
-
-        Dim fileName As String
-        File_Utilities.Split_Full_File_Ref_Into_Path_FileName(fullFileRef, String.Empty, fileName)
-
-        Dim fullFileRef_copy As String = String.Format("{0}\{1}", dir_destination, fileName)
-
         Try
+            If Not My.Computer.FileSystem.FileExists(fullFileRef) Then
+                Debug.Print("Source file {0} not found. File copy aborted", fullFileRef)
+                Return False
+            End If
+
+            If Not My.Computer.FileSystem.DirectoryExists(dir_destination) Then
+                Debug.Print("Destination directory {0} not found. File copy aborted", dir_destination)
+                Return False
+            End If
+
+            Dim fileName As String
+            File_Utilities.Split_Full_File_Ref_Into_Path_FileName(fullFileRef, String.Empty, fileName)
+
+            Dim fullFileRef_copy As String = String.Format("{0}\{1}", dir_destination, fileName)
+
+
             My.Computer.FileSystem.CopyFile(fullFileRef, fullFileRef_copy, True)
+        Catch ex As FileNotFoundException
+            MasterLog.MasterLogs().Error(ex, "File Not Found")
+        Catch ex As NullReferenceException
+            MasterLog.MasterLogs().Error(ex, "Object with null reference")
         Catch ex As Exception
             Debug.Print("Failed to copy db from {0} to {1}.{2}Reason: {3}", fullFileRef, fullFileRef_copy, vbCrLf, ex.Message)
         End Try
-
         Return True
 
     End Function
 
-
-
-
     Public Shared Function Convert_CSV_To_Tab_Delimited(ByVal line As String) As String
+        Try
+            Dim placeHolder As String = vbCrLf
 
-        Dim placeHolder As String = vbCrLf
+            While line.Contains(ChrW(34))
 
-        While line.Contains(ChrW(34))
+                Dim loc_first_dblQte As Integer = line.IndexOf(ChrW(34))
+                If loc_first_dblQte = -1 Then Exit While
 
-            Dim loc_first_dblQte As Integer = line.IndexOf(ChrW(34))
-            If loc_first_dblQte = -1 Then Exit While
+                Dim loc_sec_dblQte As Integer = line.IndexOf(ChrW(34), loc_first_dblQte + 1)
+                If loc_sec_dblQte = -1 Then Exit While
 
-            Dim loc_sec_dblQte As Integer = line.IndexOf(ChrW(34), loc_first_dblQte + 1)
-            If loc_sec_dblQte = -1 Then Exit While
+                Dim length As Integer = loc_sec_dblQte - loc_first_dblQte + 1
+                Dim head As String = line.Substring(0, loc_first_dblQte)
+                Dim value As String = line.Substring(loc_first_dblQte, length)
+                Dim tail As String = line.Substring(loc_sec_dblQte + 1)
 
-            Dim length As Integer = loc_sec_dblQte - loc_first_dblQte + 1
-            Dim head As String = line.Substring(0, loc_first_dblQte)
-            Dim value As String = line.Substring(loc_first_dblQte, length)
-            Dim tail As String = line.Substring(loc_sec_dblQte + 1)
+                value = value.Replace(",", placeHolder)
+                value = value.Trim(ChrW(34))
 
-            value = value.Replace(",", placeHolder)
-            value = value.Trim(ChrW(34))
+                line = head & value & tail
 
-            line = head & value & tail
+            End While
 
-        End While
+            line = line.Replace(",", vbTab)
+            line = line.Replace(placeHolder, ",")
 
-        line = line.Replace(",", vbTab)
-        line = line.Replace(placeHolder, ",")
-
-        Return line
-
+            Return line
+        Catch ex As NullReferenceException
+            MasterLog.MasterLogs().Error(ex, "Object with null reference")
+        Catch ex As Exception
+            MasterLog.MasterLogs().Error(ex, "")
+        End Try
     End Function
 
 

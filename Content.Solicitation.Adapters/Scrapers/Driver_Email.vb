@@ -46,7 +46,6 @@ Public Class Driver_Email
 
     Private Sub Navigate_To_Starting_URL()
 
-
         mDriver.Navigate().GoToUrl(mURL)
         System.Threading.Thread.Sleep(1000)
 
@@ -73,9 +72,12 @@ Public Class Driver_Email
 
             System.Threading.Thread.Sleep(3000)
 
-
         Catch ex As NullReferenceException
             MasterLog.MasterLogs().Error(ex, "Object with null reference")
+        Catch ex As IndexOutOfRangeException
+            MasterLog.MasterLogs().Error(ex, "Index out of range")
+        Catch ex As Exception
+            MasterLog.MasterLogs().Error(ex, "")
         End Try
 
     End Sub
@@ -94,17 +96,25 @@ Public Class Driver_Email
 
     Private Sub Load_Campaigns(ByVal msg As Message)
 
-        For Each entry In msg.Versions
+        Try
+            For Each entry In msg.Versions
 
-            Dim versionID As Integer = entry.Key
-            Dim versn As Version = entry.Value
+                Dim versionID As Integer = entry.Key
+                Dim versn As Version = entry.Value
 
-            If Not Load_Campaign(versn) Then
-                Debug.Print("failed to load version " & versionID)
-            End If
+                If Not Load_Campaign(versn) Then
+                    Debug.Print("failed to load version " & versionID)
+                End If
 
-        Next
+            Next
+        Catch ex As NullReferenceException
+            MasterLog.MasterLogs().Error(ex, "Object with null reference")
+        Catch ex As IndexOutOfRangeException
+            MasterLog.MasterLogs().Error(ex, "Index out of range")
+        Catch ex As Exception
+            MasterLog.MasterLogs().Error(ex, "")
 
+        End Try
     End Sub
 
     Private Function Load_Campaign(ByVal versn As Version) As Boolean
@@ -150,40 +160,46 @@ Public Class Driver_Email
     End Sub
 
     Private Sub Get_Variations(ByRef sentnce As Sentence, ByVal numberVariations As Integer)
+        Try
+            With sentnce
 
-        With sentnce
+                For i = 1 To numberVariations
 
-            For i = 1 To numberVariations
+                    System.Threading.Thread.Sleep(mRandom.Next(1580, 1704))
+                    Dim variation As String = Get_Variation()
 
-                System.Threading.Thread.Sleep(mRandom.Next(1580, 1704))
-                Dim variation As String = Get_Variation()
+                    .Variations.Add(.Variations.Count, variation)
 
-                .Variations.Add(.Variations.Count, variation)
+                Next
 
-            Next
-
-        End With
-
+            End With
+        Catch ex As NullReferenceException
+            MasterLog.MasterLogs().Error(ex, "Object With null reference")
+        Catch ex As Exception
+            MasterLog.MasterLogs().Error(ex, "")
+        End Try
     End Sub
 
     Private Function Get_Variation() As String
+        Try
+            Dim divs = mPanes(0).FindElements(By.ClassName("MuiGrid-root"))
+            If divs IsNot Nothing AndAlso divs.Count > 10 Then
+                divs(10).Click()
+            End If
 
-        Dim divs = mPanes(0).FindElements(By.ClassName("MuiGrid-root"))
-        If divs IsNot Nothing AndAlso divs.Count > 10 Then
-            divs(10).Click()
-        End If
+            System.Threading.Thread.Sleep(mRandom.Next(1580, 1704))
+            Dim outbound = mPanes(1).FindElement(By.Id("articleTextArea"))
 
-        System.Threading.Thread.Sleep(mRandom.Next(1580, 1704))
-        Dim outbound = mPanes(1).FindElement(By.Id("articleTextArea"))
+            Dim variation As String = mPanes(1).Text
+            If outbound IsNot Nothing Then variation = outbound.Text
 
-        Dim variation As String = mPanes(1).Text
-        If outbound IsNot Nothing Then variation = outbound.Text
-
-        Return variation
-
+            Return variation
+        Catch ex As NullReferenceException
+            MasterLog.MasterLogs().Error(ex, "Object with null reference")
+        Catch ex As Exception
+            MasterLog.MasterLogs().Error(ex, "")
+        End Try
     End Function
-
-
 
 #Region " Chrome Driver Initialization / Shut Down "
 
@@ -295,6 +311,10 @@ Public Class Driver_Email
                 Dim elem As IWebElement = Find_Element(driver, selector, findMethod)
                 If elem IsNot Nothing Then Exit For
 
+            Catch ex As NullReferenceException
+                MasterLog.MasterLogs().Error(ex, "Object with null reference")
+            Catch ex As IndexOutOfRangeException
+                MasterLog.MasterLogs().Error(ex, "Index out of range")
             Catch ex As Exception
                 Thread.Sleep(1000)
             End Try
@@ -342,9 +362,14 @@ Public Class Driver_Email
                     elem = driver.FindElement(By.Id(selector))
 
             End Select
-
-        Catch ex As OpenQA.Selenium.WebDriverException
-            'Debug.Print("failed to find element {0} because {1}", selector, ex.Message)
+        Catch ex As NullReferenceException
+            MasterLog.MasterLogs().Error(ex, "Object with null reference")
+        Catch ex As IndexOutOfRangeException
+            MasterLog.MasterLogs().Error(ex, "Index out of range")
+        Catch ex As Exception
+            MasterLog.MasterLogs().Error(ex, "")
+            'Catch ex As OpenQA.Selenium.WebDriverException
+            '    'Debug.Print("failed to find element {0} because {1}", selector, ex.Message)
         End Try
 
         Return elem

@@ -4,6 +4,7 @@ Imports Content.Solicitation.Utilities
 Imports Content.Solicitation.Localize
 Imports OpenQA.Selenium
 Imports OpenQA.Selenium.Chrome
+Imports Loggingg
 
 Public Class Scraper_Lemlist
     Private mDriver As IWebDriver
@@ -66,6 +67,7 @@ Public Class Scraper_Lemlist
                 Utilities.Send_Text_Element_No_Wait(body, bodyWithImage, mDriver)
                 body.SendKeys(Keys.Return)
                 Try
+
                     Utilities.Click_Elelment_No_Wait(mDriver.FindElement(By.CssSelector(".btn.btn-sm.btn-primary.js-campaigns-step-edit-save")), mDriver)
                 Catch ex As Exception
                     Thread.Sleep(4000)
@@ -201,60 +203,70 @@ Public Class Scraper_Lemlist
         Thread.Sleep(1000)
     End Sub
     Private Sub Stop_Sending_Email_When()
-        Dim tabs = mDriver.FindElement(By.CssSelector(".tabs")).FindElements(By.TagName("a"))
-        Utilities.Click_Elelment_No_Wait(tabs(tabs.Count - 2), mDriver)
-        Thread.Sleep(5000)
-        Dim mainDiv = mDriver.FindElement(By.CssSelector(".main-content"))
-        Dim clicker_Container As IJavaScriptExecutor = TryCast(mDriver, IJavaScriptExecutor)
-        Dim inputs = mDriver.FindElements(By.CssSelector(".form-check-input.js-edit"))
+        Try
+            Dim tabs = mDriver.FindElement(By.CssSelector(".tabs")).FindElements(By.TagName("a"))
+            Utilities.Click_Elelment_No_Wait(tabs(tabs.Count - 2), mDriver)
+            Thread.Sleep(5000)
+            Dim mainDiv = mDriver.FindElement(By.CssSelector(".main-content"))
+            Dim clicker_Container As IJavaScriptExecutor = TryCast(mDriver, IJavaScriptExecutor)
+            Dim inputs = mDriver.FindElements(By.CssSelector(".form-check-input.js-edit"))
 
+            Dim scroller = mDriver.FindElement(By.CssSelector(".main-center.ps.ps--active-y"))
+            clicker_Container.ExecuteScript("arguments[0].scrollTop+= 500", scroller)
+            Thread.Sleep(1000)
+            Dim countersend = 0
+            For Each send In mLemlist.Stop_sending
+                countersend = countersend + 1
+                If countersend = 4 Then Exit For
+                Dim key = Integer.Parse(send.Key)
+                If send.Value = True Then
+                    If key = 0 Then inputs(key).Click() : inputs(key).Click() Else inputs(key).Click()
+                Else
+                    If key = 0 Then inputs(key).Click()
+                End If
+            Next
 
+            clicker_Container.ExecuteScript("arguments[0].scrollTop+= 500", scroller)
+            Thread.Sleep(1000)
+            For Each track In mLemlist.Tracking
+                Dim key = Integer.Parse(track.Key)
+                If track.Value = True Then
+                    If key = 0 Then inputs(key + 2).Click() : inputs(key + 2).Click() Else inputs(key + 2).Click()
+                Else
+                    If key = 0 Then inputs(key + 2).Click()
+                End If
+            Next
 
-        Dim scroller = mDriver.FindElement(By.CssSelector(".main-center.ps.ps--active-y"))
-        clicker_Container.ExecuteScript("arguments[0].scrollTop+= 500", scroller)
-        Thread.Sleep(1000)
-        Dim countersend = 0
-        For Each send In mLemlist.Stop_sending
-            countersend = countersend + 1
-            If countersend = 4 Then Exit For
-            Dim key = Integer.Parse(send.Key)
-            If send.Value = True Then
-                If key = 0 Then inputs(key).Click() : inputs(key).Click() Else inputs(key).Click()
-            Else
-                If key = 0 Then inputs(key).Click()
-            End If
-        Next
+            mDriver.FindElement(By.CssSelector(".btn.btn-primary.js-save")).Click()
+            Thread.Sleep(2000)
 
-
-        clicker_Container.ExecuteScript("arguments[0].scrollTop+= 500", scroller)
-        Thread.Sleep(1000)
-        For Each track In mLemlist.Tracking
-            Dim key = Integer.Parse(track.Key)
-            If track.Value = True Then
-                If key = 0 Then inputs(key + 2).Click() : inputs(key + 2).Click() Else inputs(key + 2).Click()
-            Else
-                If key = 0 Then inputs(key + 2).Click()
-            End If
-        Next
-
-        mDriver.FindElement(By.CssSelector(".btn.btn-primary.js-save")).Click()
-        Thread.Sleep(2000)
-        'Utilities.Click(".btn.btn-secondary.dropdown-toggle.js-sender-user", mDriver)
-        'Dim btns = mDriver.FindElements(By.CssSelector(".dropdown-item"))
-        'Dim clicker_Container As IJavaScriptExecutor = TryCast(mDriver, IJavaScriptExecutor)
-        'clicker_Container.ExecuteScript("arguments[0].click();", btns(btns.Count - 4))
+            'Utilities.Click(".btn.btn-secondary.dropdown-toggle.js-sender-user", mDriver)
+            'Dim btns = mDriver.FindElements(By.CssSelector(".dropdown-item"))
+            'Dim clicker_Container As IJavaScriptExecutor = TryCast(mDriver, IJavaScriptExecutor)
+            'clicker_Container.ExecuteScript("arguments[0].click();", btns(btns.Count - 4))
+        Catch ex As NullReferenceException
+            mDriver.Quit()
+        Catch ex As Exception
+            mDriver.Quit()
+        End Try
     End Sub
     Private Sub Create_The_Campaign()
         Utilities.Click(".btn.btn-primary.js-campaign-create", mDriver)
     End Sub
     Private Sub Add_Time_Zone()
-        Thread.Sleep(5000)
-        Dim zones = mDriver.FindElements(By.CssSelector(".llcard.selectable.inspiration.schedule"))
-        For Each index As Integer In [Enum].GetValues(GetType(Time_Zone))
-            Dim myindex As Integer = index
-        Next
-        zones(Integer.Parse(mLemlist.Time_Zone)).Click()
-        Utilities.Click(".btn.btn-primary.js-next", mDriver)
+        Try
+            Thread.Sleep(5000)
+            Dim zones = mDriver.FindElements(By.CssSelector(".llcard.selectable.inspiration.schedule"))
+            For Each index As Integer In [Enum].GetValues(GetType(Time_Zone))
+                Dim myindex As Integer = index
+            Next
+            zones(Integer.Parse(mLemlist.Time_Zone)).Click()
+            Utilities.Click(".btn.btn-primary.js-next", mDriver)
+        Catch ex As NullReferenceException
+            mDriver.Quit()
+        Catch ex As Exception
+            mDriver.Quit()
+        End Try
     End Sub
     Private Sub Login()
         Dim LoginField = mDriver.FindElements(By.CssSelector(".ui-edit"))
