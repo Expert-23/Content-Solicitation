@@ -86,9 +86,11 @@ Public Class frmWorkStation
         Dim msg As New Message
         Dim frm As New frmVar()
         frm.ShowDialog()
-        mMessage.Add(frm.Message_)
-        cboEmail.Items.Add(frm.Message_.ID)
-        mSelected_Message = frm.Message_
+        If frm.Message_ IsNot Nothing Then
+            mMessage.Add(frm.Message_)
+            cboEmail.Items.Add(frm.Message_.ID)
+            mSelected_Message = frm.Message_
+        End If
     End Sub
     Private Sub Save_Form()
         Dim frm As New frmFileSystem("", "C:\Users\pc\source\repos\Expert-23\Content\G23.Content.Complete\z_cache\wip\")

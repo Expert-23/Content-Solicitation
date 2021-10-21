@@ -406,6 +406,7 @@ Partial Class frmWorkStation
         Me.txtBoxSubject.Location = New System.Drawing.Point(3, 3)
         Me.txtBoxSubject.Multiline = True
         Me.txtBoxSubject.Name = "txtBoxSubject"
+        Me.txtBoxSubject.ReadOnly = True
         Me.txtBoxSubject.Size = New System.Drawing.Size(546, 58)
         Me.txtBoxSubject.TabIndex = 0
         '
@@ -458,6 +459,7 @@ Partial Class frmWorkStation
         Me.txtBoxBody.Location = New System.Drawing.Point(3, 3)
         Me.txtBoxBody.Multiline = True
         Me.txtBoxBody.Name = "txtBoxBody"
+        Me.txtBoxBody.ReadOnly = True
         Me.txtBoxBody.Size = New System.Drawing.Size(518, 361)
         Me.txtBoxBody.TabIndex = 0
         '
