@@ -99,7 +99,7 @@ Partial Class frmCAmpaign
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoadCampaignToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(894, 27)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1350, 27)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -117,16 +117,16 @@ Partial Class frmCAmpaign
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtBox_Campaign_Name.Location = New System.Drawing.Point(37, 28)
         Me.txtBox_Campaign_Name.Name = "txtBox_Campaign_Name"
-        Me.txtBox_Campaign_Name.Size = New System.Drawing.Size(319, 25)
+        Me.txtBox_Campaign_Name.Size = New System.Drawing.Size(524, 25)
         Me.txtBox_Campaign_Name.TabIndex = 0
         '
         'Panel7
         '
         Me.Panel7.Controls.Add(Me.TableLayoutPanel6)
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel7.Location = New System.Drawing.Point(3, 153)
+        Me.Panel7.Location = New System.Drawing.Point(3, 225)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(384, 70)
+        Me.Panel7.Size = New System.Drawing.Size(589, 108)
         Me.Panel7.TabIndex = 2
         '
         'TableLayoutPanel6
@@ -141,7 +141,7 @@ Partial Class frmCAmpaign
         Me.TableLayoutPanel6.Name = "TableLayoutPanel6"
         Me.TableLayoutPanel6.RowCount = 1
         Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel6.Size = New System.Drawing.Size(375, 63)
+        Me.TableLayoutPanel6.Size = New System.Drawing.Size(580, 101)
         Me.TableLayoutPanel6.TabIndex = 0
         '
         'GroupBox4
@@ -154,7 +154,7 @@ Partial Class frmCAmpaign
         Me.GroupBox4.ForeColor = System.Drawing.Color.Green
         Me.GroupBox4.Location = New System.Drawing.Point(3, 3)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(369, 57)
+        Me.GroupBox4.Size = New System.Drawing.Size(574, 95)
         Me.GroupBox4.TabIndex = 0
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Label Name"
@@ -166,16 +166,16 @@ Partial Class frmCAmpaign
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtBox_Label.Location = New System.Drawing.Point(34, 26)
         Me.txtBox_Label.Name = "txtBox_Label"
-        Me.txtBox_Label.Size = New System.Drawing.Size(319, 25)
+        Me.txtBox_Label.Size = New System.Drawing.Size(524, 25)
         Me.txtBox_Label.TabIndex = 0
         '
         'Panel8
         '
         Me.Panel8.Controls.Add(Me.TableLayoutPanel7)
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel8.Location = New System.Drawing.Point(446, 3)
+        Me.Panel8.Location = New System.Drawing.Point(674, 3)
         Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(393, 232)
+        Me.Panel8.Size = New System.Drawing.Size(598, 342)
         Me.Panel8.TabIndex = 1
         '
         'TableLayoutPanel7
@@ -190,7 +190,7 @@ Partial Class frmCAmpaign
         Me.TableLayoutPanel7.Name = "TableLayoutPanel7"
         Me.TableLayoutPanel7.RowCount = 1
         Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel7.Size = New System.Drawing.Size(387, 229)
+        Me.TableLayoutPanel7.Size = New System.Drawing.Size(592, 339)
         Me.TableLayoutPanel7.TabIndex = 0
         '
         'GroupBox5
@@ -207,7 +207,7 @@ Partial Class frmCAmpaign
         Me.GroupBox5.ForeColor = System.Drawing.Color.Green
         Me.GroupBox5.Location = New System.Drawing.Point(3, 3)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(381, 223)
+        Me.GroupBox5.Size = New System.Drawing.Size(586, 333)
         Me.GroupBox5.TabIndex = 0
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Time Zone"
@@ -298,7 +298,7 @@ Partial Class frmCAmpaign
         Me.GroupBox3.ForeColor = System.Drawing.Color.Green
         Me.GroupBox3.Location = New System.Drawing.Point(3, 3)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(372, 59)
+        Me.GroupBox3.Size = New System.Drawing.Size(577, 95)
         Me.GroupBox3.TabIndex = 0
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Campaign Name"
@@ -307,9 +307,9 @@ Partial Class frmCAmpaign
         '
         Me.Panel9.Controls.Add(Me.TableLayoutPanel8)
         Me.Panel9.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel9.Location = New System.Drawing.Point(47, 241)
+        Me.Panel9.Location = New System.Drawing.Point(70, 351)
         Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(393, 233)
+        Me.Panel9.Size = New System.Drawing.Size(598, 342)
         Me.Panel9.TabIndex = 2
         '
         'TableLayoutPanel8
@@ -324,7 +324,7 @@ Partial Class frmCAmpaign
         Me.TableLayoutPanel8.Name = "TableLayoutPanel8"
         Me.TableLayoutPanel8.RowCount = 1
         Me.TableLayoutPanel8.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel8.Size = New System.Drawing.Size(387, 227)
+        Me.TableLayoutPanel8.Size = New System.Drawing.Size(592, 336)
         Me.TableLayoutPanel8.TabIndex = 0
         '
         'GroupBox6
@@ -398,7 +398,7 @@ Partial Class frmCAmpaign
         Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
         Me.TableLayoutPanel5.RowCount = 1
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel5.Size = New System.Drawing.Size(378, 65)
+        Me.TableLayoutPanel5.Size = New System.Drawing.Size(583, 101)
         Me.TableLayoutPanel5.TabIndex = 0
         '
         'Panel1
@@ -408,7 +408,7 @@ Partial Class frmCAmpaign
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(894, 510)
+        Me.Panel1.Size = New System.Drawing.Size(1350, 729)
         Me.Panel1.TabIndex = 1
         '
         'Panel2
@@ -417,7 +417,7 @@ Partial Class frmCAmpaign
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel2.Location = New System.Drawing.Point(0, 27)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(894, 483)
+        Me.Panel2.Size = New System.Drawing.Size(1350, 702)
         Me.Panel2.TabIndex = 1
         '
         'TableLayoutPanel1
@@ -440,7 +440,7 @@ Partial Class frmCAmpaign
         Me.TableLayoutPanel1.RowCount = 2
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(888, 477)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(1344, 696)
         Me.TableLayoutPanel1.TabIndex = 0
         '
         'TableLayoutPanel9
@@ -451,11 +451,11 @@ Partial Class frmCAmpaign
         Me.TableLayoutPanel9.ColumnCount = 1
         Me.TableLayoutPanel9.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel9.Controls.Add(Me.GroupBox7, 0, 0)
-        Me.TableLayoutPanel9.Location = New System.Drawing.Point(446, 241)
+        Me.TableLayoutPanel9.Location = New System.Drawing.Point(674, 351)
         Me.TableLayoutPanel9.Name = "TableLayoutPanel9"
         Me.TableLayoutPanel9.RowCount = 1
         Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel9.Size = New System.Drawing.Size(393, 233)
+        Me.TableLayoutPanel9.Size = New System.Drawing.Size(598, 342)
         Me.TableLayoutPanel9.TabIndex = 0
         '
         'GroupBox7
@@ -520,18 +520,18 @@ Partial Class frmCAmpaign
         'Panel10
         '
         Me.Panel10.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel10.Location = New System.Drawing.Point(3, 241)
+        Me.Panel10.Location = New System.Drawing.Point(3, 351)
         Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(38, 233)
+        Me.Panel10.Size = New System.Drawing.Size(61, 342)
         Me.Panel10.TabIndex = 3
         '
         'Panel3
         '
         Me.Panel3.Controls.Add(Me.TableLayoutPanel2)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel3.Location = New System.Drawing.Point(47, 3)
+        Me.Panel3.Location = New System.Drawing.Point(70, 3)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(393, 232)
+        Me.Panel3.Size = New System.Drawing.Size(598, 342)
         Me.Panel3.TabIndex = 0
         '
         'TableLayoutPanel2
@@ -551,7 +551,7 @@ Partial Class frmCAmpaign
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33323!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33323!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33355!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(390, 226)
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(595, 336)
         Me.TableLayoutPanel2.TabIndex = 0
         '
         'Panel4
@@ -560,7 +560,7 @@ Partial Class frmCAmpaign
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel4.Location = New System.Drawing.Point(3, 3)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(384, 69)
+        Me.Panel4.Size = New System.Drawing.Size(589, 105)
         Me.Panel4.TabIndex = 0
         '
         'TableLayoutPanel3
@@ -578,7 +578,7 @@ Partial Class frmCAmpaign
         Me.TableLayoutPanel3.RowCount = 1
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 66.0!))
-        Me.TableLayoutPanel3.Size = New System.Drawing.Size(384, 66)
+        Me.TableLayoutPanel3.Size = New System.Drawing.Size(589, 102)
         Me.TableLayoutPanel3.TabIndex = 0
         '
         'GroupBox1
@@ -609,7 +609,7 @@ Partial Class frmCAmpaign
         'Panel5
         '
         Me.Panel5.Controls.Add(Me.TableLayoutPanel4)
-        Me.Panel5.Location = New System.Drawing.Point(195, 3)
+        Me.Panel5.Location = New System.Drawing.Point(297, 3)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(186, 60)
         Me.Panel5.TabIndex = 1
@@ -656,18 +656,18 @@ Partial Class frmCAmpaign
         '
         Me.Panel6.Controls.Add(Me.TableLayoutPanel5)
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel6.Location = New System.Drawing.Point(3, 78)
+        Me.Panel6.Location = New System.Drawing.Point(3, 114)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(384, 69)
+        Me.Panel6.Size = New System.Drawing.Size(589, 105)
         Me.Panel6.TabIndex = 1
         '
-        'frmCampaign
+        'frmCAmpaign
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(894, 510)
+        Me.ClientSize = New System.Drawing.Size(1350, 729)
         Me.Controls.Add(Me.Panel1)
-        Me.Name = "frmCampaign"
+        Me.Name = "frmCAmpaign"
         Me.Text = "frmCampaign"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
