@@ -39,3 +39,5 @@ C:\Users\josep\Source\Repos\Expert-23\Content-Solicitation\Content.Solicitation.
 C:\Users\josep\Source\Repos\Expert-23\Content-Solicitation\Content.Solicitation.Primitives\obj\Debug\Content.Solicitation.Primitives.exe
 C:\Users\josep\Source\Repos\Expert-23\Content-Solicitation\Content.Solicitation.Primitives\obj\Debug\Content.Solicitation.Primitives.xml
 C:\Users\josep\Source\Repos\Expert-23\Content-Solicitation\Content.Solicitation.Primitives\obj\Debug\Content.Solicitation.Primitives.pdb
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Primitives\bin\Debug\Serilog.dll
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Primitives\bin\Debug\Serilog.xml

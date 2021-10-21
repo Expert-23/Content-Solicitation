@@ -39,3 +39,5 @@ C:\Users\josep\Source\Repos\Expert-23\Content-Solicitation\Content.Solicitation.
 C:\Users\josep\Source\Repos\Expert-23\Content-Solicitation\Content.Solicitation.Localize\obj\Debug\Content.Solicitation.Localize.exe
 C:\Users\josep\Source\Repos\Expert-23\Content-Solicitation\Content.Solicitation.Localize\obj\Debug\Content.Solicitation.Localize.xml
 C:\Users\josep\Source\Repos\Expert-23\Content-Solicitation\Content.Solicitation.Localize\obj\Debug\Content.Solicitation.Localize.pdb
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Localize\bin\Debug\Serilog.dll
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Localize\bin\Debug\Serilog.xml

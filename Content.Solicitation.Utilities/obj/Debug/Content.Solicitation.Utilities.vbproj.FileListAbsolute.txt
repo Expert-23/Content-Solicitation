@@ -39,3 +39,5 @@ C:\Users\josep\Source\Repos\Expert-23\Content-Solicitation\Content.Solicitation.
 C:\Users\josep\Source\Repos\Expert-23\Content-Solicitation\Content.Solicitation.Utilities\obj\Debug\Content.Solicitation.Utilities.exe
 C:\Users\josep\Source\Repos\Expert-23\Content-Solicitation\Content.Solicitation.Utilities\obj\Debug\Content.Solicitation.Utilities.xml
 C:\Users\josep\Source\Repos\Expert-23\Content-Solicitation\Content.Solicitation.Utilities\obj\Debug\Content.Solicitation.Utilities.pdb
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Utilities\bin\Debug\Serilog.dll
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Utilities\bin\Debug\Serilog.xml

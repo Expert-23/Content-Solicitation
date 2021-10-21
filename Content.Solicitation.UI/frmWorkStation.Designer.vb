@@ -495,7 +495,7 @@ Partial Class frmWorkStation
         '
         Me.LoadToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EmailToolStripMenuItem, Me.ContentToolStripMenuItem})
         Me.LoadToolStripMenuItem1.Name = "LoadToolStripMenuItem1"
-        Me.LoadToolStripMenuItem1.Size = New System.Drawing.Size(180, 26)
+        Me.LoadToolStripMenuItem1.Size = New System.Drawing.Size(127, 26)
         Me.LoadToolStripMenuItem1.Text = "Load"
         '
         'EmailToolStripMenuItem
@@ -514,7 +514,7 @@ Partial Class frmWorkStation
         '
         Me.SAVEToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ContentToolStripMenuItem1})
         Me.SAVEToolStripMenuItem.Name = "SAVEToolStripMenuItem"
-        Me.SAVEToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
+        Me.SAVEToolStripMenuItem.Size = New System.Drawing.Size(127, 26)
         Me.SAVEToolStripMenuItem.Text = "Save"
         '
         'ContentToolStripMenuItem1
