@@ -30,7 +30,7 @@ Public Class Persist_Solicitation
                                                     job_solicitation.Item_Content.Status,
                                                     job_solicitation.Item_Content.Website.ToString(),
                                                     job_solicitation.Item_Content.Category,
-                                                    date_created,
+                                                    date_created
 )
 
                 Dim cmd As New SqlCommand(query, conn)
