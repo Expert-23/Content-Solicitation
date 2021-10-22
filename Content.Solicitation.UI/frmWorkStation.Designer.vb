@@ -58,14 +58,16 @@ Partial Class frmWorkStation
         Me.WIPToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoadToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.SAVEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.cboWebsite = New System.Windows.Forms.ToolStripComboBox()
+        Me.WebsiteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BuildEmailToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SnippetToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EditToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaunchCampaignToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.cboWebsite = New System.Windows.Forms.ToolStripComboBox()
-        Me.WebsiteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.EditSnippetToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -469,7 +471,7 @@ Partial Class frmWorkStation
         'MenuStrip1
         '
         Me.MenuStrip1.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.LOADToolStripMenuItem, Me.WIPToolStripMenuItem, Me.BuildEmailToolStripMenuItem, Me.cboWebsite, Me.WebsiteToolStripMenuItem, Me.EditSnippetToolStripMenuItem, Me.LaunchCampaignToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.LOADToolStripMenuItem, Me.WIPToolStripMenuItem, Me.cboWebsite, Me.WebsiteToolStripMenuItem, Me.BuildEmailToolStripMenuItem, Me.SnippetToolStripMenuItem, Me.LaunchCampaignToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1350, 37)
@@ -507,31 +509,6 @@ Partial Class frmWorkStation
         Me.SAVEToolStripMenuItem.Size = New System.Drawing.Size(127, 26)
         Me.SAVEToolStripMenuItem.Text = "Save"
         '
-        'BuildEmailToolStripMenuItem
-        '
-        Me.BuildEmailToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditToolStripMenuItem, Me.EditToolStripMenuItem1})
-        Me.BuildEmailToolStripMenuItem.Name = "BuildEmailToolStripMenuItem"
-        Me.BuildEmailToolStripMenuItem.Size = New System.Drawing.Size(73, 33)
-        Me.BuildEmailToolStripMenuItem.Text = "Email"
-        '
-        'EditToolStripMenuItem
-        '
-        Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
-        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
-        Me.EditToolStripMenuItem.Text = "New"
-        '
-        'EditToolStripMenuItem1
-        '
-        Me.EditToolStripMenuItem1.Name = "EditToolStripMenuItem1"
-        Me.EditToolStripMenuItem1.Size = New System.Drawing.Size(180, 26)
-        Me.EditToolStripMenuItem1.Text = "Edit"
-        '
-        'LaunchCampaignToolStripMenuItem
-        '
-        Me.LaunchCampaignToolStripMenuItem.Name = "LaunchCampaignToolStripMenuItem"
-        Me.LaunchCampaignToolStripMenuItem.Size = New System.Drawing.Size(191, 33)
-        Me.LaunchCampaignToolStripMenuItem.Text = "Launch Campaign"
-        '
         'cboWebsite
         '
         Me.cboWebsite.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
@@ -546,16 +523,54 @@ Partial Class frmWorkStation
         Me.WebsiteToolStripMenuItem.Size = New System.Drawing.Size(107, 33)
         Me.WebsiteToolStripMenuItem.Text = "Website: "
         '
+        'BuildEmailToolStripMenuItem
+        '
+        Me.BuildEmailToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditToolStripMenuItem, Me.EditToolStripMenuItem1})
+        Me.BuildEmailToolStripMenuItem.Name = "BuildEmailToolStripMenuItem"
+        Me.BuildEmailToolStripMenuItem.Size = New System.Drawing.Size(73, 33)
+        Me.BuildEmailToolStripMenuItem.Text = "Email"
+        '
+        'EditToolStripMenuItem
+        '
+        Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
+        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(119, 26)
+        Me.EditToolStripMenuItem.Text = "New"
+        '
+        'EditToolStripMenuItem1
+        '
+        Me.EditToolStripMenuItem1.Name = "EditToolStripMenuItem1"
+        Me.EditToolStripMenuItem1.Size = New System.Drawing.Size(119, 26)
+        Me.EditToolStripMenuItem1.Text = "Edit"
+        '
+        'SnippetToolStripMenuItem
+        '
+        Me.SnippetToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewToolStripMenuItem, Me.EditToolStripMenuItem2})
+        Me.SnippetToolStripMenuItem.Name = "SnippetToolStripMenuItem"
+        Me.SnippetToolStripMenuItem.Size = New System.Drawing.Size(93, 33)
+        Me.SnippetToolStripMenuItem.Text = "Snippet"
+        '
+        'NewToolStripMenuItem
+        '
+        Me.NewToolStripMenuItem.Name = "NewToolStripMenuItem"
+        Me.NewToolStripMenuItem.Size = New System.Drawing.Size(119, 26)
+        Me.NewToolStripMenuItem.Text = "New"
+        '
+        'EditToolStripMenuItem2
+        '
+        Me.EditToolStripMenuItem2.Name = "EditToolStripMenuItem2"
+        Me.EditToolStripMenuItem2.Size = New System.Drawing.Size(119, 26)
+        Me.EditToolStripMenuItem2.Text = "Edit"
+        '
+        'LaunchCampaignToolStripMenuItem
+        '
+        Me.LaunchCampaignToolStripMenuItem.Name = "LaunchCampaignToolStripMenuItem"
+        Me.LaunchCampaignToolStripMenuItem.Size = New System.Drawing.Size(191, 33)
+        Me.LaunchCampaignToolStripMenuItem.Text = "Launch Campaign"
+        '
         'ContextMenuStrip1
         '
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
         Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
-        '
-        'EditSnippetToolStripMenuItem
-        '
-        Me.EditSnippetToolStripMenuItem.Name = "EditSnippetToolStripMenuItem"
-        Me.EditSnippetToolStripMenuItem.Size = New System.Drawing.Size(66, 33)
-        Me.EditSnippetToolStripMenuItem.Text = "View"
         '
         'frmWorkStation
         '
@@ -639,5 +654,7 @@ Partial Class frmWorkStation
     Friend WithEvents SAVEToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents cboWebsite As ToolStripComboBox
     Friend WithEvents WebsiteToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents EditSnippetToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SnippetToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents NewToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EditToolStripMenuItem2 As ToolStripMenuItem
 End Class
