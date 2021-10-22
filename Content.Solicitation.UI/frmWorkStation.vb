@@ -37,7 +37,7 @@ Public Class frmWorkStation
     Private Sub Initialize_Combo_Box_Email()
         cboEmail.Items.Clear()
         For Each key In mMessage
-            cboEmail.Items.Add(key.Value.Values.First())
+            If key.Value.Values.First().Campaign_Name IsNot Nothing Then cboEmail.Items.Add(key.Value.Values.First().Campaign_Name)
         Next
     End Sub
     Private Sub Initialize_Combobox_Websites()
@@ -107,7 +107,7 @@ Public Class frmWorkStation
     End Sub
     Private Sub Map_Selected_Email()
         For Each keyval In mMessage
-            If keyval.Value.Values.First.ID = cboEmail.SelectedItem.ID.ToString Then
+            If keyval.Value.Values.First.Campaign_Name = cboEmail.SelectedItem Then
                 txtBoxSubject.Text = keyval.Value.Values.First().Original_Subject.Original
                 mSelected_Message = keyval.Value.Values.First()
                 txtBoxBody.Text = keyval.Value.Values.First().Original.Body_Text

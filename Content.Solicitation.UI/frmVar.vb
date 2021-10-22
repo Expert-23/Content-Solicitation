@@ -174,7 +174,7 @@ Public Class frmVar
         txtOriginal_Body.Text = Message_.Original.Body_Text
         txtSubject_Variations.Text = Message_.Sentences(0).Variations(3)
         Message_.Varied = Build_Version()
-        txtBoxCampaignName.Text = Message_.ID
+        txtBoxCampaignName.Text = Message_.Campaign_Name
         txtVersion.Text = Message_.Varied.Body_Text
     End Sub
     Private Sub Change_Variation()
