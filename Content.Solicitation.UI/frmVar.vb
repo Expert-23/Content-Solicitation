@@ -33,9 +33,10 @@ Public Class frmVar
         Message_ = New Message(txtOriginal_Subject.Text, txtOriginal_Body.Text)
         Message_.ID = Guid.NewGuid.ToString
         Message_.Campaign_Name = txtBoxCampaignName.Text
+        Message_.Date_Created = Date.Now
         Message_.Website = mWebsite
+        If mEdit = False Then Message_.Date_Modified = Date.Now
     End Sub
-
 #End Region
 
 #Region "Form Events"
@@ -74,20 +75,20 @@ Public Class frmVar
 
 #Region "Methods"
     Private Sub Push_Message()
-        If mEdit Then mController_Message.Update_One_Message(Message_) : Exit Sub
+        If mEdit Then Message_.Date_Modified = Date.Now : mController_Message.Update_One_Message(Message_) : Exit Sub
         If Message_ IsNot Nothing Then mController_Message.Save_One_Message(Message_) Else MessageBox.Show("There are no analyze messages") : Exit Sub
     End Sub
     Private Sub Analyze_Message()
         Initialize_Message()
         Dim s As New Scraper_QB
+        Dim variants As Integer
         Try
-            Dim variants As Integer = Integer.Parse(txtBoxVariation.Text)
-            s.Scrape(Message_, variants)
-            Save_Message()
+            variants = Integer.Parse(txtBoxVariation.Text)
         Catch ex As Exception
-
+            MessageBox.Show("Variations must be inputed as an integer")
         End Try
-
+        s.Scrape(Message_, variants)
+        Save_Message()
     End Sub
 
     Private Sub Save_Message()

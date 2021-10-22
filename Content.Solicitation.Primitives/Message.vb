@@ -8,6 +8,8 @@ Public Class Message
     Public Varied As Version
     Public Sentences As SortedDictionary(Of Integer, Sentence)
     Public Versions As SortedDictionary(Of Integer, Version)
+    Public Date_Created As DateTime
+    Public Date_Modified As DateTime
 
     Public ReadOnly Property Original_Subject As Sentence
         Get
