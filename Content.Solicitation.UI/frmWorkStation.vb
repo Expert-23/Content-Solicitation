@@ -100,7 +100,7 @@ Public Class frmWorkStation
     End Sub
     Private Sub Load_New_Email()
         Dim msg As New Message
-        Dim frm As New frmVar()
+        Dim frm As New frmVar(cboWebsite.SelectedItem.ToString)
         frm.ShowDialog()
         Retrieve_All()
         Initialize_Comboboxes()

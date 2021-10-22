@@ -12,10 +12,12 @@ Public Class frmVar
     Private selectedPath As String
     Private mLoading As Boolean
     Private mEdit As Boolean
+    Private mWebsite As String
 #End Region
 
 #Region "Initialization"
-    Public Sub New()
+    Public Sub New(ByVal website As String)
+        mWebsite = website
         InitializeComponent()
         mController_Message = New Controller_Message
         mEdit = False
@@ -29,7 +31,9 @@ Public Class frmVar
     End Sub
     Private Sub Initialize_Message()
         Message_ = New Message(txtOriginal_Subject.Text, txtOriginal_Body.Text)
-        Message_.ID = txtBoxCampaignName.Text
+        Message_.ID = Guid.NewGuid.ToString
+        Message_.Campaign_Name = txtBoxCampaignName.Text
+        Message_.Website = mWebsite
     End Sub
 
 #End Region
@@ -76,9 +80,14 @@ Public Class frmVar
     Private Sub Analyze_Message()
         Initialize_Message()
         Dim s As New Scraper_QB
-        Dim variants As Integer = 3
-        s.Scrape(Message_, variants)
-        Save_Message()
+        Try
+            Dim variants As Integer = Integer.Parse(txtBoxVariation.Text)
+            s.Scrape(Message_, variants)
+            Save_Message()
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 
     Private Sub Save_Message()

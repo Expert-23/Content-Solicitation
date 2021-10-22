@@ -2,7 +2,8 @@
 Public Class Message
 
     Public ID As String
-
+    Public Website As String
+    Public Campaign_Name As String
     Public Original As Version
     Public Varied As Version
     Public Sentences As SortedDictionary(Of Integer, Sentence)
