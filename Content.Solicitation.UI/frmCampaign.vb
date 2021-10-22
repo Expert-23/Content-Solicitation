@@ -1,7 +1,6 @@
 ﻿Imports Content.Solicitation.Primitives
 Imports Content.Solicitation.Controllers
 Public Class frmCAmpaign
-
     Private mControllerScraper As Controller_Scraper
     Private mMessage As Message
     Private mJob As Job_Curation

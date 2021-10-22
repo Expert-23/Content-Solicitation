@@ -90,20 +90,22 @@ Public Class frmVar
     End Sub
     Private Sub Load_Next_Message_Version()
         Try
-            mLoading = True
-            Load_Message(True)
-            Load_Controls_Subject()
-            Message_.ID = txtBoxCampaignName.Text
-            Message_.Varied = Build_Version()
-            Dim bodyText As String
-            bodyText = Message_.Varied.Body_Text
-            txtVersion.Text = bodyText
-            Check_Message(bodyText)
-            mLoading = False
-            cboSentence_Number.Items.Clear()
-            For i = 0 To Message_.Sentences.Count - 1
-                cboSentence_Number.Items.Add(i.ToString())
-            Next
+            If Message_ IsNot Nothing Then
+                mLoading = True
+                Load_Message(True)
+                Load_Controls_Subject()
+                Message_.ID = txtBoxCampaignName.Text
+                Message_.Varied = Build_Version()
+                Dim bodyText As String
+                bodyText = Message_.Varied.Body_Text
+                txtVersion.Text = bodyText
+                Check_Message(bodyText)
+                mLoading = False
+                cboSentence_Number.Items.Clear()
+                For i = 0 To Message_.Sentences.Count - 1
+                    cboSentence_Number.Items.Add(i.ToString())
+                Next
+            End If
         Catch ex As Exception
 
         End Try
@@ -138,11 +140,14 @@ Public Class frmVar
             selectedPath = frm.FullFileRef()
         End If
         Try
-            If Message_ Is Nothing Then Serialization_Utilities.Load_Object_FileSystem_And_Deserialize(Of Message)(selectedPath, Message_, success) : txtSubject_Variations.Text = Message_.Sentences(0).Variations(3) : Map_Loaded() : Exit Sub
-
-            txtSubject_Variations.Text = Message_.Sentences(0).Variations(3)
-            Map_Loaded()
-
+            If Message_ Is Nothing Then
+                Serialization_Utilities.Load_Object_FileSystem_And_Deserialize(Of Message)(selectedPath, Message_, success)
+                If Message_ IsNot Nothing Then
+                    txtSubject_Variations.Text = Message_.Sentences(0).Variations(3)
+                    Map_Loaded()
+                    Exit Sub
+                End If
+            End If
         Catch ex As Exception
             Exit Sub
         End Try
@@ -163,9 +168,12 @@ Public Class frmVar
         txtVersion.Text = Message_.Varied.Body_Text
     End Sub
     Private Sub Change_Variation()
-        Dim senteceIndex As Integer = cboSentence_Number.SelectedIndex
-        Dim variationIndex As Integer = cboSentence_Variation.SelectedIndex
-        If variationIndex = -1 Then Message_.Sentences(senteceIndex).Variations(0) = txtBoxNewSentence.Text Else Message_.Sentences(senteceIndex).Variations(variationIndex) = txtBoxNewSentence.Text
+        If cboSentence_Number.SelectedIndex > 0 And cboSentence_Variation.SelectedIndex > 0 Then
+            Dim senteceIndex As Integer = cboSentence_Number.SelectedIndex
+            Dim variationIndex As Integer = cboSentence_Variation.SelectedIndex
+            If variationIndex = -1 Then Message_.Sentences(senteceIndex).Variations(0) = txtBoxNewSentence.Text Else Message_.Sentences(senteceIndex).Variations(variationIndex) = txtBoxNewSentence.Text
+        End If
+
     End Sub
     Private Sub Load_Controls_Subject()
         Try

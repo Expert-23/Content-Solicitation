@@ -147,7 +147,7 @@ Public Class frmWorkStation
         frm.ShowDialog()
         selectedPath = frm.FullFileRef()
         Serialization_Utilities.Load_Object_FileSystem_And_Deserialize(Of Solicitation_Message_Combo)(selectedPath, mJOB_Message, success)
-        Map_Job_Email()
+        If mJOB_Message IsNot Nothing Then Map_Job_Email()
     End Sub
     Private Sub Save_Form()
         Dim frm As New frmFileSystem("", "C:\Users\pc\source\repos\Expert-23\Content\G23.Content.Complete\z_cache\wip\")
