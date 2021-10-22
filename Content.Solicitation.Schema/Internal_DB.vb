@@ -221,6 +221,7 @@ Public Class Internal_DB
                 Public Shared Date_Created As String = "[Date_Created]"
                 Public Shared Date_Updated As String = "[Date_Updated]"
                 Public Shared Campaign_Name As String = "[Campaign_Name]"
+                Public Shared Website As String = "[Website]"
 
             End Class
 
@@ -231,6 +232,7 @@ Public Class Internal_DB
                 Public Shared Date_Created As Type = GetType(DateTime)
                 Public Shared Date_Updated As Type = GetType(DateTime)
                 Public Shared Campaign_Name As Type = GetType(String)
+                Public Shared Website As Type = GetType(String)
 
             End Class
 
@@ -241,6 +243,7 @@ Public Class Internal_DB
                 Public Shared Date_Created As SqlDbType = SqlDbType.DateTime
                 Public Shared Date_Updated As SqlDbType = SqlDbType.DateTime
                 Public Shared Campaign_Name As SqlDbType = SqlDbType.VarChar
+                Public Shared Website As SqlDbType = SqlDbType.VarChar
 
             End Class
 
