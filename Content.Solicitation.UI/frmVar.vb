@@ -27,6 +27,10 @@ Public Class frmVar
         mEdit = True
         Map_Loaded()
     End Sub
+    Private Sub Initialize_Message()
+        Message_ = New Message(txtOriginal_Subject.Text, txtOriginal_Body.Text)
+        Message_.ID = txtBoxCampaignName.Text
+    End Sub
 
 #End Region
 
@@ -76,10 +80,7 @@ Public Class frmVar
         s.Scrape(Message_, variants)
         Save_Message()
     End Sub
-    Private Sub Initialize_Message()
-        Message_ = New Message(txtOriginal_Subject.Text, txtOriginal_Body.Text)
-        Message_.ID = txtBoxCampaignName.Text
-    End Sub
+
     Private Sub Save_Message()
         Dim frm As New frmFileSystem("", "C:\Users\pc\source\repos\Expert-23\Content\G23.Content.Complete\z_cache\wip\")
         frm.ShowDialog()
@@ -215,8 +216,6 @@ Public Class frmVar
         txtSubject_Variations.Text = subjectText
         txtSubject_Variations.Tag = index
     End Sub
-
-
 #End Region
 
 End Class
