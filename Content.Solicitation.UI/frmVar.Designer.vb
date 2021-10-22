@@ -706,13 +706,13 @@ Partial Class frmVar
         'mnuItmWip_Load
         '
         Me.mnuItmWip_Load.Name = "mnuItmWip_Load"
-        Me.mnuItmWip_Load.Size = New System.Drawing.Size(180, 28)
+        Me.mnuItmWip_Load.Size = New System.Drawing.Size(124, 28)
         Me.mnuItmWip_Load.Text = "LOAD"
         '
         'mnuItmWIP_Save
         '
         Me.mnuItmWIP_Save.Name = "mnuItmWIP_Save"
-        Me.mnuItmWIP_Save.Size = New System.Drawing.Size(180, 28)
+        Me.mnuItmWIP_Save.Size = New System.Drawing.Size(124, 28)
         Me.mnuItmWIP_Save.Text = "SAVE"
         '
         'frmVar
