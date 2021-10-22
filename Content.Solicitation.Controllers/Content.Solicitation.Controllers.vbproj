@@ -83,6 +83,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller_Message.vb" />
+    <Compile Include="Controller_Persist.vb" />
     <Compile Include="Controller_Persistance.vb" />
     <Compile Include="Controller_Scraper.vb" />
     <Compile Include="Controller_Solicitation.vb" />

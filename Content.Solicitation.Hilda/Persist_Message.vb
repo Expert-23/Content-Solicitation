@@ -117,9 +117,9 @@ Public Class Persist_Message
 
                 conn.Open()
 
-                Dim query As String = String.Format("UPDATE {0}  SET {2}  = @binary , {3} = '{5}  WHERE {1}= '{4}' ",
+                Dim query As String = String.Format("UPDATE {0}  SET {2}  = @binary , {3} = '{5}'  WHERE {1}= '{4}' ",
                                                     OPS.Message.Table_Name,
-                                                    OPS.Message.ColName.ID,
+                                                    OPS.Message.ColName.Campaign_Name,
                                                     OPS.Message.ColName.Message_Binary,
                                                     OPS.Message.ColName.Date_Updated,
                                                     message.ID,

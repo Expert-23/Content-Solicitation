@@ -1,29 +1,33 @@
 ﻿Imports Content.Solicitation.Primitives
 Imports Content.Solicitation.Utilities
 Imports Content.Solicitation.Adapters
+Imports Content.Solicitation.Controllers
 Public Class frmVar
 
 #Region "Members"
     Public Message_ As Message
     Private mJob As Job_Curation
-
+    Private mController_Message As Controller_Message
     Private mRandom As New System.Random
     Private selectedPath As String
     Private mLoading As Boolean
+    Private mEdit As Boolean
 #End Region
 
 #Region "Initialization"
     Public Sub New()
         InitializeComponent()
+        mController_Message = New Controller_Message
+        mEdit = False
     End Sub
     Public Sub New(ByVal message As Message)
         InitializeComponent()
-        Initialize_Form(message)
-        Load_Message(False)
-    End Sub
-    Private Sub Initialize_Form(ByVal message As Message)
+        mController_Message = New Controller_Message
         Message_ = message
+        mEdit = True
+        Map_Loaded()
     End Sub
+
 #End Region
 
 #Region "Form Events"
@@ -55,9 +59,16 @@ Public Class frmVar
     Private Sub txtOriginal_Body_TextChanged(sender As Object, e As EventArgs) Handles txtOriginal_Body.TextChanged
         txtOriginal_Body.ScrollBars = ScrollBars.Both
     End Sub
+    Private Sub SaveToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveToolStripMenuItem.Click
+        Push_Message()
+    End Sub
 #End Region
 
 #Region "Methods"
+    Private Sub Push_Message()
+        If mEdit Then mController_Message.Update_One_Message(Message_) : Exit Sub
+        If Message_ IsNot Nothing Then mController_Message.Save_One_Message(Message_) Else MessageBox.Show("There are no analyze messages") : Exit Sub
+    End Sub
     Private Sub Analyze_Message()
         Initialize_Message()
         Dim s As New Scraper_QB
@@ -204,6 +215,8 @@ Public Class frmVar
         txtSubject_Variations.Text = subjectText
         txtSubject_Variations.Tag = index
     End Sub
+
+
 #End Region
 
 End Class

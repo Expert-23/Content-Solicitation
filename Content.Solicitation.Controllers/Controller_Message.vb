@@ -21,7 +21,7 @@ Public Class Controller_Message
         ds = mPersist_Message.Retrieve_All_Messages()
         Dim success As Boolean = False
 
-        For i = 0 To ds.Tables(0).Rows.Count
+        For i = 0 To ds.Tables(0).Rows.Count - 1
 
             row = New SortedDictionary(Of String, Message)
             Dim msg = Serialization_Utilities.DeSerialize_Object(Of Message)(ds.Tables(0).Rows(i)(1), success)
@@ -57,9 +57,10 @@ Public Class Controller_Message
     End Function
 
     Public Function Save_One_Message(ByVal message As Message) As Boolean
-
         Return mPersist_Message.Create_One_Message(message)
-
+    End Function
+    Public Function Update_One_Message(ByVal message As Message) As Boolean
+        Return mPersist_Message.Update_One_Message(message)
     End Function
 
 End Class

@@ -71,6 +71,7 @@ Partial Class frmVar
         Me.WIPToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuItmWip_Load = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuItmWIP_Save = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SaveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -672,7 +673,7 @@ Partial Class frmVar
         'MenuStrip1
         '
         Me.MenuStrip1.Font = New System.Drawing.Font("Arial Narrow", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.AnalyzeToolStripMenuItem, Me.MORPHToolStripMenuItem, Me.WIPToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.AnalyzeToolStripMenuItem, Me.MORPHToolStripMenuItem, Me.WIPToolStripMenuItem, Me.SaveToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1350, 31)
@@ -706,14 +707,20 @@ Partial Class frmVar
         'mnuItmWip_Load
         '
         Me.mnuItmWip_Load.Name = "mnuItmWip_Load"
-        Me.mnuItmWip_Load.Size = New System.Drawing.Size(124, 28)
+        Me.mnuItmWip_Load.Size = New System.Drawing.Size(180, 28)
         Me.mnuItmWip_Load.Text = "LOAD"
         '
         'mnuItmWIP_Save
         '
         Me.mnuItmWIP_Save.Name = "mnuItmWIP_Save"
-        Me.mnuItmWIP_Save.Size = New System.Drawing.Size(124, 28)
+        Me.mnuItmWIP_Save.Size = New System.Drawing.Size(180, 28)
         Me.mnuItmWIP_Save.Text = "SAVE"
+        '
+        'SaveToolStripMenuItem
+        '
+        Me.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem"
+        Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(59, 27)
+        Me.SaveToolStripMenuItem.Text = "Save"
         '
         'frmVar
         '
@@ -811,4 +818,5 @@ Partial Class frmVar
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
     Friend WithEvents txtOriginal_Subject As TextBox
+    Friend WithEvents SaveToolStripMenuItem As ToolStripMenuItem
 End Class
