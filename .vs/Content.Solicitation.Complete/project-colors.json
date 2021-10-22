@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "dde8a23f-e0d2-4a97-a1d5-e45ea2a397b7": {
+      "ProjectGuid": "dde8a23f-e0d2-4a97-a1d5-e45ea2a397b7",
+      "DisplayName": "Content.Solicitation.Primitives",
+      "ColorIndex": 0
+    },
+    "7bb88396-0167-481c-9f1a-e5d2b7f6e247": {
+      "ProjectGuid": "7bb88396-0167-481c-9f1a-e5d2b7f6e247",
+      "DisplayName": "Content.Solicitation.Schema",
+      "ColorIndex": 1
+    },
+    "b792f2c0-6dfb-43f5-819a-637337dca223": {
+      "ProjectGuid": "b792f2c0-6dfb-43f5-819a-637337dca223",
+      "DisplayName": "Content.Solicitation.HLDA",
+      "ColorIndex": 2
+    },
+    "80da8167-989f-49fa-8a22-19aab1a8c45c": {
+      "ProjectGuid": "80da8167-989f-49fa-8a22-19aab1a8c45c",
+      "DisplayName": "Logging",
+      "ColorIndex": 3
+    },
+    "4bc36f2c-9171-4c92-910b-4960e8ecbf37": {
+      "ProjectGuid": "4bc36f2c-9171-4c92-910b-4960e8ecbf37",
+      "DisplayName": "Content.Solicitation.UI",
+      "ColorIndex": 4
+    },
+    "3bf2e87a-3abc-4293-b74d-0afa046040a3": {
+      "ProjectGuid": "3bf2e87a-3abc-4293-b74d-0afa046040a3",
+      "DisplayName": "Content.Solicitation.Controllers",
+      "ColorIndex": 5
+    }
+  },
+  "NextColorIndex": 6
+}
