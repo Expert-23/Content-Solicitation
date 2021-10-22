@@ -48,7 +48,7 @@ Public Class Persist_FileSystem
 
     End Function
 
-    Public Function Retrieve_One_Message(ByVal id As Integer) As Boolean
+    Public Function Retrieve_One_Message(ByVal id As Integer) As DataSet
 
         Dim ds As New DataSet
 
@@ -82,7 +82,7 @@ Public Class Persist_FileSystem
 
         End Try
 
-        Return success
+        Return ds
 
     End Function
 

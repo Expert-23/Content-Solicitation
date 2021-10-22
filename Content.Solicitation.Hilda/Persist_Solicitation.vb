@@ -206,7 +206,7 @@ Public Class Persist_Solicitation
 
     End Function
 
-    Public Function Retrieve_One_Job_Solicitation(ByVal id As Integer) As Boolean
+    Public Function Retrieve_One_Job_Solicitation(ByVal id As Integer) As DataSet
 
         Dim ds As New DataSet
 
@@ -226,7 +226,6 @@ Public Class Persist_Solicitation
                 da.Fill(ds)
 
                 conn.Close()
-                success = True
 
 
 
@@ -242,7 +241,7 @@ Public Class Persist_Solicitation
 
         End Try
 
-        Return success
+        Return ds
 
     End Function
 
@@ -264,10 +263,9 @@ Public Class Persist_Solicitation
                 da.Fill(ds)
 
                 conn.Close()
-                kjkpo
             End Using
 
-        Catch ex As SqlException0iuiuiu
+        Catch ex As SqlException
 
             MasterLog.MasterLogs().[Error](ex, "Sql Exception")
 

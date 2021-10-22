@@ -62,6 +62,10 @@ Partial Class frmWorkStation
         Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaunchCampaignToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.WebsiteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Record23ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Statute23ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Expert23ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -466,7 +470,7 @@ Partial Class frmWorkStation
         'MenuStrip1
         '
         Me.MenuStrip1.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.LOADToolStripMenuItem, Me.WIPToolStripMenuItem, Me.BuildEmailToolStripMenuItem, Me.LaunchCampaignToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.LOADToolStripMenuItem, Me.WIPToolStripMenuItem, Me.BuildEmailToolStripMenuItem, Me.LaunchCampaignToolStripMenuItem, Me.WebsiteToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1350, 30)
@@ -528,6 +532,31 @@ Partial Class frmWorkStation
         Me.LaunchCampaignToolStripMenuItem.Name = "LaunchCampaignToolStripMenuItem"
         Me.LaunchCampaignToolStripMenuItem.Size = New System.Drawing.Size(191, 26)
         Me.LaunchCampaignToolStripMenuItem.Text = "Launch Campaign"
+        '
+        'WebsiteToolStripMenuItem
+        '
+        Me.WebsiteToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Record23ToolStripMenuItem, Me.Statute23ToolStripMenuItem, Me.Expert23ToolStripMenuItem})
+        Me.WebsiteToolStripMenuItem.Name = "WebsiteToolStripMenuItem"
+        Me.WebsiteToolStripMenuItem.Size = New System.Drawing.Size(95, 26)
+        Me.WebsiteToolStripMenuItem.Text = "Website"
+        '
+        'Record23ToolStripMenuItem
+        '
+        Me.Record23ToolStripMenuItem.Name = "Record23ToolStripMenuItem"
+        Me.Record23ToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
+        Me.Record23ToolStripMenuItem.Text = "Record23"
+        '
+        'Statute23ToolStripMenuItem
+        '
+        Me.Statute23ToolStripMenuItem.Name = "Statute23ToolStripMenuItem"
+        Me.Statute23ToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
+        Me.Statute23ToolStripMenuItem.Text = "Statute23"
+        '
+        'Expert23ToolStripMenuItem
+        '
+        Me.Expert23ToolStripMenuItem.Name = "Expert23ToolStripMenuItem"
+        Me.Expert23ToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
+        Me.Expert23ToolStripMenuItem.Text = "Expert23"
         '
         'ContextMenuStrip1
         '
@@ -614,4 +643,8 @@ Partial Class frmWorkStation
     Friend WithEvents EditToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EditToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents SAVEToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents WebsiteToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Record23ToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Statute23ToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Expert23ToolStripMenuItem As ToolStripMenuItem
 End Class
