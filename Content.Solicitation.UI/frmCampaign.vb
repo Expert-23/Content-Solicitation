@@ -1,7 +1,6 @@
 ﻿Imports Content.Solicitation.Primitives
 Imports Content.Solicitation.Controllers
 Public Class frmCAmpaign
-
     Private mControllerScraper As Controller_Scraper
     Private mMessage As Message
     Private mJob As Job_Curation
@@ -79,6 +78,6 @@ Public Class frmCAmpaign
         Dim file As String = My.Computer.FileSystem.ReadAllText(mLemlist.CSV_File)
         Dim lines As String() = file.Split(vbNewLine)
         mLemlist.NB_Rows = lines.Count
-        MessageBox.Show(mLemlist.NB_Rows)
+        'MessageBox.Show(mLemlist.NB_Rows)
     End Sub
 End Class
