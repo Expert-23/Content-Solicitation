@@ -68,9 +68,7 @@ Public Class Persist_FileSystem
                 Dim da As New SqlDataAdapter(query, conn)
                 da.Fill(ds)
 
-                cmd.ExecuteNonQuery()
                 conn.Close()
-                success = True
 
             End Using
 

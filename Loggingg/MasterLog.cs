@@ -1,4 +1,4 @@
-﻿using Content_Curation.Localize;
+﻿
 using Serilog;
 using System;
 using System.Collections.Generic;
@@ -27,7 +27,7 @@ namespace Loggingg
             string classification = "normal";
             //string filepathLog = @"C:\Users\joeyj\OneDrive\Desktop\Output\serilog.txt";
             //string filepathLog = @"C:\Users\pc\source\repos\Expert-23\SWAP-23\BeyBarter.Complete\Loggingg\Logs.txt"; 
-            string filepathLog = Locations.Logging.Directory();
+            string filepathLog = @"C:\Users\pc\source\repos\Expert-23\Content-Solicitation\z-cache\Logging\Logs.txt";
             string template = "[{Classification} {EnvironmentUserName} {ThreadName} {ProcessName} {MachineName} {Timestamp:HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}";
 
             mLogger = new LoggerConfiguration()

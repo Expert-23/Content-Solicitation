@@ -89,3 +89,10 @@ C:\Users\joeyj\source\repos\Expert-23\Content-Curation\Content-Curation.Complete
 C:\Users\joeyj\source\repos\Expert-23\Content-Curation\Content-Curation.Complete\Control\Loggingg\bin\Debug\Content-Curation.Localize.dll
 C:\Users\joeyj\source\repos\Expert-23\Content-Curation\Content-Curation.Complete\Control\Loggingg\bin\Debug\Content-Curation.Localize.pdb
 C:\Users\joeyj\source\repos\Expert-23\Content-Curation\Content-Curation.Complete\Control\Loggingg\bin\Debug\Content-Curation.Localize.xml
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Loggingg\obj\Debug\Loggingg.csproj.AssemblyReference.cache
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Loggingg\obj\Debug\Loggingg.Form1.resources
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Loggingg\obj\Debug\Loggingg.Properties.Resources.resources
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Loggingg\obj\Debug\Loggingg.csproj.GenerateResource.cache
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Loggingg\obj\Debug\Loggingg.csproj.CoreCompileInputs.cache
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Loggingg\obj\Debug\Loggingg.exe
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Loggingg\obj\Debug\Loggingg.pdb

@@ -1,5 +1,9 @@
-﻿Imports Content.Solicitation.Primitives
+﻿Imports System.Data.SqlClient
+Imports Content.Solicitation.Primitives
 Imports Content.Solicitation.Schema.Internal_DB
+Imports Content.Solicitation.Utilities
+Imports Loggingg
+
 Public Class Persist_Message
 
     Public Function Create_One_Message(ByVal message As Message) As Boolean

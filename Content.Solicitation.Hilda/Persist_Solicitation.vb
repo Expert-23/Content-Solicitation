@@ -1,5 +1,9 @@
 ﻿Imports Content.Solicitation.Schema.Internal_DB
 Imports Content.Solicitation.Primitives
+Imports Loggingg
+Imports System.Data.SqlClient
+Imports Content.Solicitation.Utilities
+
 Public Class Persist_Solicitation
 
     Public Function Create_One_Job_Solicitation(ByVal job_solicitation As Job_Solicitation, ByVal imagebytes As Byte()) As Boolean

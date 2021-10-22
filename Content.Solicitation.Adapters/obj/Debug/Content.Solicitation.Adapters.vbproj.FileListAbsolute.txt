@@ -27,10 +27,6 @@ C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Ada
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Adapters\bin\Debug\Content.Solicitation.Utilities.exe.config
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Adapters\bin\Debug\Serilog.xml
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Adapters\bin\Debug\WebDriver.xml
-C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Adapters\bin\Debug\Serilog.Sinks.File.xml
-C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Adapters\bin\Debug\Serilog.Sinks.Seq.xml
-C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Adapters\bin\Debug\Serilog.Sinks.PeriodicBatching.xml
-C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Adapters\bin\Debug\Serilog.Formatting.Compact.xml
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Adapters\obj\Debug\Content.Solicitation.Adapters.vbproj.AssemblyReference.cache
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Adapters\obj\Debug\Content.Solicitation.Adapters.Resources.resources
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Adapters\obj\Debug\Content.Solicitation.Adapters.vbproj.GenerateResource.cache
