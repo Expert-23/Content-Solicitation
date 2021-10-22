@@ -20,13 +20,15 @@ Public Class Persist_Message
 
                 conn.Open()
 
-                Dim query As String = String.Format("Insert into {0} ({1},{2},{3}) VALUES(@binary,'{5}','{4}')",
+                Dim query As String = String.Format("Insert into {0} ({1},{2},{3},{4}) VALUES(@binary,'{6}','{7}','{5}')",
                                                     OPS.Message.Table_Name,
                                                     OPS.Message.ColName.Message_Binary,
                                                     OPS.Message.ColName.Campaign_Name,
+                                                    OPS.Message.ColName.Website,
                                                     OPS.Message.ColName.Date_Created,
                                                     DateTime.Now,
-                                                    message.ID
+                                                    message.ID,
+                                                    message.Website
                                                     )
 
                 Dim cmd As New SqlCommand(query, conn)
