@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Content.Solicitation.Controllers"
   ],
-  "SelectedNode": "\\Content.Solicitation.Complete.sln",
+  "SelectedNode": "\\Content.Solicitation.Controllers\\Controller_Solicitation.vb",
   "PreviewInSolutionExplorer": false
 }
