@@ -16,10 +16,26 @@ Public Class frmWorkStation
         Initialize_Form()
     End Sub
     Private Sub Initialize_Form()
+        Initialize_Members()
+        Initialize_Combobox_Websites()
+    End Sub
+    Private Sub Initialize_Members()
         mMessage = New List(Of Message)
         mJob = New List(Of Job_Solicitation)
         mSelected_Message = New Message
         mSelected_Job = New Job_Solicitation
+    End Sub
+    Private Sub Initialize_Combobox_Websites()
+        cboWebsite.Items.Clear()
+        With cboWebsite
+            For Each item In System.Enum.GetValues(GetType(Websites))
+
+                If item <> Websites.unspecified Then
+                    .Items.Add(item)
+                End If
+            Next
+            .SelectedIndex = 0
+        End With
     End Sub
 #End Region
 
@@ -120,9 +136,5 @@ Public Class frmWorkStation
             Exit Sub
         End Try
     End Sub
-
-
-
-
 #End Region
 End Class
