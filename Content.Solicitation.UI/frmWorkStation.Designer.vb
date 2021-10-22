@@ -543,19 +543,19 @@ Partial Class frmWorkStation
         'Record23ToolStripMenuItem
         '
         Me.Record23ToolStripMenuItem.Name = "Record23ToolStripMenuItem"
-        Me.Record23ToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
+        Me.Record23ToolStripMenuItem.Size = New System.Drawing.Size(169, 26)
         Me.Record23ToolStripMenuItem.Text = "Record23"
         '
         'Statute23ToolStripMenuItem
         '
         Me.Statute23ToolStripMenuItem.Name = "Statute23ToolStripMenuItem"
-        Me.Statute23ToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
+        Me.Statute23ToolStripMenuItem.Size = New System.Drawing.Size(169, 26)
         Me.Statute23ToolStripMenuItem.Text = "Statute23"
         '
         'Expert23ToolStripMenuItem
         '
         Me.Expert23ToolStripMenuItem.Name = "Expert23ToolStripMenuItem"
-        Me.Expert23ToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
+        Me.Expert23ToolStripMenuItem.Size = New System.Drawing.Size(169, 26)
         Me.Expert23ToolStripMenuItem.Text = "Expert23"
         '
         'ContextMenuStrip1
