@@ -43,7 +43,7 @@ Public Class Controller_Solicitation
         Dim ds As New DataSet
         ds = mPersist_Solicitation.Retrieve_All_Job_Solicitation(website, job_status)
 
-        For i = 0 To ds.Tables(0).Rows.Count
+        For i = 0 To ds.Tables(0).Rows.Count - 1
 
             solicitation = New SortedDictionary(Of Integer, Job_Solicitation)
             Dim msg = Serialization_Utilities.DeSerialize_Object(Of Job_Solicitation)(ds.Tables(0).Rows(i)(1), success)

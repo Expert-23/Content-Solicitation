@@ -12,11 +12,11 @@ Public Class frmVar
     Private selectedPath As String
     Private mLoading As Boolean
     Private mEdit As Boolean
-    Private mWebsite As String
+    Private mWebsite As Websites
 #End Region
 
 #Region "Initialization"
-    Public Sub New(ByVal website As String)
+    Public Sub New(ByVal website As Websites)
         mWebsite = website
         InitializeComponent()
         mController_Message = New Controller_Message

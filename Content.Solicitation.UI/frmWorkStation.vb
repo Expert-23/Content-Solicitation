@@ -10,6 +10,7 @@ Public Class frmWorkStation
     Private mSelected_Job As Job_Solicitation
     Private mJOB_Message As Solicitation_Message_Combo
     Private mPersist_Message As Controller_Message
+    Private mPersist_Job As Controller_Solicitation
 #End Region
 
 #Region "Initialization"
@@ -28,7 +29,8 @@ Public Class frmWorkStation
         mSelected_Message = New Message
         mSelected_Job = New Job_Solicitation
         mPersist_Message = New Controller_Message
-        Retrieve_All()
+        mPersist_Job = New Controller_Solicitation
+        'Retrieve_All()
     End Sub
     Private Sub Initialize_Comboboxes()
         Initialize_Combobox_Websites()
@@ -37,7 +39,7 @@ Public Class frmWorkStation
     Private Sub Initialize_Combo_Box_Email()
         cboEmail.Items.Clear()
         For Each key In mMessage
-            If key.Value.Values.First().Campaign_Name IsNot Nothing Then cboEmail.Items.Add(key.Value.Values.First().Campaign_Name)
+            If key.Value.Values.First() IsNot Nothing Then If key.Value.Values.First().Campaign_Name IsNot Nothing Then cboEmail.Items.Add(key.Value.Values.First().Campaign_Name)
         Next
     End Sub
     Private Sub Initialize_Combobox_Websites()
@@ -89,14 +91,25 @@ Public Class frmWorkStation
         Edit_Snippet()
     End Sub
     Private Sub cboWebsite_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboWebsite.SelectedIndexChanged
-
+        Retrieve_All()
     End Sub
 #End Region
 
 #Region "Methods"
     Private Sub Retrieve_All()
-        Retrieve_All_Messages()
+        Retrieve_Messages()
+        Retrieve_Solicits()
+        Initialize_Combo_Box_Email()
     End Sub
+    Private Sub Retrieve_Messages()
+        Dim website As Websites = DirectCast([Enum].Parse(GetType(Websites), cboWebsite.SelectedItem), Websites)
+        mMessage = mPersist_Message.Get_One_Message_By_Website(website)
+    End Sub
+    Private Sub Retrieve_Solicits()
+        Dim website = DirectCast([Enum].Parse(GetType(Websites), cboWebsite.SelectedItem), Websites)
+        mJob = mPersist_Job.Get_All_Solicitations_By_Website(website, Content_Status.solicited_ready)
+    End Sub
+
     Private Sub Retrieve_All_Messages()
         mMessage = New SortedDictionary(Of Integer, SortedDictionary(Of String, Message))
         mMessage = mPersist_Message.Get_All_Messages()
@@ -106,7 +119,8 @@ Public Class frmWorkStation
     End Sub
     Private Sub Load_New_Email()
         Dim msg As New Message
-        Dim frm As New frmVar(cboWebsite.SelectedItem.ToString)
+        Dim webbsite = DirectCast([Enum].Parse(GetType(Websites), cboWebsite.SelectedItem), Websites)
+        Dim frm As New frmVar(webbsite)
         frm.ShowDialog()
         Retrieve_All()
         Initialize_Comboboxes()
