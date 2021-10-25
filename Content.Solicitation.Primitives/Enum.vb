@@ -40,3 +40,11 @@ Public Enum Content_Status
     failed = 6
     ignored = 7
 End Enum
+
+
+Public Enum Job_Status
+
+    unspecified = 0
+
+
+End Enum
