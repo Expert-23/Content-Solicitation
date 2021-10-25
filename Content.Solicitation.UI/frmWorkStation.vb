@@ -85,6 +85,9 @@ Public Class frmWorkStation
     Private Sub EditToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditToolStripMenuItem.Click
         Load_New_Email()
     End Sub
+    Private Sub EditToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles EditToolStripMenuItem2.Click
+        Edit_Snippet()
+    End Sub
 #End Region
 
 #Region "Methods"
@@ -181,6 +184,10 @@ Public Class frmWorkStation
             Exit Sub
         End Try
     End Sub
+    Private Sub Edit_Snippet()
+
+    End Sub
+
 #End Region
 
 End Class

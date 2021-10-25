@@ -64,7 +64,6 @@ Partial Class frmWorkStation
         Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.SnippetToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.NewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaunchCampaignToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
@@ -544,21 +543,15 @@ Partial Class frmWorkStation
         '
         'SnippetToolStripMenuItem
         '
-        Me.SnippetToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewToolStripMenuItem, Me.EditToolStripMenuItem2})
+        Me.SnippetToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditToolStripMenuItem2})
         Me.SnippetToolStripMenuItem.Name = "SnippetToolStripMenuItem"
         Me.SnippetToolStripMenuItem.Size = New System.Drawing.Size(93, 33)
         Me.SnippetToolStripMenuItem.Text = "Snippet"
         '
-        'NewToolStripMenuItem
-        '
-        Me.NewToolStripMenuItem.Name = "NewToolStripMenuItem"
-        Me.NewToolStripMenuItem.Size = New System.Drawing.Size(119, 26)
-        Me.NewToolStripMenuItem.Text = "New"
-        '
         'EditToolStripMenuItem2
         '
         Me.EditToolStripMenuItem2.Name = "EditToolStripMenuItem2"
-        Me.EditToolStripMenuItem2.Size = New System.Drawing.Size(119, 26)
+        Me.EditToolStripMenuItem2.Size = New System.Drawing.Size(180, 26)
         Me.EditToolStripMenuItem2.Text = "Edit"
         '
         'LaunchCampaignToolStripMenuItem
@@ -655,6 +648,5 @@ Partial Class frmWorkStation
     Friend WithEvents cboWebsite As ToolStripComboBox
     Friend WithEvents WebsiteToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SnippetToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents NewToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EditToolStripMenuItem2 As ToolStripMenuItem
 End Class
