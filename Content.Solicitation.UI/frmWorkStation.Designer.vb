@@ -551,7 +551,7 @@ Partial Class frmWorkStation
         'EditToolStripMenuItem2
         '
         Me.EditToolStripMenuItem2.Name = "EditToolStripMenuItem2"
-        Me.EditToolStripMenuItem2.Size = New System.Drawing.Size(180, 26)
+        Me.EditToolStripMenuItem2.Size = New System.Drawing.Size(116, 26)
         Me.EditToolStripMenuItem2.Text = "Edit"
         '
         'LaunchCampaignToolStripMenuItem
