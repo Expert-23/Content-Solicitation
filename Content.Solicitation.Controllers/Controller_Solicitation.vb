@@ -34,7 +34,7 @@ Public Class Controller_Solicitation
 
     End Function
 
-    Public Function Get_All_Solicitations_By_Website(ByVal website As Websites, ByVal job_status As Job_Status) As SortedDictionary(Of Integer, SortedDictionary(Of Integer, Job_Solicitation))
+    Public Function Get_All_Solicitations_By_Website(ByVal website As Websites, ByVal job_status As Content_Status) As SortedDictionary(Of Integer, SortedDictionary(Of Integer, Job_Solicitation))
 
         Dim success = False
 
