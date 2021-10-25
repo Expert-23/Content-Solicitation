@@ -231,6 +231,80 @@ Public Class Persist_Message
 
     End Function
 
+    Public Function Retrieve_All_Messages_By_Website(ByVal website As Websites) As DataSet
+
+        Dim ds As New DataSet
+
+        Try
+
+
+            Using conn As New SqlClient.SqlConnection(OPS.Conn)
+
+                conn.Open()
+
+                Dim query As String = String.Format("select * from {0} where {1} = '{2}'",
+                                                    OPS.Message.Table_Name,
+                                                    OPS.Message.ColName.Website,
+                                                    website)
+
+                Dim da = New SqlDataAdapter(query, conn)
+                da.Fill(ds)
+
+                conn.Close()
+
+            End Using
+
+        Catch ex As SqlException
+
+            MasterLog.MasterLogs().[Error](ex, "Sql Exception")
+
+        Catch ex As Exception
+
+            MasterLog.MasterLogs().[Error](ex, "")
+
+        End Try
+
+        Return ds
+
+    End Function
+
+    Public Function Retrieve_All_Solicites_By_Website(ByVal website As Websites) As DataSet
+
+        Dim ds As New DataSet
+
+        Try
+
+
+            Using conn As New SqlClient.SqlConnection(OPS.Conn)
+
+                conn.Open()
+
+                Dim query As String = String.Format("select * from {0} where {1} = '{2}'",
+                                                    OPS.Message.Table_Name,
+                                                    OPS.Message.ColName.Website,
+                                                    website)
+
+                Dim da = New SqlDataAdapter(query, conn)
+                da.Fill(ds)
+
+                conn.Close()
+
+            End Using
+
+        Catch ex As SqlException
+
+            MasterLog.MasterLogs().[Error](ex, "Sql Exception")
+
+        Catch ex As Exception
+
+            MasterLog.MasterLogs().[Error](ex, "")
+
+        End Try
+
+        Return ds
+
+    End Function
+
     Public Function Retrieve_All_Messages() As DataSet
 
         Dim ds As New DataSet

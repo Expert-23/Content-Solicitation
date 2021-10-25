@@ -279,4 +279,42 @@ Public Class Persist_Solicitation
 
     End Function
 
+    Public Function Retrieve_All_Job_Solicitation(ByVal website As Websites, ByVal job_status As Job_Status) As DataSet
+
+        Dim ds As New DataSet
+
+        Try
+
+
+            Using conn As New SqlClient.SqlConnection(OPS.Conn)
+
+                conn.Open()
+
+                Dim query As String = String.Format("select * from {0} where {1} = '{3}' and {2} = '{4}'",
+                                                    OPS.Job_Solicitation.Table_Name,
+                                                    OPS.Job_Solicitation.ColName.Job_Status,
+                                                    OPS.Job_Solicitation.ColName.Website,
+                                                    job_status,
+                                                    website)
+
+                Dim da = New SqlDataAdapter(query, conn)
+                da.Fill(ds)
+
+                conn.Close()
+            End Using
+
+        Catch ex As SqlException
+
+            MasterLog.MasterLogs().[Error](ex, "Sql Exception")
+
+        Catch ex As Exception
+
+            MasterLog.MasterLogs().[Error](ex, "")
+
+        End Try
+
+        Return ds
+
+    End Function
+
 End Class
