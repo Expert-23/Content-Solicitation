@@ -59,3 +59,4 @@ C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.UI\
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.UI\obj\Debug\Content.Solicitation.UI.pdb
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.UI\obj\Debug\Content.Solicitation.UI.frmWorkStationBuild.resources
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.UI\obj\Debug\Content.Solicitation.UI.frmWorkStation.resources
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.UI\obj\Debug\Content.Solicitation.UI.frmReports.resources

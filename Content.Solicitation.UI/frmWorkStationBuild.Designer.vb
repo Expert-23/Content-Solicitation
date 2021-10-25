@@ -135,13 +135,13 @@ Partial Class frmWorkStationBuild
         'EditToolStripMenuItem
         '
         Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
-        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
+        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(119, 26)
         Me.EditToolStripMenuItem.Text = "New"
         '
         'EditToolStripMenuItem1
         '
         Me.EditToolStripMenuItem1.Name = "EditToolStripMenuItem1"
-        Me.EditToolStripMenuItem1.Size = New System.Drawing.Size(180, 26)
+        Me.EditToolStripMenuItem1.Size = New System.Drawing.Size(119, 26)
         Me.EditToolStripMenuItem1.Text = "Edit"
         '
         'SnippetToolStripMenuItem
@@ -154,7 +154,7 @@ Partial Class frmWorkStationBuild
         'EditToolStripMenuItem2
         '
         Me.EditToolStripMenuItem2.Name = "EditToolStripMenuItem2"
-        Me.EditToolStripMenuItem2.Size = New System.Drawing.Size(180, 26)
+        Me.EditToolStripMenuItem2.Size = New System.Drawing.Size(116, 26)
         Me.EditToolStripMenuItem2.Text = "Edit"
         '
         'LaunchCampaignToolStripMenuItem

@@ -93,9 +93,16 @@ Public Class frmWorkStation
     Private Sub cboWebsite_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboWebsite.SelectedIndexChanged
         Retrieve_All()
     End Sub
+    Private Sub ReportsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReportsToolStripMenuItem.Click
+        Load_Reports()
+    End Sub
 #End Region
 
 #Region "Methods"
+    Private Sub Load_Reports()
+        Dim frm As frmReports = New frmReports
+        frm.ShowDialog()
+    End Sub
     Private Sub Retrieve_All()
         Retrieve_Messages()
         Retrieve_Solicits()
@@ -204,7 +211,6 @@ Public Class frmWorkStation
     Private Sub Edit_Snippet()
 
     End Sub
-
 #End Region
 
 End Class

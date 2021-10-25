@@ -107,6 +107,7 @@
     <Compile Include="Scrapers\Driver_Email.vb" />
     <Compile Include="Scrapers\Scraper_Lemlist.vb" />
     <Compile Include="Scrapers\Scraper_QB.vb" />
+    <Compile Include="Scrapers\Scraper_Reports_Lemlist.vb" />
     <Compile Include="Scrapers\Utilities.vb" />
   </ItemGroup>
   <ItemGroup>
