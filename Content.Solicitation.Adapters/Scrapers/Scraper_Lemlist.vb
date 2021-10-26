@@ -296,6 +296,7 @@ Public Class Scraper_Lemlist
     Private Sub Go_To_URl(ByVal url As String)
         mDriver.Navigate.GoToUrl(url)
     End Sub
+
 #Region "Messages"
     Private Function Load_Next_Message_Version() As String
         Load_Message()
@@ -344,4 +345,5 @@ Public Class Scraper_Lemlist
         Return subject
     End Function
 #End Region
+
 End Class

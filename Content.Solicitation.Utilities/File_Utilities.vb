@@ -1,6 +1,7 @@
 ﻿
 Imports System.IO
 Imports Loggingg
+
 Public Class File_Utilities
 
     Public Shared Function Extract_File_Extension(ByVal fileName As String, Optional ByVal defaultExt As String = "") As String
@@ -95,7 +96,7 @@ Public Class File_Utilities
             fileName = fullFileRef.Substring(locLastSlash + 1)
             filePath = fullFileRef.Substring(0, locLastSlash)
         Catch ex As FileNotFoundException
-            MasterLog.MasterLogs().Error(ex, "File Not Found")
+            MasterLog.MasterLogs().Error(ex, "File  Not Found")
         Catch ex As Exception
 
             Dim keyVariableNames() As String = {"Full File Reference", "File Path", "File Name"}
@@ -153,6 +154,7 @@ Public Class File_Utilities
     End Sub
 
     Public Shared Function Copy_File_From_One_Directory_To_Another(ByVal fullFileRef As String, ByVal dir_destination As String) As Boolean
+        Dim fullFileRef_copy = String.Empty
         Try
             If Not My.Computer.FileSystem.FileExists(fullFileRef) Then
                 Debug.Print("Source file {0} not found. File copy aborted", fullFileRef)
@@ -167,8 +169,7 @@ Public Class File_Utilities
             Dim fileName As String
             File_Utilities.Split_Full_File_Ref_Into_Path_FileName(fullFileRef, String.Empty, fileName)
 
-            Dim fullFileRef_copy As String = String.Format("{0}\{1}", dir_destination, fileName)
-
+            fullFileRef_copy = String.Format("{0}\{1}", dir_destination, fileName)
 
             My.Computer.FileSystem.CopyFile(fullFileRef, fullFileRef_copy, True)
         Catch ex As FileNotFoundException

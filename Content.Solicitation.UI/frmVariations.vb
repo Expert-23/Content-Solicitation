@@ -177,16 +177,18 @@ Public Class frmVariations
 #End Region
 
     Private Sub Changed_Subject_Variation()
+        Try
+            If mLoading Then Exit Sub
+            If cboSubjects.SelectedItem Is Nothing Then txtSubject_Variations.Text = String.Empty : Exit Sub
 
-        If mLoading Then Exit Sub
-        If cboSubjects.SelectedItem Is Nothing Then txtSubject_Variations.Text = String.Empty : Exit Sub
+            Dim index As Integer = cboSubjects.SelectedItem
+            Dim subjectText As String = cboSubjects.Tag(index)
 
-        Dim index As Integer = cboSubjects.SelectedItem
-        Dim subjectText As String = cboSubjects.Tag(index)
-
-        txtSubject_Variations.Text = subjectText
-        txtSubject_Variations.Tag = index
-
+            txtSubject_Variations.Text = subjectText
+            txtSubject_Variations.Tag = index
+        Catch ex As NullReferenceException
+            MasterLog.MasterLogs().Error(ex, "Object With null reference")
+        End Try
     End Sub
 
     Private Sub Check_Message(ByVal content As String)
@@ -337,7 +339,7 @@ Public Class frmVariations
             Dim driver As New Driver_Email()
             driver.Drive(mMessage)
         Catch ex As Exception
-
+            MasterLog.MasterLogs().Error(ex, "")
         End Try
     End Sub
 

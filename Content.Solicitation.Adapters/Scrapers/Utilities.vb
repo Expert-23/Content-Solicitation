@@ -27,33 +27,35 @@ Public Class Utilities
     End Function
 
     Public Sub Shuffle_Links(ByVal inputDirectory As String, ByVal outputDirectory As String)
+        Try
+            Dim file As String = My.Computer.FileSystem.ReadAllText(inputDirectory)
+            Dim murtToScrape As New List(Of String)
+            Dim lines As String() = file.Split(vbCrLf)
+            For i = 0 To lines.Count - 1
 
-        Dim file As String = My.Computer.FileSystem.ReadAllText(inputDirectory)
-        Dim murtToScrape As New List(Of String)
-        Dim lines As String() = file.Split(vbCrLf)
-        For i = 0 To lines.Count - 1
+                lines(i) = lines(i).Replace(vbLf, "")
 
-            lines(i) = lines(i).Replace(vbLf, "")
+            Next
 
-        Next
-
-        Dim random As New List(Of Integer)
-        random = Random_Generator(lines.Count - 1)
+            Dim random As New List(Of Integer)
+            random = Random_Generator(lines.Count - 1)
 
 
-        Debug.Print("random   " & random.Count)
-        Debug.Print("lines   " & lines.Count)
-        My.Computer.FileSystem.WriteAllText(outputDirectory, lines(0) & vbNewLine, True)
-        murtToScrape.Add(lines(0))
-        For i = 0 To random.Count - 1
-            murtToScrape.Add(random(i))
-            If i = random.Count - 1 Then
-                My.Computer.FileSystem.WriteAllText(outputDirectory, lines(random(i)), True)
-            Else
-                My.Computer.FileSystem.WriteAllText(outputDirectory, lines(random(i)) & vbNewLine, True)
-            End If
+            Debug.Print("random   " & random.Count)
+            Debug.Print("lines   " & lines.Count)
+            My.Computer.FileSystem.WriteAllText(outputDirectory, lines(0) & vbNewLine, True)
+            murtToScrape.Add(lines(0))
+            For i = 0 To random.Count - 1
+                murtToScrape.Add(random(i))
+                If i = random.Count - 1 Then
+                    My.Computer.FileSystem.WriteAllText(outputDirectory, lines(random(i)), True)
+                Else
+                    My.Computer.FileSystem.WriteAllText(outputDirectory, lines(random(i)) & vbNewLine, True)
+                End If
 
-        Next
+            Next
+        Catch
+        End Try
     End Sub
     Public Sub Clean_Line(ByRef line As String, ByVal vbtab As Boolean)
         line = line.Trim()
