@@ -52,7 +52,7 @@ Public Class Scraper_QB
     End Sub
 
 
-    Public Sub Scrape(ByRef sentences As SortedDictionary(Of Integer, Sentence),
+    Public Sub Scrape(ByRef message As Message,
                       Optional ByVal numVariants_subject As Integer = 10,
                       Optional ByVal numVariants_body As Integer = 3)
         Initialize()
@@ -62,7 +62,7 @@ Public Class Scraper_QB
         mDriver.Navigate().GoToUrl(mURL)
         Dim variations As New SortedDictionary(Of Integer, Sentence)
         Dim counter = 0
-        For Each entry In sentences
+        For Each entry In message.Sentences
             counter = counter + 1
             If (counter = 4) Then
                 counter = 0
@@ -99,7 +99,7 @@ Public Class Scraper_QB
 
         Next
 
-        sentences = variations
+        message.Sentences = variations
 
         Shut_Down_Chrome_Driver()
 

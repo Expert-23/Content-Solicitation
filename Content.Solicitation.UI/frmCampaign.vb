@@ -1,10 +1,6 @@
 ﻿Imports Content.Solicitation.Primitives
 Imports Content.Solicitation.Controllers
-Imports Loggingg
-Imports System.IO
-
 Public Class frmCAmpaign
-
     Private mControllerScraper As Controller_Scraper
     Private mMessage As Message
     Private mJob As Job_Curation
@@ -36,29 +32,18 @@ Public Class frmCAmpaign
         mControllerScraper.Launch_Campaign(mLemlist, mJob)
     End Sub
     Private Sub Map_Lemlist()
-        Try
-            mLemlist.Campaign_Name = txtBox_Campaign_Name.Text
-            mLemlist.Labels.Add(txtBox_Label.Text)
-
-            For Each zone In mZone
-                If zone.Value = True Then
-                    mLemlist.Time_Zone = zone.Key
-                    Exit For
-                End If
-            Next
-
-        Catch ex As NullReferenceException
-            MasterLog.MasterLogs().Error(ex, "Object with null reference")
-
-            mLemlist.Stop_sending = mSending
-            mLemlist.Tracking = mTracking
-            mLemlist.User_Name = "qcontinuum@mail.com"
-            mLemlist.Password = "send2021!Email"
-
-        Catch ex As Exception
-            MasterLog.MasterLogs().Error(ex, "")
-
-        End Try
+        mLemlist.Campaign_Name = txtBox_Campaign_Name.Text
+        mLemlist.Labels.Add(txtBox_Label.Text)
+        For Each zone In mZone
+            If zone.Value = True Then
+                mLemlist.Time_Zone = zone.Key
+                Exit For
+            End If
+        Next
+        mLemlist.Stop_sending = mSending
+        mLemlist.Tracking = mTracking
+        mLemlist.User_Name = "qcontinuum@mail.com"
+        mLemlist.Password = "send2021!Email"
     End Sub
     Private Sub Map_Zones()
         mZone = New SortedDictionary(Of Time_Zone, Boolean)
@@ -81,31 +66,18 @@ Public Class frmCAmpaign
         mTracking.Add(Tracking.reply_body, chck_Track_reply.Checked)
     End Sub
     Private Sub btnFile_Upload_Click(sender As Object, e As EventArgs) Handles btnFile_Upload.Click
-        Try
-            Dim openFileDialog1 As New OpenFileDialog
-            Dim result As DialogResult = openFileDialog1.ShowDialog()
-            Dim file = openFileDialog1.FileName
-            mLemlist.CSV_File = file
-            file = file.Substring(file.LastIndexOf("\") + 1)
-            lblFile.Text = file
-            File_Size()
-        Catch ex As FileNotFoundException
-            MasterLog.MasterLogs().Error(ex, "File Not Found")
-        Catch ex As Exception
-            MasterLog.MasterLogs().Error(ex, "")
-        End Try
+        Dim openFileDialog1 As New OpenFileDialog
+        Dim result As DialogResult = openFileDialog1.ShowDialog()
+        Dim file = openFileDialog1.FileName
+        mLemlist.CSV_File = file
+        file = file.Substring(file.LastIndexOf("\") + 1)
+        lblFile.Text = file
+        File_Size()
     End Sub
     Private Sub File_Size()
-        Try
-
-            Dim file As String = My.Computer.FileSystem.ReadAllText(mLemlist.CSV_File)
-            Dim lines As String() = file.Split(vbNewLine)
-            mLemlist.NB_Rows = lines.Count
-            MessageBox.Show(mLemlist.NB_Rows)
-        Catch ex As FileNotFoundException
-            MasterLog.MasterLogs().Error(ex, "File Not Found")
-        Catch ex As Exception
-            MasterLog.MasterLogs().Error(ex, "")
-        End Try
+        Dim file As String = My.Computer.FileSystem.ReadAllText(mLemlist.CSV_File)
+        Dim lines As String() = file.Split(vbNewLine)
+        mLemlist.NB_Rows = lines.Count
+        'MessageBox.Show(mLemlist.NB_Rows)
     End Sub
 End Class

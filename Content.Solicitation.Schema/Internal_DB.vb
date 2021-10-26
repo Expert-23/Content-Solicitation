@@ -174,7 +174,7 @@ Public Class Internal_DB
                 Public Shared Website As String = "[Website]"
                 Public Shared Category As String = "[Category]"
                 Public Shared Date_Created As String = "[Date_Created]"
-
+                Public Shared Date_Modified As String = "[Date_Modified]"
                 Public Shared Snippet As String = "[Snippet]"
 
 
@@ -189,7 +189,7 @@ Public Class Internal_DB
                 Public Shared Website As Type = GetType(String)
                 Public Shared Category As Type = GetType(String)
                 Public Shared Date_Created As Type = GetType(DateTime)
-
+                Public Shared Date_Modified As Type = GetType(DateTime)
                 Public Shared Snippet As Type = GetType(Byte)
 
             End Class
@@ -203,12 +203,52 @@ Public Class Internal_DB
                 Public Shared Website As SqlDbType = SqlDbType.VarChar
                 Public Shared Category As SqlDbType = SqlDbType.VarChar
                 Public Shared Date_Created As SqlDbType = SqlDbType.DateTime
-
+                Public Shared Date_Modified As SqlDbType = SqlDbType.DateTime
                 Public Shared Snippet As SqlDbType = SqlDbType.VarBinary
 
             End Class
 
         End Class
+
+        Public Class Message
+
+            Public Shared Table_Name As String = "[dbo].[Message]"
+
+            Public Class ColName
+
+                Public Shared ID As String = "[ID]"
+                Public Shared Message_Binary As String = "[Message_Binary]"
+                Public Shared Date_Created As String = "[Date_Created]"
+                Public Shared Date_Updated As String = "[Date_Updated]"
+                Public Shared Campaign_Name As String = "[Campaign_Name]"
+                Public Shared Website As String = "[Website]"
+
+            End Class
+
+            Public Class NETType
+
+                Public Shared ID As Type = GetType(Integer)
+                Public Shared Message_Binary As Type = GetType(Byte)
+                Public Shared Date_Created As Type = GetType(DateTime)
+                Public Shared Date_Updated As Type = GetType(DateTime)
+                Public Shared Campaign_Name As Type = GetType(String)
+                Public Shared Website As Type = GetType(String)
+
+            End Class
+
+            Public Class SQL
+
+                Public Shared ID As SqlDbType = SqlDbType.Int
+                Public Shared Message_Binary As SqlDbType = SqlDbType.VarBinary
+                Public Shared Date_Created As SqlDbType = SqlDbType.DateTime
+                Public Shared Date_Updated As SqlDbType = SqlDbType.DateTime
+                Public Shared Campaign_Name As SqlDbType = SqlDbType.VarChar
+                Public Shared Website As SqlDbType = SqlDbType.VarChar
+
+            End Class
+
+        End Class
+
 
     End Class
 End Class

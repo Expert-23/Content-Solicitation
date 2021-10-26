@@ -13,7 +13,6 @@ Public Enum Stop_Sending_Lead
     opens_email = 2
 End Enum
 Public Enum Websites
-
     unspecified
     code23
     droid23
@@ -24,7 +23,6 @@ Public Enum Websites
     production23
     record23
     statute23
-
 End Enum
 Public Enum Tracking
     unspecified
@@ -33,7 +31,6 @@ Public Enum Tracking
     reply_body = 5
 End Enum
 Public Enum Content_Status
-
     unspecified = 0
     scraped = 1
     accepted = 2
@@ -42,6 +39,4 @@ Public Enum Content_Status
     solicited_pushed = 5
     failed = 6
     ignored = 7
-
-
 End Enum

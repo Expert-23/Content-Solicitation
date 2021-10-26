@@ -91,3 +91,15 @@ C:\Users\josep\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.
 C:\Users\josep\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Controllers\Loggingg\obj\Debug\Loggingg.csproj.CopyComplete
 C:\Users\josep\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Controllers\Loggingg\obj\Debug\Loggingg.exe
 C:\Users\josep\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Controllers\Loggingg\obj\Debug\Loggingg.pdb
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Controllers\Loggingg\bin\Debug\Loggingg.exe.config
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Controllers\Loggingg\bin\Debug\Loggingg.exe
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Controllers\Loggingg\bin\Debug\Loggingg.pdb
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Controllers\Loggingg\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Controllers\Loggingg\obj\Debug\Loggingg.csproj.AssemblyReference.cache
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Controllers\Loggingg\obj\Debug\Loggingg.Form1.resources
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Controllers\Loggingg\obj\Debug\Loggingg.Properties.Resources.resources
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Controllers\Loggingg\obj\Debug\Loggingg.csproj.GenerateResource.cache
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Controllers\Loggingg\obj\Debug\Loggingg.csproj.CoreCompileInputs.cache
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Controllers\Loggingg\obj\Debug\Loggingg.csproj.CopyComplete
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Controllers\Loggingg\obj\Debug\Loggingg.exe
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Controllers\Loggingg\obj\Debug\Loggingg.pdb
