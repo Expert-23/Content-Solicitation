@@ -1,5 +1,5 @@
 ﻿Imports Content.Solicitation.Adapters
-Imports Content.Solicitation.Primitives
+Imports Content.Primitives
 Public Class Controller_Scraper
     Private Scraper_Quilbot As Scraper_QB
     Private Scraper_Lemlist As Scraper_Lemlist

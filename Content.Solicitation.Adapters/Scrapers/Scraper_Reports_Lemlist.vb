@@ -1,5 +1,5 @@
 ﻿Imports System.Threading
-Imports Content.Solicitation.Primitives
+Imports Content.Primitives
 Imports Content.Solicitation.Utilities
 Imports Content.Solicitation.Localize
 Imports OpenQA.Selenium

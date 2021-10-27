@@ -128,9 +128,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Content.Solicitation.Primitives\Content.Solicitation.Primitives.vbproj">
-      <Project>{dde8a23f-e0d2-4a97-a1d5-e45ea2a397b7}</Project>
-      <Name>Content.Solicitation.Primitives</Name>
+    <ProjectReference Include="..\Content.Primitives\Content.Primitives.vbproj">
+      <Project>{8378f67f-4a90-4911-87cf-18530ab97ecf}</Project>
+      <Name>Content.Primitives</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

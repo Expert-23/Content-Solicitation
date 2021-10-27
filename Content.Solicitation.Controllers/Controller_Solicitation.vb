@@ -1,5 +1,5 @@
 ﻿Imports Content.Solicitation.Hilda
-Imports Content.Solicitation.Primitives
+Imports Content.Primitives
 Imports Content.Solicitation.Utilities
 
 Public Class Controller_Solicitation
@@ -44,6 +44,15 @@ Public Class Controller_Solicitation
         ds = mPersist_Solicitation.Retrieve_All_Job_Solicitation(website, job_status)
 
         For i = 0 To ds.Tables(0).Rows.Count - 1
+
+
+            'Dim job As Job_Solicitation = Serialization_Utilities.DeSerialize_Object(Of Job_Solicitation)(ds.Tables(0).Rows(i)(1), success)
+
+            'With job
+
+            '    .s
+
+            'End With
 
             solicitation = New SortedDictionary(Of Integer, Job_Solicitation)
             Dim msg = Serialization_Utilities.DeSerialize_Object(Of Job_Solicitation)(ds.Tables(0).Rows(i)(1), success)

@@ -131,13 +131,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Content.Primitives\Content.Primitives.vbproj">
+      <Project>{8378f67f-4a90-4911-87cf-18530ab97ecf}</Project>
+      <Name>Content.Primitives</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Content.Solicitation.Localize\Content.Solicitation.Localize.vbproj">
       <Project>{274d40f8-2ff3-4fa9-93cf-0b4994ac07e3}</Project>
       <Name>Content.Solicitation.Localize</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Content.Solicitation.Primitives\Content.Solicitation.Primitives.vbproj">
-      <Project>{dde8a23f-e0d2-4a97-a1d5-e45ea2a397b7}</Project>
-      <Name>Content.Solicitation.Primitives</Name>
     </ProjectReference>
     <ProjectReference Include="..\Content.Solicitation.Schema\Content.Solicitation.Schema.vbproj">
       <Project>{7bb88396-0167-481c-9f1a-e5d2b7f6e247}</Project>

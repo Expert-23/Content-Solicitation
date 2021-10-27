@@ -1,0 +1,15 @@
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Localize\bin\Release\Content.Solicitation.Localize.exe.config
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Localize\bin\Release\Content.Solicitation.Localize.exe
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Localize\bin\Release\Content.Solicitation.Localize.pdb
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Localize\bin\Release\Content.Solicitation.Localize.xml
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Localize\bin\Release\Serilog.dll
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Localize\bin\Release\WebDriver.dll
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Localize\bin\Release\Serilog.xml
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Localize\bin\Release\WebDriver.xml
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Localize\obj\Release\Content.Solicitation.Localize.Resources.resources
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Localize\obj\Release\Content.Solicitation.Localize.vbproj.GenerateResource.cache
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Localize\obj\Release\Content.Solicitation.Localize.vbproj.CoreCompileInputs.cache
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Localize\obj\Release\Content.Solicitation.Localize.vbproj.CopyComplete
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Localize\obj\Release\Content.Solicitation.Localize.exe
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Localize\obj\Release\Content.Solicitation.Localize.xml
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Localize\obj\Release\Content.Solicitation.Localize.pdb

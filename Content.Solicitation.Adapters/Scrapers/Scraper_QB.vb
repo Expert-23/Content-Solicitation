@@ -5,7 +5,7 @@ Imports System.IO
 Imports System.Text
 Imports System.Threading
 Imports Content.Solicitation.Utilities
-Imports Content.Solicitation.Primitives
+Imports Content.Primitives
 Public Class Scraper_QB
 
     'This class is the Selenium base method of doing the screen scraping via Chrome - placed into service 7/1/17

@@ -1,5 +1,5 @@
 ﻿Imports Content.Solicitation.Schema.Internal_DB
-Imports Content.Solicitation.Primitives
+Imports Content.Primitives
 Imports Loggingg
 Imports System.Data.SqlClient
 Imports Content.Solicitation.Utilities

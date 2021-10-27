@@ -132,6 +132,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Content.Primitives\Content.Primitives.vbproj">
+      <Project>{8378f67f-4a90-4911-87cf-18530ab97ecf}</Project>
+      <Name>Content.Primitives</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Content.Solicitation.Adapters\Content.Solicitation.Adapters.vbproj">
       <Project>{06aace38-7017-451f-81a0-85ac42f4182b}</Project>
       <Name>Content.Solicitation.Adapters</Name>
@@ -139,10 +143,6 @@
     <ProjectReference Include="..\Content.Solicitation.Hilda\Content.Solicitation.HLDA.vbproj">
       <Project>{B792F2C0-6DFB-43F5-819A-637337DCA223}</Project>
       <Name>Content.Solicitation.HLDA</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Content.Solicitation.Primitives\Content.Solicitation.Primitives.vbproj">
-      <Project>{dde8a23f-e0d2-4a97-a1d5-e45ea2a397b7}</Project>
-      <Name>Content.Solicitation.Primitives</Name>
     </ProjectReference>
     <ProjectReference Include="..\Content.Solicitation.Utilities\Content.Solicitation.Utilities.vbproj">
       <Project>{2703F8D8-9A09-45BE-8C43-CFB6473DC214}</Project>

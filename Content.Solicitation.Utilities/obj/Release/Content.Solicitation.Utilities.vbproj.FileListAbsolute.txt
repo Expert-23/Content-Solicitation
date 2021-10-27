@@ -1,0 +1,15 @@
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Utilities\bin\Release\Content.Solicitation.Utilities.exe.config
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Utilities\bin\Release\Content.Solicitation.Utilities.exe
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Utilities\bin\Release\Content.Solicitation.Utilities.pdb
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Utilities\bin\Release\Content.Solicitation.Utilities.xml
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Utilities\bin\Release\Serilog.dll
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Utilities\bin\Release\WebDriver.dll
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Utilities\bin\Release\Serilog.xml
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Utilities\bin\Release\WebDriver.xml
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Utilities\obj\Release\Content.Solicitation.Utilities.Resources.resources
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Utilities\obj\Release\Content.Solicitation.Utilities.vbproj.GenerateResource.cache
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Utilities\obj\Release\Content.Solicitation.Utilities.vbproj.CoreCompileInputs.cache
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Utilities\obj\Release\Content.Solicitation.Utilities.vbproj.CopyComplete
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Utilities\obj\Release\Content.Solicitation.Utilities.exe
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Utilities\obj\Release\Content.Solicitation.Utilities.xml
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Utilities\obj\Release\Content.Solicitation.Utilities.pdb

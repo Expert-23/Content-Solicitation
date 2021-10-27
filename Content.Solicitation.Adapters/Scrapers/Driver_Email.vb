@@ -4,7 +4,7 @@ Imports OpenQA.Selenium.Support.UI
 Imports System.IO
 Imports System.Text
 Imports System.Threading
-Imports Content.Solicitation.Primitives
+Imports Content.Primitives
 Imports Content.Solicitation.Utilities
 Imports Loggingg
 

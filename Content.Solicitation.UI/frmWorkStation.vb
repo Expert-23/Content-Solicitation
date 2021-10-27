@@ -1,6 +1,8 @@
-﻿Imports Content.Solicitation.Primitives
+﻿
 Imports Content.Solicitation.Utilities
 Imports Content.Solicitation.Controllers
+Imports Content.Primitives
+Imports Content.Solicitation.UI
 
 Public Class frmWorkStation
 #Region "Members"
@@ -35,11 +37,18 @@ Public Class frmWorkStation
     Private Sub Initialize_Comboboxes()
         Initialize_Combobox_Websites()
         Initialize_Combo_Box_Email()
+        Initialize_Combo_Box_Solicit()
     End Sub
     Private Sub Initialize_Combo_Box_Email()
         cboEmail.Items.Clear()
         For Each key In mMessage
             If key.Value.Values.First() IsNot Nothing Then If key.Value.Values.First().Campaign_Name IsNot Nothing Then cboEmail.Items.Add(key.Value.Values.First().Campaign_Name)
+        Next
+    End Sub
+    Private Sub Initialize_Combo_Box_Solicit()
+        cboSnippet.Items.Clear()
+        For Each key In mJob
+            cboSnippet.Items.Add(key.Value.Values.First.Item_Content.Title)
         Next
     End Sub
     Private Sub Initialize_Combobox_Websites()
@@ -107,6 +116,7 @@ Public Class frmWorkStation
         Retrieve_Messages()
         Retrieve_Solicits()
         Initialize_Combo_Box_Email()
+        Initialize_Combo_Box_Solicit()
     End Sub
     Private Sub Retrieve_Messages()
         Dim website As Websites = DirectCast([Enum].Parse(GetType(Websites), cboWebsite.SelectedItem), Websites)
@@ -114,7 +124,7 @@ Public Class frmWorkStation
     End Sub
     Private Sub Retrieve_Solicits()
         Dim website = DirectCast([Enum].Parse(GetType(Websites), cboWebsite.SelectedItem), Websites)
-        mJob = mPersist_Job.Get_All_Solicitations_By_Website(website, Content_Status.solicited_ready)
+        mJob = mPersist_Job.Get_All_Solicitations_By_Website(website, Content_Status.solicited_pushed)
     End Sub
 
     Private Sub Retrieve_All_Messages()

@@ -1,4 +1,4 @@
-﻿Imports Content.Solicitation.Primitives
+﻿Imports Content.Primitives
 Imports Content.Solicitation.Controllers
 Imports Content.Solicitation.Adapters
 Public Class frmReports

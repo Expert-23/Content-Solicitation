@@ -1,0 +1,13 @@
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.UI\obj\Release\Content.Solicitation.UI.frmCamp.resources
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.UI\obj\Release\Content.Solicitation.UI.frmCAmpaign.resources
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.UI\obj\Release\Content.Solicitation.UI.frmFileSystem.resources
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.UI\obj\Release\Content.Solicitation.UI.frmReports.resources
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.UI\obj\Release\Content.Solicitation.UI.frmVar.resources
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.UI\obj\Release\Content.Solicitation.UI.frmVariations.resources
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.UI\obj\Release\Content.Solicitation.UI.frmVersion.resources
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.UI\obj\Release\Content.Solicitation.UI.frmWorkStation.resources
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.UI\obj\Release\Content.Solicitation.UI.frmWorkStationBuild.resources
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.UI\obj\Release\Content.Solicitation.UI.Resources.resources
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.UI\obj\Release\Content.Solicitation.UI.vbproj.GenerateResource.cache
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.UI\obj\Release\Content.Solicitation.UI.vbproj.CoreCompileInputs.cache
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.UI\obj\Release\Content.Solicitation.UI.vbproj.AssemblyReference.cache

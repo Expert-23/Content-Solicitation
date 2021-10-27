@@ -1,4 +1,4 @@
-﻿Imports Content.Solicitation.Primitives
+﻿Imports Content.Primitives
 Imports Content.Solicitation.Controllers
 Public Class frmCAmpaign
     Private mControllerScraper As Controller_Scraper

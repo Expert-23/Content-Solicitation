@@ -13,4 +13,3 @@ C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Uti
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Utilities\obj\Debug\Content.Solicitation.Utilities.exe
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Utilities\obj\Debug\Content.Solicitation.Utilities.xml
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Utilities\obj\Debug\Content.Solicitation.Utilities.pdb
-C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Utilities\obj\Debug\Content.Solicitation.Utilities.vbproj.AssemblyReference.cache

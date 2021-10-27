@@ -1,5 +1,5 @@
 ﻿Imports Content.Solicitation.Hilda
-Imports Content.Solicitation.Primitives
+Imports Content.Primitives
 Imports Content.Solicitation.Utilities
 
 Public Class Controller_Message

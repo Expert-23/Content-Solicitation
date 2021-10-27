@@ -1,4 +1,4 @@
-﻿Imports Content.Solicitation.Primitives
+﻿Imports Content.Primitives
 Public Class frmVersion
     Public Sub New(ByVal item As Version)
         InitializeComponent()

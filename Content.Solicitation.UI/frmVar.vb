@@ -1,4 +1,4 @@
-﻿Imports Content.Solicitation.Primitives
+﻿Imports Content.Primitives
 Imports Content.Solicitation.Utilities
 Imports Content.Solicitation.Adapters
 Imports Content.Solicitation.Controllers

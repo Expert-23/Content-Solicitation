@@ -2,8 +2,8 @@ C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Ada
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Adapters\bin\Debug\Content.Solicitation.Adapters.exe
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Adapters\bin\Debug\Content.Solicitation.Adapters.pdb
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Adapters\bin\Debug\Content.Solicitation.Adapters.xml
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Adapters\bin\Debug\Content.Primitives.dll
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Adapters\bin\Debug\Content.Solicitation.Localize.exe
-C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Adapters\bin\Debug\Content.Solicitation.Primitives.exe
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Adapters\bin\Debug\Content.Solicitation.Utilities.exe
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Adapters\bin\Debug\Loggingg.exe
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Adapters\bin\Debug\Serilog.dll
@@ -14,14 +14,13 @@ C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Ada
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Adapters\bin\Debug\Serilog.Sinks.Seq.dll
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Adapters\bin\Debug\Serilog.Sinks.PeriodicBatching.dll
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Adapters\bin\Debug\Serilog.Formatting.Compact.dll
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Adapters\bin\Debug\Content.Primitives.pdb
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Adapters\bin\Debug\Content.Primitives.xml
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Adapters\bin\Debug\Loggingg.pdb
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Adapters\bin\Debug\Loggingg.exe.config
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Adapters\bin\Debug\Content.Solicitation.Localize.pdb
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Adapters\bin\Debug\Content.Solicitation.Localize.xml
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Adapters\bin\Debug\Content.Solicitation.Localize.exe.config
-C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Adapters\bin\Debug\Content.Solicitation.Primitives.pdb
-C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Adapters\bin\Debug\Content.Solicitation.Primitives.xml
-C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Adapters\bin\Debug\Content.Solicitation.Primitives.exe.config
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Adapters\bin\Debug\Content.Solicitation.Utilities.pdb
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Adapters\bin\Debug\Content.Solicitation.Utilities.xml
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Adapters\bin\Debug\Content.Solicitation.Utilities.exe.config

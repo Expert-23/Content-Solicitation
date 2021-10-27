@@ -1,0 +1,4 @@
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Adapters\obj\Release\Content.Solicitation.Adapters.vbproj.AssemblyReference.cache
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Adapters\obj\Release\Content.Solicitation.Adapters.Resources.resources
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Adapters\obj\Release\Content.Solicitation.Adapters.vbproj.GenerateResource.cache
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Adapters\obj\Release\Content.Solicitation.Adapters.vbproj.CoreCompileInputs.cache
