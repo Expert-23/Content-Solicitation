@@ -29,6 +29,50 @@ Public Class Scraper_Reports_Lemlist
     End Sub
     Private Sub Scrape_Pages()
         Go_To_URl(mURL_Reports)
+        Get_Dates()
+        Get_Campaign_Stats()
+    End Sub
+    Private Sub Get_Dates()
+        mDriver.FindElements(By.CssSelector(".js-tab-switch"))(1).Click()
+        Thread.Sleep(2000)
+        mDriver.FindElement(By.CssSelector(".btn.btn-secondary.dropdown-toggle")).Click()
+        Dim dateContainer = mDriver.FindElement(By.CssSelector(".dropdown-menu.max.scrollable-menu.show")).FindElements(By.TagName("button"))
+        dateContainer(dateContainer.Count - 2).Click()
+    End Sub
+    Private Sub Get_Campaign_Stats()
+
+        Thread.Sleep(1000)
+        Dim container = mDriver.FindElement(By.CssSelector(".main-container"))
+        container.Click()
+        container.SendKeys(Keys.ArrowDown)
+        container.SendKeys(Keys.ArrowDown)
+        container.SendKeys(Keys.ArrowDown)
+        Thread.Sleep(1000)
+        mDriver.FindElement(By.CssSelector(".btn.btn-secondary.btn-block.dropdown-toggle")).Click()
+        Dim campaignContainer = mDriver.FindElement(By.CssSelector(".dropdown-menu.max.scrollable-menu.checkbox-menu.reports-campaign-analytics-campaigns show")).FindElements(By.TagName("button"))
+
+        For i = 1 To campaignContainer.Count - 1
+            Utilities.Click_Elelment(campaignContainer(0), mDriver)
+            Utilities.Click_Elelment(campaignContainer(0), mDriver)
+            campaignContainer(i).Click()
+
+            campaignContainer(0).Click()
+            campaignContainer(0).Click()
+            campaignContainer(i).Click()
+            Thread.Sleep(1000)
+            Dim report As New Reports
+
+            Dim statsContainer = mDriver.FindElement(By.CssSelector(".stat-column")).FindElement(By.CssSelector(".stat-line")).FindElements(By.CssSelector(".stat-metrics-percent"))
+            With report
+                .ID = Guid.NewGuid().ToString
+                .Campaign_Name = campaignContainer(i).FindElement(By.CssSelector(".col-4")).Text
+                .Sent = statsContainer(0).Text
+                .Opened = statsContainer(1).Text
+                .Clicked = statsContainer(2).Text
+                .Interested = statsContainer(3).Text
+            End With
+            Reports.Add(report)
+        Next
     End Sub
     Private Sub Login()
         Dim LoginField = mDriver.FindElements(By.CssSelector(".ui-edit"))
