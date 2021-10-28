@@ -27,7 +27,7 @@ Public Class Persist_Message
                                                     OPS.Message.ColName.Website,
                                                     OPS.Message.ColName.Date_Created,
                                                     DateTime.Now,
-                                                    message.ID,
+                                                    message.Campaign_Name,
                                                     message.Website
                                                     )
 

@@ -7,3 +7,4 @@ C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Primitives\obj\D
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Primitives\obj\Debug\Content.Primitives.dll
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Primitives\obj\Debug\Content.Primitives.xml
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Primitives\obj\Debug\Content.Primitives.pdb
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Primitives\obj\Debug\Content.Primitives.vbproj.AssemblyReference.cache

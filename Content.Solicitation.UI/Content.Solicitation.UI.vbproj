@@ -113,6 +113,12 @@
     <Compile Include="frmReports.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmSolicit.Designer.vb">
+      <DependentUpon>frmSolicit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSolicit.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmVar.Designer.vb">
       <DependentUpon>frmVar.vb</DependentUpon>
     </Compile>
@@ -173,6 +179,9 @@
     <EmbeddedResource Include="frmReports.resx">
       <DependentUpon>frmReports.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmSolicit.resx">
+      <DependentUpon>frmSolicit.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmVar.resx">
       <DependentUpon>frmVar.vb</DependentUpon>
     </EmbeddedResource>
@@ -219,6 +228,10 @@
     <ProjectReference Include="..\Content.Solicitation.Controllers\Content.Solicitation.Controllers.vbproj">
       <Project>{3bf2e87a-3abc-4293-b74d-0afa046040a3}</Project>
       <Name>Content.Solicitation.Controllers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Content.Solicitation.Hilda\Content.Solicitation.HLDA.vbproj">
+      <Project>{b792f2c0-6dfb-43f5-819a-637337dca223}</Project>
+      <Name>Content.Solicitation.HLDA</Name>
     </ProjectReference>
     <ProjectReference Include="..\Content.Solicitation.Utilities\Content.Solicitation.Utilities.vbproj">
       <Project>{2703f8d8-9a09-45be-8c43-cfb6473dc214}</Project>

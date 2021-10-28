@@ -63,7 +63,7 @@ Public Class Message
 
     Public Overrides Function ToString() As String
 
-        Return String.Format("{0}: {1}", ID, Original.Subject.ToString)
+        Return String.Format("{0}: {1}", Campaign_Name, Original.Subject.ToString)
 
     End Function
 

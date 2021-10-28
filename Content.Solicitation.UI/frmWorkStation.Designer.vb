@@ -53,8 +53,6 @@ Partial Class frmWorkStation
         Me.TableLayoutPanel9 = New System.Windows.Forms.TableLayoutPanel()
         Me.txtBoxBody = New System.Windows.Forms.TextBox()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LOADToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.WIPToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoadToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.SAVEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -64,7 +62,6 @@ Partial Class frmWorkStation
         Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.SnippetToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EditToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaunchCampaignToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
@@ -195,6 +192,7 @@ Partial Class frmWorkStation
         Me.cboSnippet.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cboSnippet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboSnippet.FormattingEnabled = True
         Me.cboSnippet.Location = New System.Drawing.Point(3, 3)
         Me.cboSnippet.Name = "cboSnippet"
@@ -264,6 +262,7 @@ Partial Class frmWorkStation
         Me.cboEmail.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cboEmail.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboEmail.FormattingEnabled = True
         Me.cboEmail.Location = New System.Drawing.Point(3, 3)
         Me.cboEmail.Name = "cboEmail"
@@ -471,24 +470,12 @@ Partial Class frmWorkStation
         'MenuStrip1
         '
         Me.MenuStrip1.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.LOADToolStripMenuItem, Me.WIPToolStripMenuItem, Me.cboWebsite, Me.WebsiteToolStripMenuItem, Me.BuildEmailToolStripMenuItem, Me.SnippetToolStripMenuItem, Me.LaunchCampaignToolStripMenuItem, Me.ReportsToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.WIPToolStripMenuItem, Me.cboWebsite, Me.WebsiteToolStripMenuItem, Me.BuildEmailToolStripMenuItem, Me.SnippetToolStripMenuItem, Me.LaunchCampaignToolStripMenuItem, Me.ReportsToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1350, 37)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'FileToolStripMenuItem
-        '
-        Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(55, 33)
-        Me.FileToolStripMenuItem.Text = "File"
-        '
-        'LOADToolStripMenuItem
-        '
-        Me.LOADToolStripMenuItem.Name = "LOADToolStripMenuItem"
-        Me.LOADToolStripMenuItem.Size = New System.Drawing.Size(94, 33)
-        Me.LOADToolStripMenuItem.Text = "Refresh"
         '
         'WIPToolStripMenuItem
         '
@@ -512,6 +499,7 @@ Partial Class frmWorkStation
         'cboWebsite
         '
         Me.cboWebsite.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.cboWebsite.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboWebsite.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboWebsite.Name = "cboWebsite"
         Me.cboWebsite.Size = New System.Drawing.Size(121, 33)
@@ -544,16 +532,9 @@ Partial Class frmWorkStation
         '
         'SnippetToolStripMenuItem
         '
-        Me.SnippetToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditToolStripMenuItem2})
         Me.SnippetToolStripMenuItem.Name = "SnippetToolStripMenuItem"
         Me.SnippetToolStripMenuItem.Size = New System.Drawing.Size(93, 33)
         Me.SnippetToolStripMenuItem.Text = "Snippet"
-        '
-        'EditToolStripMenuItem2
-        '
-        Me.EditToolStripMenuItem2.Name = "EditToolStripMenuItem2"
-        Me.EditToolStripMenuItem2.Size = New System.Drawing.Size(116, 26)
-        Me.EditToolStripMenuItem2.Text = "Edit"
         '
         'LaunchCampaignToolStripMenuItem
         '
@@ -616,8 +597,6 @@ Partial Class frmWorkStation
     Friend WithEvents Panel1 As Panel
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents LOADToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents WIPToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LoadToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents BuildEmailToolStripMenuItem As ToolStripMenuItem
@@ -655,6 +634,5 @@ Partial Class frmWorkStation
     Friend WithEvents cboWebsite As ToolStripComboBox
     Friend WithEvents WebsiteToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SnippetToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents EditToolStripMenuItem2 As ToolStripMenuItem
     Friend WithEvents ReportsToolStripMenuItem As ToolStripMenuItem
 End Class

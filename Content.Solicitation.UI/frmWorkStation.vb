@@ -6,8 +6,8 @@ Imports Content.Solicitation.UI
 
 Public Class frmWorkStation
 #Region "Members"
-    Private mMessage As SortedDictionary(Of Integer, SortedDictionary(Of String, Message))
-    Private mJob As SortedDictionary(Of Integer, SortedDictionary(Of Integer, Job_Solicitation))
+    Private mMessage As SortedDictionary(Of String, Message)
+    Private mJob As SortedDictionary(Of Integer, Job_Solicitation)
     Private mSelected_Message As Message
     Private mSelected_Job As Job_Solicitation
     Private mJOB_Message As Solicitation_Message_Combo
@@ -26,13 +26,13 @@ Public Class frmWorkStation
     End Sub
     Private Sub Initialize_Members()
 
-        mMessage = New SortedDictionary(Of Integer, SortedDictionary(Of String, Message))
-        mJob = New SortedDictionary(Of Integer, SortedDictionary(Of Integer, Job_Solicitation))
+        mMessage = New SortedDictionary(Of String, Message)
+        mJob = New SortedDictionary(Of Integer, Job_Solicitation)
         mSelected_Message = New Message
         mSelected_Job = New Job_Solicitation
         mPersist_Message = New Controller_Message
         mPersist_Job = New Controller_Solicitation
-        'Retrieve_All()
+
     End Sub
     Private Sub Initialize_Comboboxes()
         Initialize_Combobox_Websites()
@@ -41,15 +41,19 @@ Public Class frmWorkStation
     End Sub
     Private Sub Initialize_Combo_Box_Email()
         cboEmail.Items.Clear()
+        cboEmail.Text = ""
         For Each key In mMessage
-            If key.Value.Values.First() IsNot Nothing Then If key.Value.Values.First().Campaign_Name IsNot Nothing Then cboEmail.Items.Add(key.Value.Values.First().Campaign_Name)
+            cboEmail.Items.Add(key.Value)
         Next
+        cboEmail.SelectedIndex = mMessage.Count - 1
     End Sub
     Private Sub Initialize_Combo_Box_Solicit()
         cboSnippet.Items.Clear()
+        cboEmail.Text = ""
         For Each key In mJob
-            cboSnippet.Items.Add(key.Value.Values.First.Item_Content.Title)
+            cboSnippet.Items.Add(key.Value)
         Next
+        cboSnippet.SelectedIndex = mJob.Count - 1
     End Sub
     Private Sub Initialize_Combobox_Websites()
         cboWebsite.Items.Clear()
@@ -60,7 +64,7 @@ Public Class frmWorkStation
                     .Items.Add(item)
                 End If
             Next
-            .SelectedIndex = 0
+
         End With
     End Sub
 #End Region
@@ -96,14 +100,14 @@ Public Class frmWorkStation
     Private Sub EditToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditToolStripMenuItem.Click
         Load_New_Email()
     End Sub
-    Private Sub EditToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles EditToolStripMenuItem2.Click
-        Edit_Snippet()
-    End Sub
     Private Sub cboWebsite_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboWebsite.SelectedIndexChanged
         Retrieve_All()
     End Sub
     Private Sub ReportsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReportsToolStripMenuItem.Click
         Load_Reports()
+    End Sub
+    Private Sub SnippetToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SnippetToolStripMenuItem.Click
+        View_Snippet()
     End Sub
 #End Region
 
@@ -128,29 +132,30 @@ Public Class frmWorkStation
     End Sub
 
     Private Sub Retrieve_All_Messages()
-        mMessage = New SortedDictionary(Of Integer, SortedDictionary(Of String, Message))
+        mMessage = New SortedDictionary(Of String, Message)
         mMessage = mPersist_Message.Get_All_Messages()
     End Sub
     Private Sub Retrieve_All_Solicits()
 
     End Sub
     Private Sub Load_New_Email()
-        Dim msg As New Message
-        Dim webbsite = DirectCast([Enum].Parse(GetType(Websites), cboWebsite.SelectedItem), Websites)
-        Dim frm As New frmVar(webbsite)
-        frm.ShowDialog()
-        Retrieve_All()
-        Initialize_Comboboxes()
+        If cboWebsite.SelectedItem IsNot Nothing Then
+            Dim msg As New Message
+            Dim webbsite = DirectCast([Enum].Parse(GetType(Websites), cboWebsite.SelectedItem), Websites)
+            Dim frm As New frmVar(webbsite)
+            frm.ShowDialog()
+            Retrieve_Messages()
+            Initialize_Combo_Box_Email()
+        Else
+            MessageBox.Show("You must Select a website")
+        End If
+
     End Sub
     Private Sub Map_Selected_Email()
-        For Each keyval In mMessage
-            If keyval.Value.Values.First.Campaign_Name = cboEmail.SelectedItem Then
-                txtBoxSubject.Text = keyval.Value.Values.First().Original_Subject.Original
-                mSelected_Message = keyval.Value.Values.First()
-                txtBoxBody.Text = keyval.Value.Values.First().Original.Body_Text
-                Exit Sub
-            End If
-        Next
+
+        mSelected_Message = cboEmail.SelectedItem
+        txtBoxSubject.Text = mSelected_Message.Original.Subject.Original
+        txtBoxBody.Text = mSelected_Message.Original.Body_Text
     End Sub
     Private Sub Map_Job_Email()
         Map_Selected_Email()
@@ -165,17 +170,25 @@ Public Class frmWorkStation
         End If
     End Sub
     Private Sub Map_Selected_Job()
-        Dim job As SortedDictionary(Of Integer, Job_Solicitation)
-        job = mJob(cboSnippet.SelectedIndex)
-        mSelected_Job = job.Values.First()
+        If cboSnippet.SelectedItem Is Nothing Then Exit Sub
+        mSelected_Job = cboSnippet.SelectedItem
+        Try
+            PictureBox1.Image = mSelected_Job.Snippet
+        Catch ex As Exception
+
+        End Try
+
     End Sub
     Private Sub Launch_Campaign()
         Dim JOB As New Job_Curation
         Dim message As New Message
-        Dim frm = New frmCAmpaign(message, JOB)
-        frm.ShowDialog()
-        Retrieve_All()
-        Initialize_Combo_Box_Email()
+        If mSelected_Message.Campaign_Name Is Nothing Or mSelected_Job.Snippet Is Nothing Then
+            MessageBox.Show("Select A Solicit and An Email To Continue")
+        Else
+            Dim frm = New frmCAmpaign(message, JOB)
+            frm.ShowDialog()
+
+        End If
     End Sub
     Private Sub Load_JOB_Message()
         Dim success As Boolean
@@ -184,7 +197,23 @@ Public Class frmWorkStation
         frm.ShowDialog()
         selectedPath = frm.FullFileRef()
         Serialization_Utilities.Load_Object_FileSystem_And_Deserialize(Of Solicitation_Message_Combo)(selectedPath, mJOB_Message, success)
-        If mJOB_Message IsNot Nothing Then Map_Job_Email()
+        If mJOB_Message IsNot Nothing Then Map_Loaded(mJOB_Message)
+    End Sub
+    Private Sub Map_Loaded(ByVal jOb_Message As Solicitation_Message_Combo)
+        Initialize_Combobox_Websites()
+        cboWebsite.SelectedItem = jOb_Message.Website
+        Initialize_Combo_Box_Email()
+        Initialize_Combo_Box_Solicit()
+        Retrieve_Messages()
+        Retrieve_Solicits()
+        mSelected_Message = jOb_Message.Message
+        mSelected_Job = jOb_Message.Solicit
+        mSelected_Job.Snippet = mPersist_Job.To_Bitmap_From_Bytes_Array(jOb_Message.Image_Bytes)
+        PictureBox1.Image = mSelected_Job.Snippet
+        cboEmail.SelectedIndex = cboEmail.FindStringExact(mJOB_Message.Message.ToString)
+        cboSnippet.SelectedIndex = cboSnippet.FindStringExact(mJOB_Message.Solicit.ToString)
+        txtBoxBody.Text = jOb_Message.Message.Original.Body_Text
+        txtBoxSubject.Text = jOb_Message.Message.Original_Subject.Original
     End Sub
     Private Sub Save_Form()
         Dim frm As New frmFileSystem("", "C:\Users\pc\source\repos\Expert-23\Content\G23.Content.Complete\z_cache\wip\")
@@ -192,13 +221,11 @@ Public Class frmWorkStation
         Dim selectedPath = frm.FullFileRef()
         Dim success As Boolean
         Dim cmb As New Solicitation_Message_Combo
-        Dim msg As SortedDictionary(Of String, Message)
-        msg = mMessage(cboEmail.SelectedIndex)
-        Dim job As SortedDictionary(Of Integer, Job_Solicitation)
-        job = mJob(cboSnippet.SelectedIndex)
         With cmb
-            .Message = msg.Values.First
-            .Solicit = job.Values.First
+            .Message = mSelected_Message
+            .Solicit = mSelected_Job
+            .Image_Bytes = mPersist_Job.To_Bytes_Array_From_BitMap(mSelected_Job.Snippet)
+            .Website = cboWebsite.SelectedItem
         End With
         Serialization_Utilities.Serialize_Object_And_Save_FileSystem(cmb, selectedPath, success)
     End Sub
@@ -218,9 +245,9 @@ Public Class frmWorkStation
             Exit Sub
         End Try
     End Sub
-    Private Sub Edit_Snippet()
-
+    Private Sub View_Snippet()
+        If mSelected_Job Is Nothing Then MessageBox.Show("No selected Job")
+        If mSelected_Job.Snippet IsNot Nothing Then Dim frmSol As New frmSolicit(mSelected_Job.Snippet) : frmSol.ShowDialog()
     End Sub
 #End Region
-
 End Class

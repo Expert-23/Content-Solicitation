@@ -100,10 +100,10 @@ Public Class Version
 
         Dim sb As New System.Text.StringBuilder
 
-        For Each sentence In sentences.Values
-
-            sb.AppendLine(sentence.ToString)
-            sb.AppendLine()
+        For i = 0 To sentences.Values.Count - 1
+            If i = sentences.Values.Count - 1 Then sb.Append(sentences(i).ToString) : Exit For
+            sb.AppendLine(sentences(i).ToString)
+            '       sb.AppendLine()
 
         Next
 

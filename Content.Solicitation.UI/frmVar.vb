@@ -44,7 +44,7 @@ Public Class frmVar
         Analyze_Message()
     End Sub
     Private Sub btnSentence_Substitute_Click(sender As Object, e As EventArgs) Handles btnSentence_Substitute.Click
-        Change_Variation()
+        Change_Variation_Body()
     End Sub
     Private Sub MORPHToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MORPHToolStripMenuItem.Click
         Load_Next_Message_Version()
@@ -53,7 +53,6 @@ Public Class frmVar
         Sentence_Change()
     End Sub
     Private Sub mnuItmWip_Load_Click(sender As Object, e As EventArgs) Handles mnuItmWip_Load.Click
-
         Load_Message(False)
     End Sub
     Private Sub mnuItmWIP_Save_Click(sender As Object, e As EventArgs) Handles mnuItmWIP_Save.Click
@@ -71,26 +70,40 @@ Public Class frmVar
     Private Sub SaveToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveToolStripMenuItem.Click
         Push_Message()
     End Sub
+    Private Sub txtVersion_TextChanged(sender As Object, e As EventArgs) Handles txtVersion.TextChanged
+        txtVersion.ScrollBars = ScrollBars.Both
+    End Sub
+    Private Sub btnSubjectSubstitute_Click(sender As Object, e As EventArgs) Handles btnSubjectSubstitute.Click
+        Change_Variation_Subject()
+    End Sub
 #End Region
 
 #Region "Methods"
     Private Sub Push_Message()
         If mEdit Then Message_.Date_Modified = Date.Now : mController_Message.Update_One_Message(Message_) : Exit Sub
-        If Message_ IsNot Nothing Then mController_Message.Save_One_Message(Message_) Else MessageBox.Show("There are no analyze messages") : Exit Sub
+        If Message_ IsNot Nothing Then
+            mController_Message.Save_One_Message(Message_)
+            Me.Close()
+        Else
+            MessageBox.Show("There are no analyze messages")
+            Exit Sub
+        End If
     End Sub
     Private Sub Analyze_Message()
         Initialize_Message()
-        Dim s As New Scraper_QB
-        Dim variants As Integer
+        If txtBoxCampaignName.Text = "" Then MessageBox.Show("Campaign name is empty")
         Try
+            Dim s As New Scraper_QB
+            Dim variants As Integer
             variants = Integer.Parse(txtBoxVariation.Text)
+            If txtOriginal_Body.Text.Length < 5 Then MessageBox.Show("Body message is empty") : Exit Sub
+            If txtOriginal_Subject.Text = "" Then MessageBox.Show("Subject cannot be empty") : Exit Sub
+            s.Scrape(Message_, variants)
+            Save_Message()
         Catch ex As Exception
             MessageBox.Show("Variations must be inputed as an integer")
         End Try
-        s.Scrape(Message_, variants)
-        Save_Message()
     End Sub
-
     Private Sub Save_Message()
         Dim frm As New frmFileSystem("", "C:\Users\pc\source\repos\Expert-23\Content\G23.Content.Complete\z_cache\wip\")
         frm.ShowDialog()
@@ -175,15 +188,20 @@ Public Class frmVar
         txtSubject_Variations.Text = Message_.Sentences(0).Variations(3)
         Message_.Varied = Build_Version()
         txtBoxCampaignName.Text = Message_.Campaign_Name
+        If Message_.Sentences.Count > 1 Then txtBoxVariation.Text = Message_.Sentences(1).Variations.Count - 1.ToString
         txtVersion.Text = Message_.Varied.Body_Text
     End Sub
-    Private Sub Change_Variation()
+    Private Sub Change_Variation_Body()
         If cboSentence_Number.SelectedIndex > 0 And cboSentence_Variation.SelectedIndex > 0 Then
             Dim senteceIndex As Integer = cboSentence_Number.SelectedIndex
             Dim variationIndex As Integer = cboSentence_Variation.SelectedIndex
             If variationIndex = -1 Then Message_.Sentences(senteceIndex).Variations(0) = txtBoxNewSentence.Text Else Message_.Sentences(senteceIndex).Variations(variationIndex) = txtBoxNewSentence.Text
         End If
-
+    End Sub
+    Private Sub Change_Variation_Subject()
+        If cboSubjects.SelectedIndex > 0 Then
+            Message_.Sentences(0).Variations(cboSubjects.SelectedIndex) = txtSubject_Variations.Text
+        End If
     End Sub
     Private Sub Load_Controls_Subject()
         Try
@@ -234,6 +252,12 @@ Public Class frmVar
         txtSubject_Variations.Text = subjectText
         txtSubject_Variations.Tag = index
     End Sub
+
+
+
+
+
+
 #End Region
 
 End Class

@@ -56,27 +56,14 @@
 
         'Next
         Dim sentences As New SortedDictionary(Of Integer, String)
-        Dim output = content.Split(".")
-        Dim j = 0
+        Dim output = content.Split(vbNewLine)
         For i = 0 To output.Count - 1
-
-            If output(i).Contains(vbNewLine) Then
-                Dim temp = output(i).Split(vbNewLine)
-                sentences.Add(j, temp(0))
-                sentences.Add(j + 1, temp(1))
-                j = j + 2
-
-            Else
-                sentences.Add(j, output(i))
-                j = j + 1
-            End If
-
+            Clean_Line(output(i))
+            If i = output.Count - 1 Then If output(i) <> "" Then sentences.Add(i, output(i)) : Exit For
+            sentences.Add(i, output(i))
         Next
         Return sentences
-
     End Function
-
-
     Public Function Preprocess_Text(ByVal subject As String, ByVal content As String) As SortedDictionary(Of Integer, String)
 
         Dim clean As Char() = content.Replace(vbCr, "").Replace(vbLf, " ").ToArray
@@ -155,4 +142,9 @@
 
     End Function
 
+    Private Sub Clean_Line(ByRef line As String)
+        line = line.Replace(vbLf, "")
+        line = line.Replace(vbCrLf, "")
+        line = line.Replace(vbCr, "")
+    End Sub
 End Class
