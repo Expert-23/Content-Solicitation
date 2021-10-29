@@ -12,6 +12,7 @@ Public Class Email_Format
     Public Date_Modified As DateTime
     Public File_Dir As String
     Public Bold_Words As List(Of String)
+    Public Binary_String As String
     Public Underlined_Words As List(Of String)
 
     Public Sub New()
@@ -29,6 +30,7 @@ Public Class Email_Format
         Date_Modified = Date.Now
         Bold_Words = New List(Of String)
         Underlined_Words = New List(Of String)
+        Binary_String = String.Empty
     End Sub
     Public Overrides Function ToString() As String
         Return Font_Family & vbTab & Font_Size
