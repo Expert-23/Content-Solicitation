@@ -8,3 +8,13 @@ C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Primitives\obj\D
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Primitives\obj\Debug\Content.Primitives.xml
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Primitives\obj\Debug\Content.Primitives.pdb
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Primitives\obj\Debug\Content.Primitives.vbproj.AssemblyReference.cache
+C:\Users\joeyj\Source\Repos\Expert-23\Content-Solicitation\Content.Primitives\bin\Debug\Content.Primitives.dll
+C:\Users\joeyj\Source\Repos\Expert-23\Content-Solicitation\Content.Primitives\bin\Debug\Content.Primitives.pdb
+C:\Users\joeyj\Source\Repos\Expert-23\Content-Solicitation\Content.Primitives\bin\Debug\Content.Primitives.xml
+C:\Users\joeyj\Source\Repos\Expert-23\Content-Solicitation\Content.Primitives\obj\Debug\Content.Primitives.vbproj.AssemblyReference.cache
+C:\Users\joeyj\Source\Repos\Expert-23\Content-Solicitation\Content.Primitives\obj\Debug\Content.Primitives.Resources.resources
+C:\Users\joeyj\Source\Repos\Expert-23\Content-Solicitation\Content.Primitives\obj\Debug\Content.Primitives.vbproj.GenerateResource.cache
+C:\Users\joeyj\Source\Repos\Expert-23\Content-Solicitation\Content.Primitives\obj\Debug\Content.Primitives.vbproj.CoreCompileInputs.cache
+C:\Users\joeyj\Source\Repos\Expert-23\Content-Solicitation\Content.Primitives\obj\Debug\Content.Primitives.dll
+C:\Users\joeyj\Source\Repos\Expert-23\Content-Solicitation\Content.Primitives\obj\Debug\Content.Primitives.xml
+C:\Users\joeyj\Source\Repos\Expert-23\Content-Solicitation\Content.Primitives\obj\Debug\Content.Primitives.pdb
