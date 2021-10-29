@@ -13,3 +13,4 @@ C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Loc
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Localize\obj\Debug\Content.Solicitation.Localize.exe
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Localize\obj\Debug\Content.Solicitation.Localize.xml
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Localize\obj\Debug\Content.Solicitation.Localize.pdb
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Localize\obj\Debug\Content.Solicitation.Localize.vbproj.AssemblyReference.cache

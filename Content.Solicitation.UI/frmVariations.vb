@@ -355,9 +355,9 @@ Public Class frmVariations
     End Sub
 
     Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
-        Load_Message(True)
-        Dim frm As frmCAmpaign = New frmCAmpaign(mMessage, mJob)
-        frm.ShowDialog()
+        'Load_Message(True)
+        'Dim frm As frmCAmpaign = New frmCAmpaign(mMessage_Job)
+        'frm.ShowDialog()
     End Sub
 
     Private Sub WIPToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles WIPToolStripMenuItem.Click

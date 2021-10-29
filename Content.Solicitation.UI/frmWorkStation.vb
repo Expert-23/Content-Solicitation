@@ -10,7 +10,7 @@ Public Class frmWorkStation
     Private mJob As SortedDictionary(Of Integer, Job_Solicitation)
     Private mSelected_Message As Message
     Private mSelected_Job As Job_Solicitation
-    Private mJOB_Message As Solicitation_Message_Combo
+    Private mMessage_Job As Message_Job
     Private mPersist_Message As Controller_Message
     Private mPersist_Job As Controller_Solicitation
 #End Region
@@ -32,7 +32,7 @@ Public Class frmWorkStation
         mSelected_Job = New Job_Solicitation
         mPersist_Message = New Controller_Message
         mPersist_Job = New Controller_Solicitation
-
+        mMessage_Job = New Message_Job
     End Sub
     Private Sub Initialize_Comboboxes()
         Initialize_Combobox_Websites()
@@ -153,17 +153,14 @@ Public Class frmWorkStation
     End Sub
     Private Sub Map_Selected_Email()
 
-        mSelected_Message = cboEmail.SelectedItem
-        txtBoxSubject.Text = mSelected_Message.Original.Subject.Original
-        txtBoxBody.Text = mSelected_Message.Original.Body_Text
+        mMessage_Job.Message = cboEmail.SelectedItem
+        txtBoxSubject.Text = mMessage_Job.Message.Original.Subject.Original
+        txtBoxBody.Text = mMessage_Job.Message.Original.Body_Text
     End Sub
-    Private Sub Map_Job_Email()
-        Map_Selected_Email()
-        Map_Selected_Job()
-    End Sub
+
     Private Sub Edit_Email()
-        If mSelected_Message.ID <> "-1" Then
-            Dim frm = New frmVar(mSelected_Message)
+        If mMessage_Job.Message.ID <> "-1" Then
+            Dim frm = New frmVar(mMessage_Job)
             frm.ShowDialog()
         Else
             MessageBox.Show("There are no selected email")
@@ -171,23 +168,27 @@ Public Class frmWorkStation
     End Sub
     Private Sub Map_Selected_Job()
         If cboSnippet.SelectedItem Is Nothing Then Exit Sub
-        mSelected_Job = cboSnippet.SelectedItem
+        mMessage_Job.Job = cboSnippet.SelectedItem
         Try
-            PictureBox1.Image = mSelected_Job.Snippet
+            PictureBox1.Image = mMessage_Job.Job.Snippet
         Catch ex As Exception
 
         End Try
 
     End Sub
     Private Sub Launch_Campaign()
-        Dim JOB As New Job_Curation
-        Dim message As New Message
-        If mSelected_Message.Campaign_Name Is Nothing Or mSelected_Job.Snippet Is Nothing Then
+        Dim file As String = "C:\Users\pc\source\repos\Expert-23\Content-Solicitation\z-cache\bitmap\" & Guid.NewGuid.ToString & ".png"
+
+        Using bm As New Bitmap(mMessage_Job.Job.Snippet)
+            bm.Save(file)
+            bm.Dispose()
+        End Using
+        mMessage_Job.Job.Snippet_File_Path = file
+        If mMessage_Job.Message.Campaign_Name Is Nothing Or mMessage_Job.Job.Snippet Is Nothing Then
             MessageBox.Show("Select A Solicit and An Email To Continue")
         Else
-            Dim frm = New frmCAmpaign(message, JOB)
+            Dim frm = New frmCAmpaign(mMessage_Job)
             frm.ShowDialog()
-
         End If
     End Sub
     Private Sub Load_JOB_Message()
@@ -196,22 +197,20 @@ Public Class frmWorkStation
         Dim frm As frmFileSystem = New frmFileSystem("", "C:\Users\pc\source\repos\Expert-23\Content\G23.Content.Complete\z_cache\wip\")
         frm.ShowDialog()
         selectedPath = frm.FullFileRef()
-        Serialization_Utilities.Load_Object_FileSystem_And_Deserialize(Of Solicitation_Message_Combo)(selectedPath, mJOB_Message, success)
-        If mJOB_Message IsNot Nothing Then Map_Loaded(mJOB_Message)
+        Serialization_Utilities.Load_Object_FileSystem_And_Deserialize(Of Message_Job)(selectedPath, mMessage_Job, success)
+        If mMessage_Job IsNot Nothing Then Map_Loaded(mMessage_Job)
     End Sub
-    Private Sub Map_Loaded(ByVal jOb_Message As Solicitation_Message_Combo)
+    Private Sub Map_Loaded(ByVal jOb_Message As Message_Job)
         Initialize_Combobox_Websites()
         cboWebsite.SelectedItem = jOb_Message.Website
         Initialize_Combo_Box_Email()
         Initialize_Combo_Box_Solicit()
         Retrieve_Messages()
         Retrieve_Solicits()
-        mSelected_Message = jOb_Message.Message
-        mSelected_Job = jOb_Message.Solicit
-        mSelected_Job.Snippet = mPersist_Job.To_Bitmap_From_Bytes_Array(jOb_Message.Image_Bytes)
-        PictureBox1.Image = mSelected_Job.Snippet
-        cboEmail.SelectedIndex = cboEmail.FindStringExact(mJOB_Message.Message.ToString)
-        cboSnippet.SelectedIndex = cboSnippet.FindStringExact(mJOB_Message.Solicit.ToString)
+        mMessage_Job.Job.Snippet = mPersist_Job.To_Bitmap_From_Bytes_Array(jOb_Message.Image_Bytes)
+        PictureBox1.Image = mMessage_Job.Job.Snippet
+        cboEmail.SelectedIndex = cboEmail.FindStringExact(mMessage_Job.Message.ToString)
+        cboSnippet.SelectedIndex = cboSnippet.FindStringExact(mMessage_Job.Job.ToString)
         txtBoxBody.Text = jOb_Message.Message.Original.Body_Text
         txtBoxSubject.Text = jOb_Message.Message.Original_Subject.Original
     End Sub
@@ -220,34 +219,31 @@ Public Class frmWorkStation
         frm.ShowDialog()
         Dim selectedPath = frm.FullFileRef()
         Dim success As Boolean
-        Dim cmb As New Solicitation_Message_Combo
-        With cmb
-            .Message = mSelected_Message
-            .Solicit = mSelected_Job
-            .Image_Bytes = mPersist_Job.To_Bytes_Array_From_BitMap(mSelected_Job.Snippet)
-            .Website = cboWebsite.SelectedItem
-        End With
-        Serialization_Utilities.Serialize_Object_And_Save_FileSystem(cmb, selectedPath, success)
+        mMessage_Job.Image_Bytes = mPersist_Job.To_Bytes_Array_From_BitMap(mMessage_Job.Job.Snippet)
+        mMessage_Job.Website = cboWebsite.SelectedItem
+        Serialization_Utilities.Serialize_Object_And_Save_FileSystem(mMessage_Job, selectedPath, success)
     End Sub
     Private Sub Load_Form()
-        Dim cmb As New Solicitation_Message_Combo
+        Dim cmb As New Message_Job
         Dim success As Boolean
         Dim frm As frmFileSystem = New frmFileSystem("", "C:\Users\pc\source\repos\Expert-23\Content\G23.Content.Complete\z_cache\wip\")
         frm.ShowDialog()
         Dim selectedPath = frm.FullFileRef()
         Try
-            Serialization_Utilities.Load_Object_FileSystem_And_Deserialize(Of Solicitation_Message_Combo)(selectedPath, cmb, success)
-            mSelected_Job = cmb.Solicit
-            mSelected_Message = cmb.Message
-            txtBoxBody.Text = mSelected_Message.Original.Body_Text
-            txtBoxSubject.Text = mSelected_Message.Original_Subject.Original
+            Serialization_Utilities.Load_Object_FileSystem_And_Deserialize(Of Message_Job)(selectedPath, cmb, success)
+            mSelected_Job = cmb.Job
+            mMessage_Job.Message = cmb.Message
+            txtBoxBody.Text = mMessage_Job.Message.Original.Body_Text
+            txtBoxSubject.Text = mMessage_Job.Message.Original_Subject.Original
         Catch ex As Exception
             Exit Sub
         End Try
     End Sub
     Private Sub View_Snippet()
-        If mSelected_Job Is Nothing Then MessageBox.Show("No selected Job")
-        If mSelected_Job.Snippet IsNot Nothing Then Dim frmSol As New frmSolicit(mSelected_Job.Snippet) : frmSol.ShowDialog()
+        If mMessage_Job.Job Is Nothing Then MessageBox.Show("No selected Job")
+        If mMessage_Job.Job.Snippet IsNot Nothing Then Dim frmSol As New frmSolicit(mMessage_Job.Job.Snippet) : frmSol.ShowDialog()
     End Sub
+
+
 #End Region
 End Class

@@ -1,29 +1,27 @@
 ﻿Imports System.Threading
 Imports Content.Primitives
-Imports Content.Solicitation.Utilities
-Imports Content.Solicitation.Localize
 Imports OpenQA.Selenium
+Imports Content.Solicitation.Utilities
 Imports OpenQA.Selenium.Chrome
-
+Imports Content.Solicitation.Localize
 Public Class Scraper_Lemlist
     Private mDriver As IWebDriver
     Private mDirChrome As String
     Private mUrl_Base As String
     Private mdirVPN As String
     Private mLemlist As Lemlist
-    Private mJob As Job_Curation
+    Private mJob As Message_Job
     Private mRandom As New System.Random
-
-    Public Sub New(ByVal dt2 As Lemlist, Job As Job_Curation)
+    Public Sub New(ByVal dt2 As Lemlist, Job As Message_Job)
         Initialize(dt2, Job)
     End Sub
-    Private Sub Initialize(ByVal dt2 As Lemlist, Job As Job_Curation)
+    Private Sub Initialize(ByVal dt2 As Lemlist, Job As Message_Job)
         mJob = Job
+        mJob.Job.Item_Content.URL_Post = "https://www.record23.com/what-is-the-difference-between-web-scraping-and-crawling/"
         mLemlist = dt2
         mDirChrome = "C:\Users\pc\Desktop\Software and Files\Expert 23\Google_For_Selenium_78.0.3904.7000\Chrome\Application\chrome.exe"
         mUrl_Base = "https://app.lemlist.com/campaigns/"
         mdirVPN = "C:\Users\pc\Desktop\Software and Files\Expert 23\Google_For_Selenium_78.0.3904.7000\Chrome\Application\2.0.0_0.crx"
-        'test
     End Sub
     Public Sub Scrape()
         Initialise_Driver()
@@ -62,9 +60,11 @@ Public Class Scraper_Lemlist
                 'Dim wrapper = container.FindElement(By.CssSelector(".fr-wrapper"))
                 Dim body = mDriver.FindElement(By.CssSelector(".fr-element.fr-view"))
                 Dim subject = mDriver.FindElement(By.CssSelector(".emojionearea-editor"))
-                Dim bodyWithImage = Load_Next_Message_Version() & body.GetAttribute("innerHTML")
+                Dim divContainer = body.GetAttribute("innerHTML")
+                Dim emailRaw = Load_Next_Message_Version()
+                Build_Email(emailRaw, divContainer, 2)
                 Utilities.Send_Text_Element_No_Wait(subject, Load_Random_Subject, mDriver)
-                Utilities.Send_Text_Element_No_Wait(body, bodyWithImage, mDriver)
+                Utilities.Send_Text_Element_No_Wait(body, emailRaw, mDriver)
                 body.SendKeys(Keys.Return)
                 Try
                     Utilities.Click_Elelment_No_Wait(mDriver.FindElement(By.CssSelector(".btn.btn-sm.btn-primary.js-campaigns-step-edit-save")), mDriver)
@@ -83,9 +83,41 @@ Public Class Scraper_Lemlist
         Utilities.Click(".swal-button.swal-button--confirm.swal-button--danger", mDriver)
         mDriver.Quit()
     End Sub
+    Private Sub Build_Email(ByRef email As String, ByRef divContainer As String, ByVal index As String)
+
+        Dim temp = email.Split(vbNewLine)
+        Dim snippet = divContainer.Substring(divContainer.IndexOf("<a"))
+        snippet = snippet.Replace("</div>", "")
+        Dim fonSize = mJob.Message.Email.Font_Size
+        Dim fontFamily = mJob.Message.Email.Font_Family
+        divContainer = divContainer.Replace(snippet, "")
+        Dim logo = "<img style=""vertical-align: middle; border-style: none; cursor: pointer; padding: 0px 1px; max-width: 100%; box-sizing: border-box;"" width=""200"" height=""200"" src=""/api/files/Files/fil_5Ytfx6woYnj7rL5BM.png"">"
+
+        Dim html As String = ""
+
+        For i = 0 To temp.Count - 1
+            temp(i) = temp(i).Replace(vbLf, "")
+
+            If i = Integer.Parse(mJob.Message.Email.Snippet_Position) Then
+                html = html & temp(i) & "<br>" & snippet & "<br>"
+            ElseIf i = Integer.Parse(mJob.Message.Email.Logo_Position) Then
+
+                html = html & temp(i) & "<br>" & logo & "<br>"
+            Else
+                html = html & temp(i) & "<br>"
+            End If
+        Next
+        If mJob.Message.Email.Logo_Position > temp.Count - 1 Then
+            html = html & "<br>" & logo
+        End If
+        divContainer = divContainer.Replace("<div style=""box-sizing: border-box;"">", "<div style=""box-sizing: border-box;font-size: " & fonSize & "px;font-family: " & fontFamily & """>")
+        divContainer = divContainer.Replace("&nbsp;", html)
+        email = divContainer
+    End Sub
     Private Sub Create_Campaign()
-        mDriver.FindElement(By.CssSelector(".btn.btn-secondary.js-campaigns-create")).SendKeys(Keys.Return)
-        Thread.Sleep(5000)
+        Thread.Sleep(4000)
+        mDriver.FindElement(By.CssSelector(".btn.btn-secondary.js-campaigns-create")).Click()
+        Thread.Sleep(14000)
 
 
         mDriver.FindElement(By.CssSelector(".js-campaign-name.js-edit")).SendKeys(mLemlist.Campaign_Name)
@@ -131,10 +163,10 @@ Public Class Scraper_Lemlist
         Dim selectOption = selectBoxEmail(selectBoxEmail.Count - 1).FindElement(By.TagName("option"))
         Dim Selected = selectBoxEmail(selectBoxEmail.Count - 1).FindElement(By.TagName("select"))
         Dim mapperTime As SortedDictionary(Of Integer, String) = New SortedDictionary(Of Integer, String)
-        Thread.Sleep(2000)
+        Thread.Sleep(3000)
 
         selectBoxEmail(selectBoxEmail.Count - 1).FindElement(By.TagName("select")).FindElements(By.TagName("option"))(Integer.Parse(mLemlist.Time_Zone)).Click()
-        Thread.Sleep(2000)
+        Thread.Sleep(3000)
 
         Dim senderContainer = mDriver.FindElement(By.CssSelector(".ui-edit-container.wizard-select.js-sender")).FindElements(By.TagName("optgroup"))
         senderContainer(senderContainer.Count - 1).FindElement(By.TagName("option")).Click()
@@ -175,15 +207,15 @@ Public Class Scraper_Lemlist
         mDriver.FindElement(By.CssSelector(".fal.fa-images")).Click()
         Thread.Sleep(4000)
         mDriver.FindElement(By.CssSelector(".btn.btn-secondary.js-image-inspiration-create")).Click()
-        Thread.Sleep(4000)
+        Thread.Sleep(5000)
         mDriver.FindElement(By.CssSelector(".btn.btn-secondary.js-toggle-add")).Click()
         Thread.Sleep(4000)
         mDriver.FindElement(By.CssSelector(".image-button.js-image-templates-image-add")).Click()
         Thread.Sleep(4000)
         Dim input = mDriver.FindElement(By.Id("fileInput"))
-        mLemlist.Images.Add(mJob.Current.SnippetRefDir)
+        mLemlist.Images.Add(mJob.Job.Snippet_File_Path)
         input.SendKeys(mLemlist.Images(0))
-        Thread.Sleep(4000)
+        Thread.Sleep(7000)
         mDriver.FindElement(By.CssSelector(".swal-button.swal-button--confirm.swal-button--danger")).Click()
         Thread.Sleep(4000)
         mDriver.FindElement(By.CssSelector(".btn.btn-primary.js-save")).Click()
@@ -196,8 +228,8 @@ Public Class Scraper_Lemlist
 
         mDriver.FindElement(By.Id("imageLink-3")).Click()
         Thread.Sleep(4000)
-        mDriver.FindElement(By.CssSelector(".fr-popup.fr-desktop.fr-active")).FindElement(By.TagName("input")).SendKeys(mJob.Current.URL_Post)
-        Thread.Sleep(2000)
+        mDriver.FindElement(By.CssSelector(".fr-popup.fr-desktop.fr-active")).FindElement(By.TagName("input")).SendKeys(mJob.Job.Item_Content.URL_Post)
+        Thread.Sleep(3000)
         mDriver.FindElement(By.CssSelector(".fr-command.fr-submit")).Click()
         Thread.Sleep(1000)
     End Sub

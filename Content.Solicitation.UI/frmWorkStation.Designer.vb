@@ -487,13 +487,13 @@ Partial Class frmWorkStation
         'LoadToolStripMenuItem1
         '
         Me.LoadToolStripMenuItem1.Name = "LoadToolStripMenuItem1"
-        Me.LoadToolStripMenuItem1.Size = New System.Drawing.Size(127, 26)
+        Me.LoadToolStripMenuItem1.Size = New System.Drawing.Size(180, 26)
         Me.LoadToolStripMenuItem1.Text = "Load"
         '
         'SAVEToolStripMenuItem
         '
         Me.SAVEToolStripMenuItem.Name = "SAVEToolStripMenuItem"
-        Me.SAVEToolStripMenuItem.Size = New System.Drawing.Size(127, 26)
+        Me.SAVEToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
         Me.SAVEToolStripMenuItem.Text = "Save"
         '
         'cboWebsite
@@ -521,13 +521,13 @@ Partial Class frmWorkStation
         'EditToolStripMenuItem
         '
         Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
-        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(119, 26)
+        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
         Me.EditToolStripMenuItem.Text = "New"
         '
         'EditToolStripMenuItem1
         '
         Me.EditToolStripMenuItem1.Name = "EditToolStripMenuItem1"
-        Me.EditToolStripMenuItem1.Size = New System.Drawing.Size(119, 26)
+        Me.EditToolStripMenuItem1.Size = New System.Drawing.Size(180, 26)
         Me.EditToolStripMenuItem1.Text = "Edit"
         '
         'SnippetToolStripMenuItem

@@ -40,3 +40,24 @@ Public Enum Content_Status
     failed = 6
     ignored = 7
 End Enum
+Public Enum Font_Size
+    unspecified = 0
+    nine = 9
+    ten = 10
+    eleven = 11
+    twelve = 12
+    thirteen = 13
+    fourteen = 14
+    fifteen = 15
+    sixteen = 16
+    seventeen = 17
+    eighteen = 18
+    nineteen = 19
+    twenty = 20
+End Enum
+Public Enum Font_Family
+    Arial
+    Calibri
+    Times_New_Roman
+    Open_Sans
+End Enum

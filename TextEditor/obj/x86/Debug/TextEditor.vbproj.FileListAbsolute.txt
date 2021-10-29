@@ -1,0 +1,31 @@
+U:\Users\Asim Rehman\Documents\Visual Studio 2010\Projects\VB\thecodingguys\TextEditor\TextEditor\bin\Debug\TextEditor.exe
+U:\Users\Asim Rehman\Documents\Visual Studio 2010\Projects\VB\thecodingguys\TextEditor\TextEditor\bin\Debug\TextEditor.pdb
+U:\Users\Asim Rehman\Documents\Visual Studio 2010\Projects\VB\thecodingguys\TextEditor\TextEditor\bin\Debug\TextEditor.xml
+U:\Users\Asim Rehman\Documents\Visual Studio 2010\Projects\VB\thecodingguys\TextEditor\TextEditor\obj\x86\Debug\ResolveAssemblyReference.cache
+U:\Users\Asim Rehman\Documents\Visual Studio 2010\Projects\VB\thecodingguys\TextEditor\TextEditor\obj\x86\Debug\TextEditor.TextEditor.resources
+U:\Users\Asim Rehman\Documents\Visual Studio 2010\Projects\VB\thecodingguys\TextEditor\TextEditor\obj\x86\Debug\TextEditor.Resources.resources
+U:\Users\Asim Rehman\Documents\Visual Studio 2010\Projects\VB\thecodingguys\TextEditor\TextEditor\obj\x86\Debug\GenerateResource.read.1.tlog
+U:\Users\Asim Rehman\Documents\Visual Studio 2010\Projects\VB\thecodingguys\TextEditor\TextEditor\obj\x86\Debug\GenerateResource.write.1.tlog
+U:\Users\Asim Rehman\Documents\Visual Studio 2010\Projects\VB\thecodingguys\TextEditor\TextEditor\obj\x86\Debug\TextEditor.exe
+U:\Users\Asim Rehman\Documents\Visual Studio 2010\Projects\VB\thecodingguys\TextEditor\TextEditor\obj\x86\Debug\TextEditor.xml
+U:\Users\Asim Rehman\Documents\Visual Studio 2010\Projects\VB\thecodingguys\TextEditor\TextEditor\obj\x86\Debug\TextEditor.pdb
+C:\Users\Lenovo\Documents\vbtexteditor\TextEditor\TextEditor\obj\x86\Debug\TextEditor.exe
+C:\Users\Lenovo\Documents\vbtexteditor\TextEditor\TextEditor\obj\x86\Debug\TextEditor.xml
+C:\Users\Lenovo\Documents\vbtexteditor\TextEditor\TextEditor\obj\x86\Debug\TextEditor.pdb
+C:\Users\Lenovo\Documents\vbtexteditor\TextEditor\TextEditor\bin\Debug\TextEditor.exe
+C:\Users\Lenovo\Documents\vbtexteditor\TextEditor\TextEditor\bin\Debug\TextEditor.pdb
+C:\Users\Lenovo\Documents\vbtexteditor\TextEditor\TextEditor\bin\Debug\TextEditor.xml
+C:\Users\Lenovo\Documents\vbtexteditor\TextEditor\TextEditor\obj\x86\Debug\TextEditor.TextEditor.resources
+C:\Users\Lenovo\Documents\vbtexteditor\TextEditor\TextEditor\obj\x86\Debug\TextEditor.Resources.resources
+C:\Users\Lenovo\Documents\vbtexteditor\TextEditor\TextEditor\obj\x86\Debug\TextEditor.vbproj.GenerateResource.Cache
+C:\Users\pc\Desktop\New folder\Basic Text Editor\Basic Text Editor\TextEditor\TextEditor\bin\Debug\TextEditor.exe
+C:\Users\pc\Desktop\New folder\Basic Text Editor\Basic Text Editor\TextEditor\TextEditor\bin\Debug\TextEditor.pdb
+C:\Users\pc\Desktop\New folder\Basic Text Editor\Basic Text Editor\TextEditor\TextEditor\bin\Debug\TextEditor.xml
+C:\Users\pc\Desktop\New folder\Basic Text Editor\Basic Text Editor\TextEditor\TextEditor\obj\x86\Debug\TextEditor.vbproj.AssemblyReference.cache
+C:\Users\pc\Desktop\New folder\Basic Text Editor\Basic Text Editor\TextEditor\TextEditor\obj\x86\Debug\TextEditor.TextEditor.resources
+C:\Users\pc\Desktop\New folder\Basic Text Editor\Basic Text Editor\TextEditor\TextEditor\obj\x86\Debug\TextEditor.Resources.resources
+C:\Users\pc\Desktop\New folder\Basic Text Editor\Basic Text Editor\TextEditor\TextEditor\obj\x86\Debug\TextEditor.vbproj.GenerateResource.cache
+C:\Users\pc\Desktop\New folder\Basic Text Editor\Basic Text Editor\TextEditor\TextEditor\obj\x86\Debug\TextEditor.vbproj.CoreCompileInputs.cache
+C:\Users\pc\Desktop\New folder\Basic Text Editor\Basic Text Editor\TextEditor\TextEditor\obj\x86\Debug\TextEditor.exe
+C:\Users\pc\Desktop\New folder\Basic Text Editor\Basic Text Editor\TextEditor\TextEditor\obj\x86\Debug\TextEditor.xml
+C:\Users\pc\Desktop\New folder\Basic Text Editor\Basic Text Editor\TextEditor\TextEditor\obj\x86\Debug\TextEditor.pdb

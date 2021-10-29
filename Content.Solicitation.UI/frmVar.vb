@@ -3,10 +3,10 @@ Imports Content.Solicitation.Utilities
 Imports Content.Solicitation.Adapters
 Imports Content.Solicitation.Controllers
 Public Class frmVar
-
 #Region "Members"
-    Public Message_ As Message
-    Private mJob As Job_Curation
+
+    Public mMessage_Job As Message_Job
+
     Private mController_Message As Controller_Message
     Private mRandom As New System.Random
     Private selectedPath As String
@@ -22,20 +22,20 @@ Public Class frmVar
         mController_Message = New Controller_Message
         mEdit = False
     End Sub
-    Public Sub New(ByVal message As Message)
+    Public Sub New(ByRef message_Job As Message_Job)
         InitializeComponent()
         mController_Message = New Controller_Message
-        Message_ = message
+        mMessage_Job = message_Job
         mEdit = True
         Map_Loaded()
     End Sub
     Private Sub Initialize_Message()
-        Message_ = New Message(txtOriginal_Subject.Text, txtOriginal_Body.Text)
-        Message_.ID = Guid.NewGuid.ToString
-        Message_.Campaign_Name = txtBoxCampaignName.Text
-        Message_.Date_Created = Date.Now
-        Message_.Website = mWebsite
-        If mEdit = False Then Message_.Date_Modified = Date.Now
+        mMessage_Job.Message = New Message(txtOriginal_Subject.Text, txtOriginal_Body.Text)
+        mMessage_Job.Message.ID = Guid.NewGuid.ToString
+        mMessage_Job.Message.Campaign_Name = txtBoxCampaignName.Text
+        mMessage_Job.Message.Date_Created = Date.Now
+        mMessage_Job.Message.Website = mWebsite
+        If mEdit = False Then mMessage_Job.Message.Date_Modified = Date.Now
     End Sub
 #End Region
 
@@ -76,13 +76,84 @@ Public Class frmVar
     Private Sub btnSubjectSubstitute_Click(sender As Object, e As EventArgs) Handles btnSubjectSubstitute.Click
         Change_Variation_Subject()
     End Sub
+    Private Sub FontToolStripMenuItem_Click(sender As Object, e As EventArgs)
+        Load_Font()
+    End Sub
+    Private Sub ViewToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewToolStripMenuItem.Click
+        Show_Txt_Editor()
+    End Sub
+    Private Sub btnResetBold_Click(sender As Object, e As EventArgs) Handles btnResetBold.Click
+        Reset_Bold_Words()
+    End Sub
+    Private Sub btnAdd_Bold_Click(sender As Object, e As EventArgs) Handles btnAdd_Bold.Click
+        Add_Bold_Word()
+    End Sub
+    Private Sub txtBoxBold_TextChanged(sender As Object, e As EventArgs) Handles txtBoxBold.TextChanged
+        txtBoxBold.ScrollBars = ScrollBars.Both
+    End Sub
+    Private Sub txtboxUnderlined_TextChanged(sender As Object, e As EventArgs) Handles txtboxUnderlined.TextChanged
+        txtboxUnderlined.ScrollBars = ScrollBars.Both
+    End Sub
+    Private Sub btnResetUnderlined_Click(sender As Object, e As EventArgs) Handles btnResetUnderlined.Click
+        Reset_Undelined_Words()
+    End Sub
+    Private Sub btnAddUnderlimed_Click(sender As Object, e As EventArgs) Handles btnAddUnderlimed.Click
+        Add_Underline_Words()
+    End Sub
+
 #End Region
 
 #Region "Methods"
+    Private Sub Reset_Undelined_Words()
+
+        mMessage_Job.Message.Email.Underlined_Words = New List(Of String)
+        txtboxUnderlined.Text = ""
+        txtBoxSingleUnderline.Text = ""
+    End Sub
+    Private Sub Add_Underline_Words()
+        If txtBoxSingleUnderline.Text <> "" Then
+            mMessage_Job.Message.Email.Underlined_Words.Add(txtBoxSingleUnderline.Text.Trim)
+            If txtboxUnderlined.Text = "" Then
+                txtboxUnderlined.Text = txtBoxSingleUnderline.Text & vbNewLine
+            Else
+                txtboxUnderlined.Text = txtboxUnderlined.Text & vbNewLine & txtBoxSingleUnderline.Text
+            End If
+        End If
+        txtBoxSingleUnderline.Text = ""
+    End Sub
+    Private Sub Reset_Bold_Words()
+        mMessage_Job.Message.Email.Bold_Words = New List(Of String)
+        txtBoxBold.Text = ""
+        txtboxSingleBold.Text = ""
+    End Sub
+    Private Sub Add_Bold_Word()
+        If txtboxSingleBold.Text <> "" Then
+            mMessage_Job.Message.Email.Bold_Words.Add(txtboxSingleBold.Text.Trim)
+            If txtBoxBold.Text = "" Then
+                txtBoxBold.Text = txtboxSingleBold.Text & vbNewLine
+            Else
+                txtBoxBold.Text = txtBoxBold.Text & vbNewLine & txtboxSingleBold.Text
+
+            End If
+        End If
+        txtboxSingleBold.Text = ""
+    End Sub
+
+    Private Sub Show_Txt_Editor()
+        If txtVersion.Text <> "" Then
+            Dim frm As New frmTxtEditor
+            frm.Message_Job = mMessage_Job
+            frm.ShowDialog()
+
+            mMessage_Job.Message.Email = frm.Message_Job.Message.Email
+        Else
+            MessageBox.Show("body message is  still empty")
+        End If
+    End Sub
     Private Sub Push_Message()
-        If mEdit Then Message_.Date_Modified = Date.Now : mController_Message.Update_One_Message(Message_) : Exit Sub
-        If Message_ IsNot Nothing Then
-            mController_Message.Save_One_Message(Message_)
+        If mEdit Then mMessage_Job.Message.Date_Modified = Date.Now : mController_Message.Update_One_Message(mMessage_Job.Message) : Exit Sub
+        If mMessage_Job.Message IsNot Nothing Then
+            mController_Message.Save_One_Message(mMessage_Job.Message)
             Me.Close()
         Else
             MessageBox.Show("There are no analyze messages")
@@ -98,7 +169,7 @@ Public Class frmVar
             variants = Integer.Parse(txtBoxVariation.Text)
             If txtOriginal_Body.Text.Length < 5 Then MessageBox.Show("Body message is empty") : Exit Sub
             If txtOriginal_Subject.Text = "" Then MessageBox.Show("Subject cannot be empty") : Exit Sub
-            s.Scrape(Message_, variants)
+            s.Scrape(mMessage_Job.Message, variants)
             Save_Message()
         Catch ex As Exception
             MessageBox.Show("Variations must be inputed as an integer")
@@ -109,23 +180,23 @@ Public Class frmVar
         frm.ShowDialog()
         selectedPath = frm.FullFileRef()
         Dim success As Boolean
-        Serialization_Utilities.Serialize_Object_And_Save_FileSystem(Message_, selectedPath, success)
+        Serialization_Utilities.Serialize_Object_And_Save_FileSystem(mMessage_Job.Message, selectedPath, success)
     End Sub
     Private Sub Load_Next_Message_Version()
         Try
-            If Message_ IsNot Nothing Then
+            If mMessage_Job.Message IsNot Nothing Then
                 mLoading = True
                 Load_Message(True)
                 Load_Controls_Subject()
-                Message_.ID = txtBoxCampaignName.Text
-                Message_.Varied = Build_Version()
+                mMessage_Job.Message.ID = txtBoxCampaignName.Text
+                mMessage_Job.Message.Varied = Build_Version()
                 Dim bodyText As String
-                bodyText = Message_.Varied.Body_Text
+                bodyText = mMessage_Job.Message.Varied.Body_Text
                 txtVersion.Text = bodyText
                 Check_Message(bodyText)
                 mLoading = False
                 cboSentence_Number.Items.Clear()
-                For i = 0 To Message_.Sentences.Count - 1
+                For i = 0 To mMessage_Job.Message.Sentences.Count - 1
                     cboSentence_Number.Items.Add(i.ToString())
                 Next
             End If
@@ -135,7 +206,7 @@ Public Class frmVar
     End Sub
     Private Function Build_Version() As Version
         Dim vers As New Version()
-        With Message_
+        With mMessage_Job.Message
             Dim permutation As New SortedDictionary(Of Integer, Integer)
             permutation = Select_Random_Permutation()
             vers = Version.Build_Version(.Sentences, permutation)
@@ -144,7 +215,7 @@ Public Class frmVar
     End Function
     Private Function Select_Random_Permutation() As SortedDictionary(Of Integer, Integer)
         Dim permutation As New SortedDictionary(Of Integer, Integer) 'line number, variation chosen
-        With Message_
+        With mMessage_Job.Message
             For i = 1 To .Sentences.Count - 1
                 Dim sentnce As Sentence = .Sentences(i)
                 If sentnce.Variations.Count > 0 Then
@@ -163,10 +234,10 @@ Public Class frmVar
             selectedPath = frm.FullFileRef()
         End If
         Try
-            If Message_ Is Nothing Then
-                Serialization_Utilities.Load_Object_FileSystem_And_Deserialize(Of Message)(selectedPath, Message_, success)
-                If Message_ IsNot Nothing Then
-                    txtSubject_Variations.Text = Message_.Sentences(0).Variations(3)
+            If mMessage_Job.Message Is Nothing Then
+                Serialization_Utilities.Load_Object_FileSystem_And_Deserialize(Of Message)(selectedPath, mMessage_Job.Message, success)
+                If mMessage_Job.Message IsNot Nothing Then
+                    txtSubject_Variations.Text = mMessage_Job.Message.Sentences(0).Variations(3)
                     Map_Loaded()
                     Exit Sub
                 End If
@@ -183,31 +254,33 @@ Public Class frmVar
         'txtSpam.Text = sb.ToString
     End Sub
     Private Sub Map_Loaded()
-        txtOriginal_Subject.Text = Message_.Original_Subject.Original
-        txtOriginal_Body.Text = Message_.Original.Body_Text
-        txtSubject_Variations.Text = Message_.Sentences(0).Variations(3)
-        Message_.Varied = Build_Version()
-        txtBoxCampaignName.Text = Message_.Campaign_Name
-        If Message_.Sentences.Count > 1 Then txtBoxVariation.Text = Message_.Sentences(1).Variations.Count - 1.ToString
-        txtVersion.Text = Message_.Varied.Body_Text
+        txtOriginal_Subject.Text = mMessage_Job.Message.Original_Subject.Original
+        txtOriginal_Body.Text = mMessage_Job.Message.Original.Body_Text
+        txtSubject_Variations.Text = mMessage_Job.Message.Sentences(0).Variations(3)
+        mMessage_Job.Message.Varied = Build_Version()
+        txtBoxCampaignName.Text = mMessage_Job.Message.Campaign_Name
+        If mMessage_Job.Message.Email IsNot Nothing Then txtboxUnderlined.Text = MapWords(mMessage_Job.Message.Email.Underlined_Words)
+        If mMessage_Job.Message.Email IsNot Nothing Then txtBoxBold.Text = MapWords(mMessage_Job.Message.Email.Bold_Words)
+        If mMessage_Job.Message.Sentences.Count > 1 Then txtBoxVariation.Text = mMessage_Job.Message.Sentences(1).Variations.Count - 1.ToString
+        txtVersion.Text = mMessage_Job.Message.Varied.Body_Text
     End Sub
     Private Sub Change_Variation_Body()
         If cboSentence_Number.SelectedIndex > 0 And cboSentence_Variation.SelectedIndex > 0 Then
             Dim senteceIndex As Integer = cboSentence_Number.SelectedIndex
             Dim variationIndex As Integer = cboSentence_Variation.SelectedIndex
-            If variationIndex = -1 Then Message_.Sentences(senteceIndex).Variations(0) = txtBoxNewSentence.Text Else Message_.Sentences(senteceIndex).Variations(variationIndex) = txtBoxNewSentence.Text
+            If variationIndex = -1 Then mMessage_Job.Message.Sentences(senteceIndex).Variations(0) = txtBoxNewSentence.Text Else mMessage_Job.Message.Sentences(senteceIndex).Variations(variationIndex) = txtBoxNewSentence.Text
         End If
     End Sub
     Private Sub Change_Variation_Subject()
         If cboSubjects.SelectedIndex > 0 Then
-            Message_.Sentences(0).Variations(cboSubjects.SelectedIndex) = txtSubject_Variations.Text
+            mMessage_Job.Message.Sentences(0).Variations(cboSubjects.SelectedIndex) = txtSubject_Variations.Text
         End If
     End Sub
     Private Sub Load_Controls_Subject()
         Try
             cboSubjects.Items.Clear()
             Dim seen As New SortedDictionary(Of Integer, String)
-            For Each entry In Message_.Sentences(0).Variations
+            For Each entry In mMessage_Job.Message.Sentences(0).Variations
 
                 Dim number = entry.Key
                 Dim text = entry.Value
@@ -234,15 +307,15 @@ Public Class frmVar
     End Sub
     Private Sub Select_Variation()
         cboSentence_Variation.Items.Clear()
-        For j = 0 To Message_.Sentences(cboSentence_Number.SelectedIndex).Variations.Count - 1
+        For j = 0 To mMessage_Job.Message.Sentences(cboSentence_Number.SelectedIndex).Variations.Count - 1
             cboSentence_Variation.Items.Add(j.ToString())
         Next
     End Sub
     Private Sub Select_Sentence_Default()
-        txtBoxNewSentence.Text = Message_.Sentences(cboSentence_Number.SelectedIndex).Variations(0)
+        txtBoxNewSentence.Text = mMessage_Job.Message.Sentences(cboSentence_Number.SelectedIndex).Variations(0)
     End Sub
     Private Sub Select_Sentence()
-        txtBoxNewSentence.Text = Message_.Sentences(cboSentence_Number.SelectedIndex).Variations(cboSentence_Variation.SelectedIndex)
+        txtBoxNewSentence.Text = mMessage_Job.Message.Sentences(cboSentence_Number.SelectedIndex).Variations(cboSentence_Variation.SelectedIndex)
     End Sub
     Private Sub Changed_Subject_Variation()
         If mLoading Then Exit Sub
@@ -252,12 +325,18 @@ Public Class frmVar
         txtSubject_Variations.Text = subjectText
         txtSubject_Variations.Tag = index
     End Sub
+    Private Sub Load_Font()
+        Dim frm As New frmFont
+        frm.ShowDialog()
+    End Sub
 
-
-
-
-
-
+    Private Function MapWords(ByVal words As List(Of String)) As String
+        Dim result As String = ""
+        For Each word In words
+            result = result & word & vbNewLine
+        Next
+        Return result
+    End Function
 #End Region
 
 End Class

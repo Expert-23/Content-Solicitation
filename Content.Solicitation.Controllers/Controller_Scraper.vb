@@ -10,8 +10,8 @@ Public Class Controller_Scraper
     Public Sub Analyze_Message(ByRef message As Message, ByVal variants As Integer)
         Scraper_Quilbot.Scrape(message, variants)
     End Sub
-    Public Sub Launch_Campaign(ByRef lemlist As Lemlist, ByRef job As Job_Curation)
-        Scraper_Lemlist = New Scraper_Lemlist(lemlist, job)
+    Public Sub Launch_Campaign(ByRef lemlist As Lemlist, ByRef message_job As Message_Job)
+        Scraper_Lemlist = New Scraper_Lemlist(lemlist, message_job)
         Scraper_Lemlist.Scrape()
     End Sub
     Public Sub Scrape_Reports()

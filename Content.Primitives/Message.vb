@@ -10,6 +10,7 @@ Public Class Message
     Public Versions As SortedDictionary(Of Integer, Version)
     Public Date_Created As DateTime
     Public Date_Modified As DateTime
+    Public Email As Email_Format
 
     Public ReadOnly Property Original_Subject As Sentence
         Get
@@ -36,7 +37,7 @@ Public Class Message
         Original = New Version(subj, body, "original")
         Varied = New Version
         Versions = New SortedDictionary(Of Integer, Version)
-
+        Email = New Email_Format()
         Build_Sentences(subj, body)
 
     End Sub
