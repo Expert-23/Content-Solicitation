@@ -1,5 +1,5 @@
 ﻿Imports System.Data.SqlClient
-Imports Content.Solicitation.Primitives
+Imports Content.Primitives
 Imports Content.Solicitation.Schema.Internal_DB
 Imports Content.Solicitation.Utilities
 Imports Loggingg
@@ -27,7 +27,7 @@ Public Class Persist_Message
                                                     OPS.Message.ColName.Website,
                                                     OPS.Message.ColName.Date_Created,
                                                     DateTime.Now,
-                                                    message.ID,
+                                                    message.Campaign_Name,
                                                     message.Website
                                                     )
 

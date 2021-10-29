@@ -1,5 +1,5 @@
 ﻿Imports Content.Solicitation.Hilda
-Imports Content.Solicitation.Primitives
+Imports Content.Primitives
 Public Class Controller_Persist
 #Region "Members"
     Private mPersistMessage As Persist_Message

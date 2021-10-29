@@ -5,7 +5,7 @@ Imports System.IO
 Imports System.Text
 Imports System.Threading
 Imports Content.Solicitation.Utilities
-Imports Content.Solicitation.Primitives
+Imports Content.Primitives
 Public Class Scraper_QB
 
     'This class is the Selenium base method of doing the screen scraping via Chrome - placed into service 7/1/17
@@ -78,23 +78,22 @@ Public Class Scraper_QB
             If number > 0 Then numVariants = numVariants_body
 
             If Not String.IsNullOrWhiteSpace(sentnce.ToString) Then
-
-                If Not Extract_Variations_For_Sentence(sentnce, numVariants) Then
-                    Utilities.Rotate_VPN(2, False, mDriver)
-                    'MA
-
-                    Dim originalval As String = entry.Value.Variations(0)
-                    Dim sorted As New SortedDictionary(Of Integer, String)
-                    sorted.Add(0, originalval)
-                    sentnce.Variations = sorted
+                If sentnce.Original <> "" Then
                     If Not Extract_Variations_For_Sentence(sentnce, numVariants) Then
-                        Debug.Print("Failed to scrape results for sentence " & number)
+                        Utilities.Rotate_VPN(2, False, mDriver)
+                        'MA
+
+                        Dim originalval As String = entry.Value.Variations(0)
+                        Dim sorted As New SortedDictionary(Of Integer, String)
+                        sorted.Add(0, originalval)
+                        sentnce.Variations = sorted
+                        If Not Extract_Variations_For_Sentence(sentnce, numVariants) Then
+                            Debug.Print("Failed to scrape results for sentence " & number)
+                        End If
+                        'MA
                     End If
-                    'MA
                 End If
-
             End If
-
             variations.Add(number, sentnce)
 
         Next

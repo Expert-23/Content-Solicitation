@@ -2,12 +2,11 @@ C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Sch
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Schema\bin\Debug\Content.Solicitation.Schema.exe
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Schema\bin\Debug\Content.Solicitation.Schema.pdb
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Schema\bin\Debug\Content.Solicitation.Schema.xml
-C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Schema\bin\Debug\Content.Solicitation.Primitives.exe
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Schema\bin\Debug\Content.Primitives.dll
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Schema\bin\Debug\Serilog.dll
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Schema\bin\Debug\WebDriver.dll
-C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Schema\bin\Debug\Content.Solicitation.Primitives.pdb
-C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Schema\bin\Debug\Content.Solicitation.Primitives.xml
-C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Schema\bin\Debug\Content.Solicitation.Primitives.exe.config
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Schema\bin\Debug\Content.Primitives.pdb
+C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Schema\bin\Debug\Content.Primitives.xml
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Schema\bin\Debug\Serilog.xml
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Schema\bin\Debug\WebDriver.xml
 C:\Users\pc\source\repos\Expert-23\Content-Solicitation\Content.Solicitation.Schema\obj\Debug\Content.Solicitation.Schema.vbproj.AssemblyReference.cache

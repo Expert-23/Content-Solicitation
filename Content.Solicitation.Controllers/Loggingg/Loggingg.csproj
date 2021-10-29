@@ -158,11 +158,5 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Base\BeyBarter.Localize\BeyBarter.Localize.csproj">
-      <Project>{891b88c5-deda-462d-b746-34d2f4b39b5c}</Project>
-      <Name>BeyBarter.Localize</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

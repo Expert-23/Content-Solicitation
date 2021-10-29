@@ -1,20 +1,18 @@
-﻿Imports Content.Solicitation.Primitives
+﻿Imports Content.Primitives
 Imports Content.Solicitation.Controllers
 Public Class frmCAmpaign
     Private mControllerScraper As Controller_Scraper
-    Private mMessage As Message
-    Private mJob As Job_Curation
+    Private mMessage_Job As Message_Job
     Private mZone As SortedDictionary(Of Time_Zone, Boolean)
     Private mSending As SortedDictionary(Of Stop_Sending_Lead, Boolean)
     Private mTracking As SortedDictionary(Of Tracking, Boolean)
     Private mLemlist As New Lemlist
-    Public Sub New(message As Message, Job As Job_Curation)
-        Initialize(message, Job)
+    Public Sub New(ByRef message_Job As Message_Job)
+        Initialize(message_Job)
     End Sub
-    Private Sub Initialize(message As Message, Job As Job_Curation)
+    Private Sub Initialize(ByRef message_Job As Message_Job)
         InitializeComponent()
-        mMessage = message
-        mJob = Job
+        mMessage_Job = message_Job
         mSending = New SortedDictionary(Of Stop_Sending_Lead, Boolean)
         mTracking = New SortedDictionary(Of Tracking, Boolean)
         mZone = New SortedDictionary(Of Time_Zone, Boolean)
@@ -28,8 +26,8 @@ Public Class frmCAmpaign
         Map_Tracking()
         Map_Lemlist()
         Dim a = Integer.Parse(mLemlist.Time_Zone)
-        mLemlist.Message = mMessage
-        mControllerScraper.Launch_Campaign(mLemlist, mJob)
+        mLemlist.Message = mMessage_Job.Message
+        mControllerScraper.Launch_Campaign(mLemlist, mMessage_Job)
     End Sub
     Private Sub Map_Lemlist()
         mLemlist.Campaign_Name = txtBox_Campaign_Name.Text

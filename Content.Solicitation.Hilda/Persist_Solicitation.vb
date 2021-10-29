@@ -1,5 +1,5 @@
 ﻿Imports Content.Solicitation.Schema.Internal_DB
-Imports Content.Solicitation.Primitives
+Imports Content.Primitives
 Imports Loggingg
 Imports System.Data.SqlClient
 Imports Content.Solicitation.Utilities
@@ -279,7 +279,7 @@ Public Class Persist_Solicitation
 
     End Function
 
-    Public Function Retrieve_All_Job_Solicitation(ByVal website As Websites, ByVal job_status As Job_Status) As DataSet
+    Public Function Retrieve_All_Job_Solicitation(ByVal website As Websites, ByVal job_status As Content_Status) As DataSet
 
         Dim ds As New DataSet
 

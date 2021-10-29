@@ -51,6 +51,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
       <HintPath>..\packages\Serilog.2.10.0\lib\net46\Serilog.dll</HintPath>
     </Reference>
@@ -94,6 +95,12 @@
     <Compile Include="frmCampaign.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmFont.Designer.vb">
+      <DependentUpon>frmFont.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmFont.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmMain.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +112,24 @@
       <DependentUpon>frmFileSystem.vb</DependentUpon>
     </Compile>
     <Compile Include="frmFileSystem.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReports.Designer.vb">
+      <DependentUpon>frmReports.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmReports.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSolicit.Designer.vb">
+      <DependentUpon>frmSolicit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSolicit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTxtEditor.Designer.vb">
+      <DependentUpon>frmTxtEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTxtEditor.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmVar.Designer.vb">
@@ -129,6 +154,12 @@
       <DependentUpon>frmWorkStation.vb</DependentUpon>
     </Compile>
     <Compile Include="frmWorkStation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWorkStationBuild.Designer.vb">
+      <DependentUpon>frmWorkStationBuild.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmWorkStationBuild.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -158,6 +189,18 @@
     <EmbeddedResource Include="frmFileSystem.resx">
       <DependentUpon>frmFileSystem.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmFont.resx">
+      <DependentUpon>frmFont.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReports.resx">
+      <DependentUpon>frmReports.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSolicit.resx">
+      <DependentUpon>frmSolicit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTxtEditor.resx">
+      <DependentUpon>frmTxtEditor.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmVar.resx">
       <DependentUpon>frmVar.vb</DependentUpon>
     </EmbeddedResource>
@@ -169,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmWorkStation.resx">
       <DependentUpon>frmWorkStation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWorkStationBuild.resx">
+      <DependentUpon>frmWorkStationBuild.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -190,6 +236,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Content.Primitives\Content.Primitives.vbproj">
+      <Project>{8378f67f-4a90-4911-87cf-18530ab97ecf}</Project>
+      <Name>Content.Primitives</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Content.Solicitation.Adapters\Content.Solicitation.Adapters.vbproj">
       <Project>{06aace38-7017-451f-81a0-85ac42f4182b}</Project>
       <Name>Content.Solicitation.Adapters</Name>
@@ -198,9 +248,9 @@
       <Project>{3bf2e87a-3abc-4293-b74d-0afa046040a3}</Project>
       <Name>Content.Solicitation.Controllers</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Content.Solicitation.Primitives\Content.Solicitation.Primitives.vbproj">
-      <Project>{dde8a23f-e0d2-4a97-a1d5-e45ea2a397b7}</Project>
-      <Name>Content.Solicitation.Primitives</Name>
+    <ProjectReference Include="..\Content.Solicitation.Hilda\Content.Solicitation.HLDA.vbproj">
+      <Project>{b792f2c0-6dfb-43f5-819a-637337dca223}</Project>
+      <Name>Content.Solicitation.HLDA</Name>
     </ProjectReference>
     <ProjectReference Include="..\Content.Solicitation.Utilities\Content.Solicitation.Utilities.vbproj">
       <Project>{2703f8d8-9a09-45be-8c43-cfb6473dc214}</Project>
@@ -213,6 +263,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Test0.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\R23_Logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Import Project="..\packages\Selenium.WebDriver.ChromeDriver.78.0.3904.7000\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.ChromeDriver.78.0.3904.7000\build\Selenium.WebDriver.ChromeDriver.targets')" />

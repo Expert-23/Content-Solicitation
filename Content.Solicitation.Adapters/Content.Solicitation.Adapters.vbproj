@@ -107,6 +107,7 @@
     <Compile Include="Scrapers\Driver_Email.vb" />
     <Compile Include="Scrapers\Scraper_Lemlist.vb" />
     <Compile Include="Scrapers\Scraper_QB.vb" />
+    <Compile Include="Scrapers\Scraper_Reports_Lemlist.vb" />
     <Compile Include="Scrapers\Utilities.vb" />
   </ItemGroup>
   <ItemGroup>
@@ -131,6 +132,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Content.Primitives\Content.Primitives.vbproj">
+      <Project>{8378f67f-4a90-4911-87cf-18530ab97ecf}</Project>
+      <Name>Content.Primitives</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Content.Solicitation.Controllers\Loggingg\Loggingg.csproj">
       <Project>{5C0AF8F7-3DF7-409D-A99C-6A87CA927C84}</Project>
       <Name>Loggingg</Name>
@@ -138,10 +143,6 @@
     <ProjectReference Include="..\Content.Solicitation.Localize\Content.Solicitation.Localize.vbproj">
       <Project>{274d40f8-2ff3-4fa9-93cf-0b4994ac07e3}</Project>
       <Name>Content.Solicitation.Localize</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Content.Solicitation.Primitives\Content.Solicitation.Primitives.vbproj">
-      <Project>{dde8a23f-e0d2-4a97-a1d5-e45ea2a397b7}</Project>
-      <Name>Content.Solicitation.Primitives</Name>
     </ProjectReference>
     <ProjectReference Include="..\Content.Solicitation.Utilities\Content.Solicitation.Utilities.vbproj">
       <Project>{2703f8d8-9a09-45be-8c43-cfb6473dc214}</Project>

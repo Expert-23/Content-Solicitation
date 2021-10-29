@@ -1,5 +1,5 @@
 ﻿Imports System.Drawing
-Imports Content.Solicitation.Primitives
+Imports Content.Primitives
 Imports Content.Solicitation.Utilities
 Imports Content.Solicitation.Localize
 Imports Content.Solicitation.Schema.Internal_DB

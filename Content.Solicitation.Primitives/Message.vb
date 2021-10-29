@@ -2,7 +2,7 @@
 Public Class Message
 
     Public ID As String
-    Public Website As String
+    Public Website As Websites
     Public Campaign_Name As String
     Public Original As Version
     Public Varied As Version
