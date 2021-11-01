@@ -30,7 +30,17 @@
       "ProjectGuid": "3bf2e87a-3abc-4293-b74d-0afa046040a3",
       "DisplayName": "Content.Solicitation.Controllers",
       "ColorIndex": 5
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "8378f67f-4a90-4911-87cf-18530ab97ecf": {
+      "ProjectGuid": "8378f67f-4a90-4911-87cf-18530ab97ecf",
+      "DisplayName": "Content.Primitives",
+      "ColorIndex": 6
     }
   },
-  "NextColorIndex": 6
+  "NextColorIndex": 7
 }
