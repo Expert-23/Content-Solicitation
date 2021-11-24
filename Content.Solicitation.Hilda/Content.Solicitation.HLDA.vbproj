@@ -104,6 +104,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Persist_Before_Lemlist.vb" />
     <Compile Include="Persist_FileSystem.vb" />
     <Compile Include="Persist_Message.vb" />
     <Compile Include="Persist_Solicitation.vb" />

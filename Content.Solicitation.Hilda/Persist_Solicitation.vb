@@ -251,7 +251,6 @@ Public Class Persist_Solicitation
 
         Try
 
-
             Using conn As New SqlClient.SqlConnection(OPS.Conn)
 
                 conn.Open()
@@ -261,8 +260,8 @@ Public Class Persist_Solicitation
 
                 Dim da = New SqlDataAdapter(query, conn)
                 da.Fill(ds)
-
                 conn.Close()
+
             End Using
 
         Catch ex As SqlException
@@ -317,4 +316,6 @@ Public Class Persist_Solicitation
 
     End Function
 
+
 End Class
+

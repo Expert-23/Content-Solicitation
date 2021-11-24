@@ -249,6 +249,83 @@ Public Class Internal_DB
 
         End Class
 
+        Public Class Before_Lemlist
+
+            Public Shared Table_Name As String = "[Diaspora].[dbo].[Before_Lemlist]"
+
+            Public Class ColName
+
+                Public Shared Index As String = "[Index]"
+                Public Shared ID As String = "[ID]"
+                Public Shared LinkedIn_URL As String = "[LinkedIn URL]"
+                Public Shared First_Name As String = "[First Name]"
+                Public Shared Last_Name As String = "[Last Name]"
+                Public Shared Company As String = "[Company]"
+                Public Shared Title_Actual As String = "[Title Actual]"
+                Public Shared City As String = "[City]"
+                Public Shared State As String = "[State]"
+                Public Shared Alternate_Address As String = "[Alternate Address]"
+                Public Shared Alternate_Phone As String = "[Alternate Phone]"
+                Public Shared Email As String = "[Email]"
+                Public Shared Title As String = "[Title]"
+                Public Shared Country As String = "[Country]"
+                Public Shared Website As String = "[Website]"
+                Public Shared Address As String = "[Address]"
+                Public Shared Phone_Number As String = "[Phone Number]"
+                Public Shared Date_Created As String = "[Date_Created]"
+                Public Shared Status As String = "[Status]"
+
+            End Class
+
+            Public Class NETType
+
+                Public Shared Index As Type = GetType(Integer)
+                Public Shared ID As Type = GetType(Integer)
+                Public Shared LinkedIn_URL As Type = GetType(String)
+                Public Shared First_Name As Type = GetType(String)
+                Public Shared Last_Name As Type = GetType(String)
+                Public Shared Company As Type = GetType(String)
+                Public Shared Title_Actual As Type = GetType(String)
+                Public Shared City As Type = GetType(String)
+                Public Shared State As Type = GetType(String)
+                Public Shared Alternate_Address As Type = GetType(String)
+                Public Shared Alternate_Phone As Type = GetType(String)
+                Public Shared Email As Type = GetType(String)
+                Public Shared Title As Type = GetType(String)
+                Public Shared Country As Type = GetType(String)
+                Public Shared Website As Type = GetType(String)
+                Public Shared Address As Type = GetType(String)
+                Public Shared Phone_Number As Type = GetType(String)
+                Public Shared Date_Created As Type = GetType(DateTime)
+                Public Shared Status As Type = GetType(String)
+
+            End Class
+
+            Public Class SQL
+
+                Public Shared Index As SqlDbType = SqlDbType.Int
+                Public Shared ID As SqlDbType = SqlDbType.Int
+                Public Shared LinkedIn_URL As SqlDbType = SqlDbType.VarChar
+                Public Shared First_Name As SqlDbType = SqlDbType.VarChar
+                Public Shared Last_Name As SqlDbType = SqlDbType.VarChar
+                Public Shared Company As SqlDbType = SqlDbType.VarChar
+                Public Shared Title_Actual As SqlDbType = SqlDbType.VarChar
+                Public Shared City As SqlDbType = SqlDbType.VarChar
+                Public Shared State As SqlDbType = SqlDbType.VarChar
+                Public Shared Alternate_Address As SqlDbType = SqlDbType.VarChar
+                Public Shared Alternate_Phone As SqlDbType = SqlDbType.VarChar
+                Public Shared Email As SqlDbType = SqlDbType.VarChar
+                Public Shared Title As SqlDbType = SqlDbType.VarChar
+                Public Shared Country As SqlDbType = SqlDbType.VarChar
+                Public Shared Website As SqlDbType = SqlDbType.VarChar
+                Public Shared Address As SqlDbType = SqlDbType.VarChar
+                Public Shared Phone_Number As SqlDbType = SqlDbType.VarChar
+                Public Shared Date_Created As SqlDbType = SqlDbType.DateTime
+                Public Shared Status As SqlDbType = SqlDbType.VarChar
+
+            End Class
+
+        End Class
 
     End Class
 End Class
